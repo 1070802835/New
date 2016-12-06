@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>支付宝</title>
+		<script src="js/jquery-3.1.1.js"></script>
+		<script src="js/touch.js"></script>
+		<script src="js/swiper-3.4.0.jquery.min.js"></script>
+		<link href="http://cdn.bootcss.com/font-awesome/3.0.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.0.min.css" />
+		<link rel="stylesheet" href="css/Alipay.css">
+	</head>
+
+	<body>
+		<header>
+			<div class="header-top">
+				<div class="header-top-left icon-reorder">
+					<i>账单</i>
+				</div>
+				<div class="header-top-right">
+					<a href="javascript:void(0)" class="icon-twitter"></a>
+					<a href="javascript:void(0)" class="icon-facebook-sign"></a>
+					<a href="javascript:void(0)" class="icon-github-alt"></a>
+				</div>
+			</div>
+
+			<div class="header-btm">
+				<div class="header-btm-s">
+					<a href="javascript:void(0)" class="icon-desktop"><i>扫一扫</i></a>
+					<a href="javascript:void(0)" class="icon-rss"><i>付款</i></a>
+					<a href="javascript:void(0)" class="icon-indent-right"><i>卡券</i></a>
+					<a href="javascript:void(0)" class="icon-github"><i>咻一咻</i></a>
+
+				</div>
+
+			</div>
+		</header>
+		<section>
+			<div class="section-main">
+				<a href="javascript:void(0)">
+					<img src="img/yue.png" />
+					<i>余额宝</i>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/hong1.png" />
+					</svg>
+					<i>红包</i>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/tianmao.png" />
+					<i>天猫</i>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/zhuanzhang.png" />
+					<i>转账</i>
+				</a>
+			</div>
+			<div class="section-main">
+				<a href="javascript:void(0)">
+					<img src="img/chongzhi.png" />
+					<i>手机充值</i>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/zhima.png" />
+					<i>芝麻信用</i></a>
+				<a href="javascript:void(0)">
+					<img src="img/didi.png" />
+					<i>滴滴出行</i>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/taobao.png" />
+					<i>淘宝电影</i>
+				</a>
+			</div>
+			<div class="section-main">
+				<a href="javascript:void(0)">
+					<img src="img/mayi.png" />
+					<i>蚂蚁聚宝</i>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/yang.png" />
+					<i>羊城通充值</i>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/shijie.png" />
+					<i>世界那么大</i>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/xin.png" />
+					<i>信用卡还款</i>
+				</a>
+			</div>
+
+			<div class="section-mid">
+				<div class="swiper-container ul">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="img/1.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="img/2.jpg" alt=""></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-main">
+				<a href="javascript:void(0)">
+					<img src="img/shoukuan.png" />
+					<i>收款</i>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/huilv.png" />
+					<i>汇率结算</i>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/cai.png" />
+					<i>彩票</i>
+				</a>
+				<a href="javascript:void(0)">
+					<img src="img/hong2.png" />
+					<i>红包快手</i>
+				</a>
+			</div>
+		</section>
+
+		<footer>
+			<ul>
+				<li class="changeBg">
+					<a href="javascript:void(0)">
+						<img src="img/zhifubao.png" />
+						<i>支付宝</i>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">
+						<img src="img/koubei.png" />
+						<i>口碑</i>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">
+						<img src="img/pengyou.png" />
+						<i>朋友</i>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)">
+						<img src="img/hong3.png" />
+						<i>我的</i>
+					</a>
+				</li>
+			</ul>
+
+		</footer>
+
+		<script>
+			var mySwiper = new Swiper('.swiper-container', {
+				autoplay: 2000, //可选选项，自动滑动
+				autoplayDisableOnInteraction: false
+			})
+			$("footer>ul>li").click(function() {
+				$(this).css('background','#8D8D8D').siblings().css('background','#fff')
+			})
+		</script>
+
+	</body>
+
+</html>

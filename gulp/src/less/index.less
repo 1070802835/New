@@ -1,0 +1,19 @@
+@str: 'Hello World';
+
+@another: 'That will be change';
+
+.Test:before{
+	content: @str;
+}
+@c: #fff;
+.A{
+	color: @c;
+}
+
+.TestAnother:before{
+	content: @another;
+}
+@width:300px;
+.aa{
+    width: @width;
+}

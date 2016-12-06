@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Title</title>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/touch.js"></script>
+    <style>
+        #dom {
+            width: 50%;
+            margin: 0 auto;
+            background: red;
+        }
+        .div1{
+        	width: 50%;
+            margin: 0 auto;
+            background: yellow;
+            margin-top: 10px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        a{
+        	width: 100%;
+        	height: 30px;
+        	position: absolute;
+        	left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        	text-decoration: none;
+        	color: cornflowerblue;
+        	line-height: 30px;
+        	text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="dom"></div>
+<div class="div1"></div>
+<div class="div2"></div>
+<a href="Photo.html">Most-Photo</a>
+<script>
+
+    $("#dom").css("height", parseInt($("#dom").css("width")));
+    $(".div1").css("height", parseInt($(".div1").css("width")));
+    //        touch.on("#dom","touchstart",function (e) {
+    //            e.startRotate();
+    //            e.preventDefault();
+    //        });
+    var angle = 0;
+    touch.on("#dom", "rotate", function (e) {
+        e.preventDefault();
+        var totalAngle = angle + e.rotation;
+        this.style.webkitTransform = "rotate(" + totalAngle + "deg)";
+    });
+    touch.on(".div1","swipeleft",function(e){
+    	this.style.left=this.offsetLeft-20+"px";
+    })
+    touch.on(".div1","swiperight",function(e){
+    	this.style.left=this.offsetLeft+20+"px";
+    })
+</script>
+</body>
+</html>
