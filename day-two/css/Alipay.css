@@ -40,10 +40,6 @@ q:before, q:after {
     content: '';
     content: none;
 }
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
 header{
     width:100%;
     font-size: 1.5rem;
