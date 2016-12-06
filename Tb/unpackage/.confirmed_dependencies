@@ -1,0 +1,38 @@
+{
+	"index.html": {
+		"resources": [
+			"img/banner2.jpg",
+			"css/index.css",
+			"js/jquery-3.1.1.js",
+			"img/ad.png",
+			"img/sao.png",
+			"img/banner1.jpg",
+			"css/swiper.min.css",
+			"css/font-awesome.min.css",
+			"img/message.png",
+			"js/swiper.min.js",
+			"img/banner3.jpg",
+			"js/touch.js",
+			"js/index.js",
+			"img/mao.png",
+			"img/market.png",
+			"img/eat.png",
+			"img/international.png",
+			"img/inner.png",
+			"img/sort.png",
+			"img/get.png",
+			"img/add.png",
+			"img/home.png",
+			"img/travel.png",
+			"img/物流.png",
+			"img/购物车.png",
+			"img/更多.png",
+			"img/我的.png",
+			"img/index.png",
+			"img/my.png",
+			"img/more.png",
+			"img/cart.png",
+			"img/channel.png"
+		]
+	}
+}
