@@ -2,7 +2,80 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="263fe8db-f7d5-4905-8b10-a596cbad530d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day-two/css/Alipay.css" afterPath="$PROJECT_DIR$/day-two/css/Alipay.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/css/Alipay.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/css/iconfont.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/css/swiper-3.4.0.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/cai.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/chongzhi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/didi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/hong1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/hong2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/hong3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/huilv.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/koubei.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/mayi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/pengyou.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/shijie.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/shoukuan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/taobao.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/tianmao.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/xin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/yang.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/yue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/zhifubao.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/zhima.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/img/zhuanzhang.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/js/jquery-2.1.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/js/jquery-3.1.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/js/jquery.easing.1.3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/js/jquery.easing.compatibility.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/js/saparallax.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/js/swiper-3.4.0.jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/js/touch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Apptest/manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/css/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/css/swiper.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/font/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/font/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/font/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/font/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/font/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/ad.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/banner1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/banner2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/banner3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/cart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/channel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/eat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/get.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/home.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/index.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/inner.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/international.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/mao.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/market.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/message.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/mine.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/more.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/my.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/sao.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/sort.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/travel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/img/朋友.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/js/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/js/jquery-3.1.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/js/swiper.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/js/touch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tb/unpackage/.confirmed_dependencies" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,13 +95,24 @@
     <favorites_list name="APP" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day-three/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="95" column="28" lean-forward="true" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -48,6 +132,7 @@
         <option value="$PROJECT_DIR$/day-two/css/index.html" />
         <option value="$PROJECT_DIR$/day-two/index.html" />
         <option value="$PROJECT_DIR$/day-two/css/index.css" />
+        <option value="$PROJECT_DIR$/day-three/index.html" />
       </list>
     </option>
   </component>
@@ -58,10 +143,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="x" value="34" />
+    <option name="y" value="136" />
+    <option name="width" value="1137" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -81,7 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -104,51 +188,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="day-two" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="day-two" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="day-three" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xuliangmost1" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -235,32 +288,33 @@
       <updated>1480990197711</updated>
       <workItem from="1480990202294" duration="11309000" />
       <workItem from="1481024328336" duration="5055000" />
+      <workItem from="1481077053828" duration="4319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16364000" />
+    <option name="totallyTimeSpent" value="20683000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
-    <editor active="false" />
+    <frame x="34" y="136" width="1137" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18515626" sideWeight="0.49607182" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21052632" sideWeight="0.49607182" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18515626" sideWeight="0.5039282" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,11 +332,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4278">
           <caret line="186" column="12" lean-forward="false" selection-start-line="186" selection-start-column="12" selection-end-line="186" selection-end-column="12" />
-          <folding>
-            <element signature="n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -290,7 +339,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -305,7 +353,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -313,27 +360,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1570">
           <caret line="166" column="22" lean-forward="true" selection-start-line="166" selection-start-column="22" selection-end-line="166" selection-end-column="22" />
-          <folding>
-            <element signature="n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day-two/css/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/day-two/css/index.html" />
     <entry file="file://$PROJECT_DIR$/day-two/css/Alipay.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="23" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -341,7 +375,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -349,22 +382,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day-two/css/index.css">
+    <entry file="file://$PROJECT_DIR$/day-two/css/index.css" />
+    <entry file="file://$PROJECT_DIR$/day-two/index.html" />
+    <entry file="file://$PROJECT_DIR$/day-three/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day-two/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="253">
+          <caret line="95" column="28" lean-forward="true" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
           <folding />
         </state>
       </provider>

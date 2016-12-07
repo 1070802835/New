@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3d</title>
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <style>
+        .wrap{
+            width: 150px;
+            height:150px;
+            position: absolute;
+            top:10%;
+            left:50%;
+            transform: translate(-50%);
+            perspective: 1000px;
+        }
+        section{
+            width: 150px;
+            height:150px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+        }
+        .wrap>section>div{
+            width:150px;
+            height:150px;
+        }
+        .wrap>section>div:nth-child(1){
+            width: 150px;
+            height:150px;
+            background:#7DFF02 ;
+            transform: translateZ(75px);
+            position: absolute;
+        }
+        .wrap>section>div:nth-child(2){
+            width: 150px;
+            height:150px;
+            background:#FF0007 ;
+            position: absolute;
+            transform:translateX(75px) rotateY(90deg);
+        }
+
+        .wrap>section>div:nth-child(3){
+            width: 150px;
+            height:150px;
+            background:#7E00FF ;
+            position: absolute;
+            transform: translateZ(-75px) rotateY(180deg);
+        }
+
+        .wrap>section>div:nth-child(4){
+            width: 150px;
+            height:150px;
+            background:#00E5FF;
+            position: absolute;
+            transform:translateX(-75px)  rotateY(-90deg);
+        }
+
+        .wrap>section>div:nth-child(5){
+            width: 150px;
+            height:150px;
+            background:#00E5FF ;
+            position: absolute;
+            transform:translateY(75px) rotateX(-90deg);
+        }
+
+        .wrap>section>div:nth-child(6){
+            width: 150px;
+            height:150px;
+            background:#00E5FF ;
+            position: absolute;
+            transform:translateY(-75px) rotateX(90deg);
+        }
+        .wrap5 section{
+            transform: rotateX(90deg);
+        }
+        .wrap6 section{
+            transform: rotateX(-90deg);
+        }
+        .wrap2 section{
+            transform: rotateY(-90deg);
+        }
+        .wrap4 section{
+            transform: rotateY(90deg);
+        }
+        .wrap3 section{
+            transform: rotateY(180deg);
+        }
+        .wrap1 section{
+            transform: rotate3d(1,0,1,0deg);
+
+        }
+        section>div{
+            text-align: center;
+            line-height: 150px;
+            font-size: 20px;
+
+        }
+        .a{
+            transform: rotateY(180deg);
+        }
+
+        .wrap>.nav{
+            position: fixed;
+            top:50%;
+            right:-100px;
+            width:auto;
+            height:auto;
+            transform: translate(-50%);
+        }
+        .wrap>.nav>a{
+            text-decoration: none;
+            display: block;
+            width:30px;
+            height:30px;
+            background: #00FFD7;
+            line-height: 30px;
+            margin-top:10px;
+            text-align: center;
+            color: #00CCFF;
+        }
+        @keyframes most {
+            0%{transform: rotateX(0deg) rotateY(0deg);}
+            100%{transform:rotateX(360deg) rotateY(360deg); }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </section>
+    <div class="nav">
+        <a href="javascript:void(0)" class="nav1">1</a>
+        <a href="javascript:void(0)" class="nav1">2</a>
+        <a href="javascript:void(0)" class="nav1">3</a>
+        <a href="javascript:void(0)" class="nav1">4</a>
+        <a href="javascript:void(0)" class="nav1">5</a>
+        <a href="javascript:void(0)" class="nav1">6</a>
+    </div>
+
+</div>
+<script>
+
+    	$(".nav>a").click(function () {
+    		$(".wrap").attr("class","wrap wrap"+parseInt($(this).index()+1));
+    	});
+
+</script>
+</body>
+</html>
