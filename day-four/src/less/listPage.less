@@ -1,0 +1,422 @@
+@width:100%;
+@height:100%;
+body,html{
+	overflow-x: hidden;
+}
+.transform(@param){
+	-webkit-transform: @param;
+     -moz-transform: @param;
+      -ms-transform: @param;
+       -o-transform: @param;
+          transform: @param;
+}
+.transition(@param){
+	-webkit-transition: @param;
+     -moz-transition: @param;
+      -ms-transition: @param;
+       -o-transition: @param;
+          transition: @param;
+}
+.page1{
+	width: 80%;
+	height: @height;
+	position: absolute;
+	// left: -80%;
+	left: 0;
+	top: 0;
+	z-index:1;
+ 	transition:all 1s ease;
+	.Hah{
+		width: 100%;
+		height: @height;
+		background: #f3f3f3;
+		position: absolute;
+		left: 0;
+		top: 0;
+		float: left;
+		font-size: 1.4rem;
+		
+		ul{
+			width: @width;
+			margin-bottom: 16px;
+		}
+		.Hah_ul1{
+			overflow: hidden;
+			border-bottom: 1px solid #888;
+			
+			li{
+				width: @width;
+				float: left;
+				background: #fff;
+				
+				p{
+
+					width: 86%;
+					display: block;
+					padding: 22px 0;
+					text-indent: 14%;
+					position: relative;
+					margin:0 auto;
+					font-weight: bolder;
+					
+					box-sizing: border-box;
+					&:before{
+						content:"";
+						display: block;
+						width:14%;
+						height: @height;
+						position: absolute;
+						left: 0;
+						top: 0;
+					}
+					
+
+				}
+				&:nth-last-child(1)>p{
+						border-bottom:0;
+				}
+				&:nth-child(1){
+					
+					p:before{
+						background: url("../list-img/nansheng.png") no-repeat center;
+					}
+				}
+				&:nth-child(2){
+					background: #444;
+					p:before{
+						background: url("../list-img/nvsheng.png") no-repeat center;
+					}
+				}
+				&:nth-child(3){
+					p:before{
+						background: url("../list-img/ertong.png") no-repeat center;
+					}
+				}
+				&:nth-child(4){
+					p{
+						border-bottom: 1px solid #999;
+						&:before{
+						background: url("../list-img/chuangyi.png") no-repeat center;
+					}
+					}
+					
+				}
+				&:nth-child(5){
+					border-bottom: 1px solid #999;
+					p:before{
+						background: url("../list-img/aolai.png") no-repeat center;
+					}
+				}
+
+				&:nth-child(6){
+					border-top: 1px solid #999;
+					margin-top: 14px;
+					
+
+					p:before{
+						background: url("../list-img/fangdajing.png") no-repeat center;
+					}
+				}
+				&:nth-child(7){
+					p:before{
+						background: url("../list-img/yanjing.png") no-repeat center;
+					}
+				}
+				&:nth-child(8){
+					border-bottom: 1px solid #999;
+					p:before{
+						background: url("../list-img/feiji.png") no-repeat center;
+					}
+				}
+				&:nth-child(9){
+					border-top: 1px solid #999;
+					margin-top: 14px;
+					p:before{
+						background: url("../list-img/huojian1.png") no-repeat center;
+					}
+				}
+	
+			}
+		}
+		
+	}
+	.Heh{
+		width: 25%;
+		height: @height;
+		background: #000;
+		opacity:0;
+		position: absolute;
+		left: 100%;
+		// left: 80%;
+		top: 0;
+		display: none;
+	}
+}
+
+
+.page2{
+	width: @width;
+	height: @height;
+	position: absolute;
+	left:0;
+	// left: 0;
+	top: 0;
+	z-index:3;
+	background: #fff;
+	transition:all .6 ease;
+	header{
+		width: @width;
+		background: #ff3382;
+		font-size: 1.4rem;
+		.header_top{
+		width: @width;
+		display:flex;
+		
+			.header_top_left{
+				flex:1;
+				color: #fff;
+				padding: 20px 0px;
+				margin-left: 15px;
+				
+			};
+			.header_top_mid{
+				flex:3;
+				display: flex;
+				padding: 20px 0;
+				.nav_top{
+					padding: 0 10px;
+					color: #fff;
+					font-weight: bolder;
+					
+					// &:nth-child(1):after{
+					// 	content: "";
+					// 	display: block;
+					// 	width: 20px;
+					// 	height: 3px;
+					// 	background: #fff;
+
+					// }
+				}
+				
+			}
+		}
+	}
+
+	section{
+		width: @width;
+		font-size: 1.6rem;
+		.section_top{
+			display:flex;
+			width: @width;
+			a{
+				flex:1;
+				font-weight: bolder;
+				text-decoration: none;
+				text-align: center;
+				color: #d0d0d0;
+				margin: 20px 0;
+				border-left: 1px solid #e0e0e0;
+				&:nth-child(1){
+					color: #373737;
+					border-left: 0;
+				}
+			}
+		}
+		.section_main{
+			width: @width;
+			font-size: 1.4rem;
+			position: relative;
+			.section_main_ul1{
+				width: inherit;
+				li{
+					width: inherit;
+					position: relative;
+					border-bottom: 1px solid #eee;
+					p{
+						width: @width;
+						padding: 25px 0;
+						text-indent: @width/6;
+					}
+					&:nth-child(1){
+						border-top: 1px solid #eee;
+						&:before{
+							content: "";
+							display: block;
+							width: @width/6;
+							height: 100%;
+							position: absolute;
+							background: url("../list-img/shangyi.png") no-repeat center; 
+						}
+						
+					}
+					&:nth-child(2){
+						&:before{
+							content: "";
+							display: block;
+							width: @width/6;
+							height: 100%;
+							position: absolute;
+							background: url("../list-img/kuzi.png") no-repeat center; 
+						}
+					}
+					&:nth-child(3){
+						&:before{
+							content: "";
+							display: block;
+							width: @width/6;
+							height: 100%;
+							position: absolute;
+							background: url("../list-img/xiezi.png") no-repeat center; 
+						}
+					}
+					&:nth-child(4){
+						&:before{
+							content: "";
+							display: block;
+							width: @width/6;
+							height: 100%;
+							position: absolute;
+							background: url("../list-img/bao.png") no-repeat center; 
+						}
+					}
+					&:nth-child(5){
+						&:before{
+							content: "";
+							display: block;
+							width: @width/6;
+							height: 100%;
+							position: absolute;
+							background: url("../list-img/shoubiao.png") no-repeat center; 
+						}
+					}
+					&:nth-child(6){
+						&:before{
+							content: "";
+							display: block;
+							width: @width/6;
+							height: 100%;
+							position: absolute;
+							background: url("../list-img/neiyi.png") no-repeat center; 
+						}
+					}
+					&:nth-child(7){
+						&:before{
+							content: "";
+							display: block;
+							width: @width/6;
+							height: 100%;
+							position: absolute;
+							background: url("../list-img/meizhaung.png") no-repeat center; 
+						}
+					}
+					span{
+						display: block;
+						width: 0;
+						height: 0;
+						border-top: 6px solid #fff;
+						border-bottom: 6px solid #fff;
+						border-left: 6px solid #fff;
+						border-right: 6px solid #dcdcdc;
+						position: absolute;
+						right: 46%;
+						top: 50%;
+						.transform(translateY(-50%));
+						display: none;
+					}
+
+				}
+			}
+
+			.flaot-div{
+				width: 46%;
+				height: @height+6;
+				position: absolute;
+				top: 0;
+				// left: 54%;
+				left: 100%;
+				ul{
+					width: @width;
+					height:@height;
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: none;
+					background: #f4f4f4;
+					li{
+						text-indent: 9%;
+						border-bottom: 1px solid #eaeaea;
+						a{
+							text-decoration: none;
+							display: inline-block;
+							color: #bdbdbd;
+							padding: 20px 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	.footer1{
+		width: @width;
+		position: fixed;
+		bottom: 0;
+		border-top: 1px solid #e6e6e6;
+		font-size: 1.2rem;
+		ul{
+			width: @width;
+			display: flex;
+			li{
+				flex:1;
+
+				padding: 12px 0;
+				list-style: none;
+				text-align: center;
+				img{
+					width: 2.2rem;
+					
+				}
+				&:nth-child(1):after{
+					content: "首页";
+					display: block;
+					color: #b0b0b0;
+					margin-top: 3px;
+				}
+				&:nth-child(2):after{
+					content: "分类";
+					display: block;
+					color: #b0b0b0;
+					margin-top: 3px;
+				}
+				&:nth-child(3):after{
+					content: "逛";
+					display: block;
+					color: #b0b0b0;
+					margin-top: 3px;
+				}
+				&:nth-child(4):after{
+					content: "购物车";
+					display: block;
+					color: #b0b0b0;
+					margin-top: 3px;
+				}
+				&:nth-child(5):after{
+					content: "我的";
+					display: block;
+					color: #b0b0b0;
+					margin-top: 3px;
+				}
+			}
+		}
+	}
+	.page_wrap{
+		width: @width;
+		height: @height;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: #444;
+		opacity:0.4;
+		z-index: 6;
+		display: none
+	}	
+}
