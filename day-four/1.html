@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call</title>
+</head>
+<body>
+<script>
+    var a=10;
+    var b=20;
+
+    var obj={
+        a:100,
+        b:200,
+        c:111,
+        d:222
+    }
+    // function fn(c,d){
+    //    this.c=this.c;
+    //    this.d=this.d;
+    //    console.log(this.c,this.d)
+    // }
+    // fn(1,2);
+
+
+    function fn(c,d){
+       this.c=c;
+       this.d=d;
+       console.log(this.c,this.d)
+    }
+    fn(a,b)
+
+	console.log(obj)
+
+    fn.call(obj,a,b);
+    //call改变了函数内部this的指向 指向了第一个参数
+
+    console.log(obj)
+    //27、28 给obj赋值了  obj的值变化了
+
+
+    // function fn(c,d){
+    //    c=this.c;
+    //    d=this.d;
+    //    console.log(this.c,this.d)
+    // }
+    // fn.call(obj,a,b);
+    
+</script>
+</body>
+</html>
