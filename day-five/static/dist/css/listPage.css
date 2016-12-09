@@ -5,14 +5,15 @@ header {
 }
 header a {
   flex: 1;
+  padding: 4px;
   text-align: center;
-  font-size: 3rem;
+  font-size: 3.2rem;
   color: #fff;
 }
 header .header_name {
   color: #fff;
   font-weight: bolder;
-  padding: 8px 0;
+  padding: 12px 0;
   flex: 2;
   font-size: 1.6rem;
   white-space: nowrap;
@@ -27,6 +28,7 @@ header .header_right {
 }
 header .header_right div {
   flex: 1;
+  padding: 12px 0;
 }
 header .header_right .empty0 {
   position: relative;
@@ -46,21 +48,21 @@ header .header_right .empty0:before {
 }
 header .header_right .collect {
   color: #fff;
-  padding: 8px 0;
   font-size: 1.4rem;
   font-weight: bolder;
 }
 header .header_right .share {
   color: #fff;
-  padding: 8px 0;
   font-size: 1.4rem;
   font-weight: bolder;
 }
 header .header_right .shaiXuan {
   color: #fff;
-  padding: 8px 0;
   font-size: 1.4rem;
   font-weight: bolder;
+}
+a {
+  text-decoration: none;
 }
 section {
   width: 100%;
@@ -78,12 +80,8 @@ section .section_top li {
   color: #bababa;
   box-sizing: border-box;
 }
-section .section_top li p {
-  width: 32px;
-  margin: 0 auto;
-  position: relative;
-}
-section .section_top li p:before {
+section .section_top li:nth-child(2) p:before,
+section .section_top li:nth-child(3) p:before {
   content: "";
   display: block;
   width: 16px;
@@ -93,7 +91,8 @@ section .section_top li p:before {
   top: -4px;
   background: url("../img/list-img/icon-angle-up.png");
 }
-section .section_top li p:after {
+section .section_top li:nth-child(2) p:after,
+section .section_top li:nth-child(3) p:after {
   content: "";
   display: block;
   width: 16px;
@@ -103,15 +102,39 @@ section .section_top li p:after {
   bottom: -4px;
   background: url("../img/list-img/icon-angle-down2.png");
 }
+section .section_top li p {
+  width: 32px;
+  margin: 0 auto;
+  position: relative;
+}
 section .section_top li:nth-child(1) {
   color: #000;
   border-bottom: 2px solid #000;
 }
+section .section_main {
+  overflow: hidden;
+}
 section .section_main .product0 {
-  margin: 10px;
+  margin: 3%;
+  display: block;
   float: left;
+  height: 267px;
 }
 section .section_main .product0 img {
   width: 166px;
-  float: left;
+  display: block;
+}
+section .section_main .product0 p {
+  width: 166px;
+  color: #444;
+  word-break: break-all;
+  word-wrap: break-word;
+  padding: 4px 0;
+  text-indent: 6px;
+}
+section .section_main .product0 span {
+  color: #000;
+  display: inline-block;
+  text-indent: 4px;
+  font-size: 1.5rem;
 }

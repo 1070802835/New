@@ -7,6 +7,9 @@
 	<title>list</title>
 	<link rel="stylesheet" href="../dist/css/common.css">
 	<link rel="stylesheet" href="../dist/common/font-awesome.css">
+	<script src="../dist/common/jquery-2.1.1.min.js"></script>
+	<script src="../dist/common/touch.js"></script>
+	<script src="../dist/common/template.js"></script>
 	<link rel="stylesheet" href="../dist/css/listPage.css">
 </head>
 <body>
@@ -23,18 +26,75 @@
 
 	<section>
 		<ul class="section_top">
-			<li>最新</li>
-			<li><p>价格</p></li>
-			<li><p>折扣</p></li>
+			<li  class="1"><p class="1">最新</p></li>
+			<li  class="2"><p class="2">价格</p></li>
+			<li  class="3"><p class="3">折扣</p></li>
 		</ul>
 
 		<div class="section_main">
-				<div class="product0">
-					<img src="../dist/img/list-img/monster (12).jpg" alt="">
-					<p></p>
-					<span></span>
-				</div>
+				<!-- <a href="#" class="product0">
+					<img src="../dist/img/list-img/monster1.jpg" alt="">
+					<p>Monster Guardians粉色鸭舌帽粉色鸭舌帽</p>
+					<span>&pound; 98.00</span>
+				</a href="#"> -->
+
 		</div>
 	</section>
+	<script id="main" type="text/html">
+
+
+		{{each list as value i}}
+			<a href="#" class="product0" lang="{{value.id}}">
+				<img src="{{value.src}}" alt="">
+				<p>{{value.parductName}}</p>
+				<span>&pound; {{value.price}}</span>
+			</a>
+		{{/each}}
+
+
+	</script>
+	<script>
+		function most() {
+			this.url = "../dist/json/list-page.json";
+			this.useAjax(this.url);
+			this.tapTop();
+		}
+
+		most.prototype.tapTop = function() {
+			touch.on(".section_top li", "tap", function(e) {
+				if (e.target.nodeName == "LI") {
+					this.$index = this.className - 1;
+				} else {
+					this.$index = this.parentNode.className - 1;
+				}
+				$(".section_top li").css("border-bottom", "0").children("p").css("color", "#bababa");
+				$(".section_top li").eq(this.$index).css("border-bottom", "2px solid #000").children("p").css("color", "#000")
+			})
+		}
+		most.prototype.useAjax = function(url) {
+			this.setting = {
+				dateType: "json",
+				success: function(data) {
+					// console.log(data);
+					var html = template("main", data);
+					$(".section_main").html(html);
+					touch.on(".product0", "tap", function(e) {
+						if (e.target.nodeName == "A") {
+							this.$lang = this.langName;
+							console.log(this.lang)
+						} else {
+							this.$lang = this.parentNode.lang;
+							console.log(this.parentNode.lang)
+						}
+						location.href="sort.html?"+this.$lang;
+					})
+				}
+			}
+			$.ajax(url, this.setting);
+		}
+
+
+		new most();
+	</script>
 </body>
 </html>

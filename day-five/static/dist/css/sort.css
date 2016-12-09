@@ -1,5 +1,7 @@
 body,
 html {
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 .page1 {
@@ -151,6 +153,7 @@ html {
 .page2 section {
   width: 100%;
   font-size: 1.6rem;
+  background: #fff;
 }
 .page2 section .section_top {
   display: flex;
@@ -165,7 +168,7 @@ html {
   margin: 20px 0;
   border-left: 1px solid #e0e0e0;
 }
-.page2 section .section_top a:nth-child(1) {
+.page2 section .section_top a:nth-child(2) {
   color: #373737;
   border-left: 0;
 }
@@ -270,6 +273,7 @@ html {
   position: absolute;
   top: 0;
   left: 100%;
+  display: none;
 }
 .page2 section .section_main .flaot-div ul {
   width: 100%;
@@ -290,56 +294,6 @@ html {
   color: #bdbdbd;
   padding: 20px 0;
 }
-.page2 .footer1 {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  border-top: 1px solid #e6e6e6;
-  font-size: 1.2rem;
-}
-.page2 .footer1 ul {
-  width: 100%;
-  display: flex;
-}
-.page2 .footer1 ul li {
-  flex: 1;
-  padding: 12px 0;
-  list-style: none;
-  text-align: center;
-}
-.page2 .footer1 ul li img {
-  width: 2.2rem;
-}
-.page2 .footer1 ul li:nth-child(1):after {
-  content: "首页";
-  display: block;
-  color: #b0b0b0;
-  margin-top: 3px;
-}
-.page2 .footer1 ul li:nth-child(2):after {
-  content: "分类";
-  display: block;
-  color: #b0b0b0;
-  margin-top: 3px;
-}
-.page2 .footer1 ul li:nth-child(3):after {
-  content: "逛";
-  display: block;
-  color: #b0b0b0;
-  margin-top: 3px;
-}
-.page2 .footer1 ul li:nth-child(4):after {
-  content: "购物车";
-  display: block;
-  color: #b0b0b0;
-  margin-top: 3px;
-}
-.page2 .footer1 ul li:nth-child(5):after {
-  content: "我的";
-  display: block;
-  color: #b0b0b0;
-  margin-top: 3px;
-}
 .page2 .page_wrap {
   width: 100%;
   height: 100%;
@@ -350,4 +304,57 @@ html {
   opacity: 0.4;
   z-index: 6;
   display: none;
+}
+.footer1 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #e6e6e6;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  background: #fff;
+  z-index: 10;
+}
+.footer1 ul {
+  width: 100%;
+  display: flex;
+}
+.footer1 ul li {
+  flex: 1;
+  padding: 12px 0;
+  list-style: none;
+  text-align: center;
+}
+.footer1 ul li img {
+  width: 2.2rem;
+}
+.footer1 ul li:nth-child(1):after {
+  content: "首页";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(2):after {
+  content: "分类";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(3):after {
+  content: "逛";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(4):after {
+  content: "购物车";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(5):after {
+  content: "我的";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
 }
