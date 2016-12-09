@@ -1,0 +1,230 @@
+/*  variables  */
+/*  color  */
+@bgColor: #444;
+@base: #fff;
+@base-lighter: #fafafa;
+@borderColor: #5b5b5b;
+@outline-color:#7d7d7d;
+@con-Color: #575757;
+@font-color: #808080;
+@login-color: #a2a2a2;
+@icon-bg:#333;
+@maxWidth: 100%;
+
+.transform(@param)
+{
+    -webkit-transform: @param;
+       -moz-transform: @param;
+        -ms-transform: @param;
+         -o-transform: @param;
+            transform: @param;
+}
+
+/*  style sheets  */
+body
+{
+    background: @bgColor;
+}
+header
+{
+    padding-bottom: 1rem;
+    .head_top
+    {
+        padding: .6rem;
+
+        text-align: right;
+    }
+    .head_mid
+    {
+        text-align: center;
+        //margin-top: 1rem;
+        img
+        {
+            width: 70%;
+            padding: .6rem 0;
+        }
+    }
+    h5
+    {
+        font-family: Arial;
+        font-size: 1.4rem;
+
+        padding: 1rem;
+
+        text-align: center;
+
+        color: @base-lighter;
+    }
+}
+/*  section  */
+section
+{
+    margin-top: 2rem;
+    ul
+    {
+        overflow: hidden;
+        li
+        {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 1rem;
+
+            text-align: center;
+            input
+            {
+                font-size: 1.4rem;
+                font-weight: 600;
+
+                width: @maxWidth*.97;
+                height: 3.6rem;
+                padding-left: .6rem;
+
+                color: @font-color;
+                border: 1px solid @borderColor;
+                border-radius: .3rem;
+                background: @con-Color;
+                &::-webkit-input-placeholder
+                {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+
+                    color: @font-color;
+                }
+                &:focus
+                {
+                    outline-color: @outline-color;
+                }
+            }
+            &:nth-child(1)
+            {
+                span
+                {
+                    position: absolute;
+                    top: 50%;
+                    left: 3%;
+
+                    display: block;
+
+                    width: 3rem;
+                    height: 3rem;
+                    margin-top: -1.5rem;
+
+                    background: url('../img/login/y.jpg') no-repeat center;
+                }
+                input
+                {
+                    text-indent: 2.6rem;
+                }
+            }
+            &:nth-child(2)
+            {
+                span
+                {
+                    position: absolute;
+                    top: 50%;
+                    right: 1rem;
+
+                    display: block;
+
+                    width: 3rem;
+                    height: 3rem;
+                    margin-top: -1.5rem;
+
+                    background: url('../img/login/eye.jpg') no-repeat center;
+                }
+            }
+            &:nth-child(3)
+            {
+                input
+                {
+                    color: @base-lighter;
+                    background: @login-color;
+                }
+            }
+            &:nth-child(4)
+            {
+                color: @font-color;
+
+                span: nth-child(1)
+                {
+                    float: left;
+
+                    padding-left: .8rem;
+                }
+                    span:nth-child(2)
+                    {
+                        float: right;
+
+                        padding-right: .6rem;
+                    }
+            }
+        }
+    }
+}
+/*  footer  */
+footer
+{
+    display: flex;
+
+    padding: 2rem 0;
+    .icon
+    {
+        position: relative;
+
+        overflow: hidden;
+
+        margin: 0 2rem;
+
+        text-align: center;
+
+        border-radius: 50%;
+        background: @icon-bg;
+
+        flex: 1;
+        img
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: 2.4rem;
+
+            .transform(translate(-50%,-50%));
+        }
+    }
+}
+/*  aside  */
+aside
+{
+    font-size: 1.6rem;
+    line-height: 2rem;
+
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+
+    width: 50%;
+    height: 2rem;
+    margin-left: -25%;
+
+    text-align: center;
+    text-align: center;
+
+    color: @base-lighter;
+    border-radius: 1rem;
+    background: @icon-bg;
+}
+.aside_static
+{
+    position: static;
+}
+.aside_fixed
+{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+
+    margin-left: -25%;
+}
