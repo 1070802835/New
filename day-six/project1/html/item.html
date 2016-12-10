@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>item</title>
+    <link rel="stylesheet" href="../dist/css/common.css">
+    <link rel="stylesheet" href="../dist/css/item.css">
+    <link rel="stylesheet" href="../dist/common/font-awesome.css">
+    <link rel="stylesheet" href="../dist/common/swiper.min.css">
+    <script src="../dist/common/swiper.min.js"></script>
+    <script src="../dist/common/touch.js"></script>
+    <script src='../dist/common/jquery1.12.4.js'></script>
+    <script src="../dist/common/template.js"></script>
+</head>
+
+<body>
+    <div class="opa"></div>
+    <header>
+        <div class="head-content1">
+            <a href="listPage.html" class="icon-angle-left"></a>
+        </div>
+        <div class="head-content2">
+            <span>商品详情</span>
+        </div>
+        <div class="head-content3">
+            <a href="javascript:void(0)" class="icon-share-alt"></a>
+        </div>
+    </header>
+    <section class="banner">
+        <!--  <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../dist/img/item/id1_show_big1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../dist/img/item/id1_show_big2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../dist/img/item/id1_show_big3.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <h3>Monster Guardians 女裤黑色紧身长裤</h3> -->
+    </section>
+    <section class="details">
+        <img src="../dist/img/item/id1_details1.jpg" alt="">
+        <img src="../dist/img/item/id1_details2.jpg" alt="">
+        <img src="../dist/img/item/id1_details3.jpg" alt="">
+        <img src="../dist/img/item/id1_details4.jpg" alt="">
+        <img src="../dist/img/item/id1_details5.jpg" alt="">
+        <img src="../dist/img/item/id1_details6.jpg" alt="">
+        <img src="../dist/img/item/id1_details7.jpg" alt="">
+        <img src="../dist/img/item/id1_details8.jpg" alt="">
+        <img src="../dist/img/item/id1_details9.jpg" alt="">
+        <img src="../dist/img/item/id1_details11.jpg" alt="">
+        <img src="../dist/img/item/id1_details12.jpg" alt="">
+        <img src="../dist/img/item/id1_details13.jpg" alt="">
+        <img src="../dist/img/item/id1_details14.jpg" alt="">
+        <img src="../dist/img/item/id1_details15.jpg" alt="">
+        <img src="../dist/img/item/id1_details16.jpg" alt="">
+        <img src="../dist/img/item/id1_details17.jpg" alt="">
+        <img src="../dist/img/item/id1_details18.jpg" alt="">
+        <img src="../dist/img/item/id1_details19.jpg" alt="">
+        <img src="../dist/img/item/id1_details20.jpg" alt="">
+        <img src="../dist/img/item/id1_details21.jpg" alt="">
+        <img src="../dist/img/item/id1_details22.jpg" alt="">
+        <img src="../dist/img/item/id1_details23.jpg" alt="">
+        <img src="../dist/img/item/id1_details24.jpg" alt="">
+        <img src="../dist/img/item/id1_details25.jpg" alt="">
+        <img src="../dist/img/item/id1_details26.jpg" alt="">
+    </section>
+    <footer>
+        <div class="buy">
+            <span class="icon-shopping-cart"></span>
+        </div>
+        <div class="buy">
+            <a href="javascript:void(0)" id="add_cart">加入购物车</a>
+        </div>
+        <div class="buy">
+            <span class="icon-heart"></span>
+        </div>
+    </footer>
+    <aside>
+        <dl>
+            <dt>
+                <img class="productImg" src="../dist/img/item/id1_show_big1.jpg" alt="">
+            </dt>
+            <dd>
+                <p class="productName">Monster Guardians 女裤黑色紧身长裤</p>
+                <p class="productPrice">￥269.00</span>
+            </dd>
+        </dl>
+        <ul>
+            <li>
+                颜色
+                <span class="color">黑色</span>
+            </li>
+            <li class="size">
+                尺码
+                <span class="num">XS</span>
+                <span class="num">S</span>
+                <span class="num">M</span>
+            </li>
+            <li>
+                数量
+                <ol>
+                    <li class="s">-</li>
+                    <li>1</li>
+                    <li class="b">+</li>
+                </ol>
+            </li>
+        </ul>
+        <h2>
+				<a href="javascript:void(0)" class="addcart">确定</a>
+			</h2>
+    </aside>
+    <script id="banner" type="text/html">
+        {{each list as value i}}
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{{value.src}}">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../dist/img/item/id1_show_big2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../dist/img/item/id1_show_big3.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <h3>{{value.parductName}}</h3> {{/each}}
+    </script>
+    <script>
+    var $href = location.href.split("?")[1];
+    var url = "../dist/json/list-page.json";
+    var kk = {};
+    var setting = {
+        dataType: "json",
+        success: function(data) {
+            $.each(data.list, function() {
+                if (this.id == $href) {
+                    kk.src = this.src;
+                    kk.price = this.price;
+                    kk.parductName = this.parductName;
+                    $(".productName").html(this.parductName);
+                    $(".productPrice").html("¥ "+this.price);
+                    $(".productImg").attr("src",this.src)
+                }
+
+            });
+
+            var obj = {
+                list: [kk]
+            };
+            var html = template("banner", obj);
+            $(".banner").html(html);
+            mostt();
+        }
+    };
+    $.ajax(url, setting);
+
+
+
+
+
+
+
+
+
+    function mostt() {
+        var mySwiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination'
+        });
+        $("aside").css({
+            "height": $("aside").width() * .9,
+            "bottom": $("aside").width() * .9 * (-1)
+        });
+        touch.on("#add_cart", "tap", function() {
+            // add to shopping cart
+
+            /* ?????????   transition  problems
+            	$(".opa").css({
+            		"display":"block"
+            	});
+            	$(".opa").css("opacity",".4");
+            */
+            $(".opa").attr("class", "opa to_show");
+            $("aside").css("bottom", 0);
+        });
+        touch.on(".opa", "tap", function() {
+            $("aside").css("bottom", $("aside").width() * .9 * (-1));
+            $(this).attr("class", "opa to_hide");
+        });
+        touch.on(".color", "tap", function() {
+            $(this).css("border-color", "#d0011b").attr("is_selected", true);
+        });
+        touch.on(".num", "tap", function() {
+            $(this).css("border-color", "#d0011b").siblings().css("border-color", "#333").removeAttr("is_selected");
+            $(".size").attr("size",$(this).html())
+        });
+
+        touch.on(".s", "tap", function() {
+            var $s = this.className;
+            if (parseInt($("." + $s).next("li").html()) > 1) {
+                $("." + $s).next("li").html(parseInt($("." + $s).next("li").html()) - 1);
+            }
+        });
+
+
+        touch.on(".b", "tap", function() {
+            var $s = this.className;
+            $("." + $s).prev().html(parseInt($("." + $s).prev("li").html()) + 1);
+        });
+        touch.on(".addcart", "tap", function() {
+            var str={};
+            if($(".color").attr("is_selected")){
+            	str.color=$(".color").html();
+                
+	            	if($(".size").attr("size")){
+	            		str.size=$(".size").attr("size");
+                        str.num=$(".s").next().html();
+                        var oldList = localStorage.getItem("product")?JSON.parse(localStorage.getItem("product")):[];
+                        //懒得去写判断商品存不存在了   在这里写出思路好了
+                        //拿到获取的oldList   然后$.each(oldList)  id相等  尺寸一样  就让数量相加   否则就直接push到oldList
+                        //最后setItem   存到localStorage里面
+                        oldList.push(str)
+                        localStorage.setItem("product",JSON.stringify(oldList));
+                        alert("加入购物车成功!");
+                        // location.href="cart.html"
+	            	
+		            }else{
+		            	alert("请选择尺码!")
+		            }
+            }else{
+            	alert("请选择颜色!")
+            }
+        });
+
+    }
+    </script>
+</body>
+
+</html>

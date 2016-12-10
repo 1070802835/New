@@ -1,0 +1,219 @@
+a {
+  color: #fff;
+}
+body {
+  font-family: "微软雅黑";
+}
+img {
+  width: 100%;
+}
+.opa {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #333;
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transition: all 5s linear;
+}
+.to_show {
+  display: block;
+  animation: show .4s linear forwards;
+}
+.to_hide {
+  animation: hide .4s linear forwards;
+  display: none;
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+header {
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  background: #fc2f7e;
+  display: flex;
+  text-align: center;
+}
+header .head-content1 {
+  flex: 1;
+}
+header .head-content1 a {
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+header .head-content2 {
+  flex: 8;
+  font-size: 1.6rem;
+  color: #fff;
+}
+header .head-content3 {
+  flex: 1;
+}
+header .head-content3 a {
+  font-size: 1.6rem;
+  line-height: 3rem;
+}
+section.banner {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+section.banner .swiper-container {
+  width: 100%;
+}
+section.banner .swiper-pagination {
+  transform: translateY(-2.4rem);
+}
+section.banner img {
+  width: 100%;
+}
+section.banner h3 {
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem;
+  text-indent: 1rem;
+  background: #333;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  z-index: 100;
+  opacity: 0.8;
+}
+footer {
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  background: #fff;
+  text-align: center;
+  z-index: 200;
+}
+footer .buy:nth-child(1) {
+  flex: 1;
+  font-size: 2.4rem;
+  color: #444444;
+}
+footer .buy:nth-child(2) {
+  flex: 4;
+}
+footer .buy:nth-child(2) a {
+  width: 50%;
+  height: 3.2rem;
+  display: block;
+  text-align: center;
+  line-height: 3.2rem;
+  color: #fff;
+  font-size: 1.6rem;
+  background: #d0011b;
+  border-radius: .6rem;
+  margin: .4rem auto;
+  text-decoration: none;
+}
+footer .buy:nth-child(3) {
+  flex: 1;
+  font-size: 1.6rem;
+  color: #b0b0b0;
+}
+aside {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  position: fixed;
+  z-index: 1001;
+  transition: all .3s linear;
+}
+aside dl {
+  width: 94%;
+  margin: 0 auto;
+  margin-top: 1.6rem;
+  overflow: hidden;
+}
+aside dl dt {
+  float: left;
+  width: 18%;
+}
+aside dl dd {
+  float: left;
+  width: 82%;
+  text-indent: .8rem;
+}
+aside dl dd p {
+  padding: 1rem 0;
+  text-indent: .8rem;
+  font-size: 1.4rem;
+}
+aside dl dd p:nth-child(2) {
+  color: #d0011b;
+  font-size: 1.6rem;
+}
+aside ul {
+  margin-top: 1rem;
+}
+aside ul li {
+  padding: .8rem;
+  text-indent: 1rem;
+  font-size: 1.4rem;
+}
+aside ul li span {
+  display: inline-block;
+  border: 1px solid #333;
+  border-radius: .2rem;
+  width: 16%;
+  padding: .6rem 0;
+  text-align: center;
+  text-indent: 0;
+}
+aside ul li span:nth-child(1) {
+  margin-left: .4rem;
+}
+aside ul li ol {
+  display: inline-block;
+  overflow: hidden;
+  margin-left: .4rem;
+  vertical-align: middle;
+}
+aside ul li ol li {
+  float: left;
+  width: 2rem;
+  text-align: center;
+  border: 1px solid #999;
+  text-indent: 0;
+}
+aside ul li ol li:nth-child(2) {
+  border-left: 0;
+  border-right: 0;
+}
+aside h2 {
+  border-top: 1px solid #666;
+  margin-top: 1rem;
+}
+aside h2 a {
+  width: 40%;
+  height: 4rem;
+  display: block;
+  border-radius: .4rem;
+  background: #d0011b;
+  margin: .4rem auto;
+  line-height: 4rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fff;
+  text-decoration: none;
+}

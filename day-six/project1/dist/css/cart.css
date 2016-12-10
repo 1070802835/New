@@ -1,0 +1,140 @@
+a {
+	text-decoration: none;
+}
+header {
+	width: 100%;
+	height: 6rem;
+	background: #ff3382;
+	text-align: center;
+}
+header h3 {
+	color: #fff;
+	font-size: 2rem;
+	line-height: 6rem;
+}
+
+center {
+	width: 100%;
+	height: 26rem;
+	border-bottom: 2px solid #ccc;
+	text-align: center;	
+}
+center .cart {
+	width: 40%;
+	height: 16rem;
+	margin: 0 auto;
+	overflow: hidden;
+}
+center .cart img {
+	width: 100%;
+	height: 100%;
+}
+center p {
+	color: #CCCCCC;
+	font-size: 2rem;
+	margin: 0.5rem 0 1rem 0;
+}
+center .btn {
+	width: 40%;
+	display: block;
+	margin: 0 auto;
+	border: 3px solid #000000;
+	padding: 1rem 2rem;
+	font-size: 2rem;
+	background: #fff;
+	border-radius: 1rem;
+	margin-top: 1rem;
+	color: #ccc;
+} 
+
+.menu {
+	width: 100%;
+	font-size: 2rem;
+	color: #000;
+}
+.menu h3 {
+	text-align: center;
+	padding: 3rem;
+}
+.menu .list {
+	width: 100%;
+	overflow: hidden;
+}
+.menu .list dl {
+	width: 44%;
+	padding: 3rem 3%;
+	float: left;
+}
+.menu .list dt {
+	width: 100%;
+	height: 80%;
+}
+.menu .list dt img {
+	width: 100%;
+}
+.menu .list dd p {
+	padding: 2rem 0;
+}
+.menu .list dd span{
+	color: red;
+}
+.menu .list dd del {
+	color: #808080;
+	padding: 0 1rem;
+	font-size: 1rem;
+}
+
+.footer1 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #e6e6e6;
+  font-size: 1.2rem;
+  background: #fff;
+}
+.footer1 ul {
+  width: 100%;
+  display: flex;
+}
+.footer1 ul li {
+  flex: 1;
+  padding: 12px 0;
+  list-style: none;
+  text-align: center;
+}
+.footer1 ul li a{
+  display: block;
+}
+.footer1 ul li img {
+  width: 2.2rem;
+}
+.footer1 ul li:nth-child(1):after {
+  content: "首页";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(2):after {
+  content: "分类";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(3):after {
+  content: "逛";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(4):after {
+  content: "购物车";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(5):after {
+  content: "我的";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}

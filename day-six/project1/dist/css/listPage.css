@@ -1,0 +1,142 @@
+header {
+  width: 100%;
+  display: flex;
+  background: #ff3382;
+}
+header a {
+  flex: 1;
+  padding: 4px;
+  text-align: center;
+  font-size: 3.2rem;
+  color: #fff;
+}
+header .header_name {
+  color: #fff;
+  font-weight: bolder;
+  padding: 12px 0;
+  flex: 2;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+header .header_right {
+  flex: 4;
+  display: flex;
+  text-align: center;
+}
+header .header_right div {
+  flex: 1;
+  padding: 12px 0;
+}
+header .header_right .empty0 {
+  position: relative;
+  z-index: 1;
+}
+header .header_right .empty0:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -18%;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 32px;
+  background: url("../img/list-img/icon-angle-down.png") no-repeat center;
+}
+header .header_right .collect {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+header .header_right .share {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+header .header_right .shaiXuan {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+a {
+  text-decoration: none;
+}
+section {
+  width: 100%;
+}
+section .section_top {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  font-size: 1.4rem;
+}
+section .section_top li {
+  flex: 1;
+  text-align: center;
+  padding: 14px 0;
+  color: #bababa;
+  box-sizing: border-box;
+}
+section .section_top li:nth-child(2) p:before,
+section .section_top li:nth-child(3) p:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: -16px;
+  top: -4px;
+  background: url("../img/list-img/icon-angle-up.png");
+}
+section .section_top li:nth-child(2) p:after,
+section .section_top li:nth-child(3) p:after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: -16px;
+  bottom: -4px;
+  background: url("../img/list-img/icon-angle-down2.png");
+}
+section .section_top li p {
+  width: 32px;
+  margin: 0 auto;
+  position: relative;
+}
+section .section_top li:nth-child(1) {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+section .section_main {
+  overflow: hidden;
+}
+section .section_main .product0 {
+  margin: 10px 0;
+  display: block;
+  float: left;
+  height: 267px;
+}
+section .section_main .product0 img {
+  width: 160px;
+  display: block;
+  margin-top: 10px;
+}
+section .section_main .product0 p {
+  width: 160px;
+  color: #444;
+  word-break: break-all;
+  word-wrap: break-word;
+  padding: 4px 0;
+  text-indent: 6px;
+}
+section .section_main .product0 span {
+  color: #000;
+  display: inline-block;
+  text-indent: 4px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}

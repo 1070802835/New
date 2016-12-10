@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../dist/css/common.css" />
+    <link rel="stylesheet" href="../dist/css/cart.css" />
+    <script src="../dist/common/jquery1.12.4.js"></script>
+</head>
+
+<body>
+    <header>
+        <h3>购物车</h3>
+    </header>
+    <center>
+        <div class="cart">
+            <img src="../dist/img/cart/cart.png">
+        </div>
+        <p>您的购物车暂无商品</p>
+        <!--<input class="btn" type="button" value="随便逛逛" />-->
+        <a class="btn" href="listPage.html">随便逛逛</a>
+    </center>
+    <div class="menu">
+        <h3>为您优选新品</h3>
+        <div class="list">
+            <dl>
+                <dt>
+                    <img src="../dist/img/cart/c-list1.jpg">
+                </dt>
+                <dd>
+                    <p>韩束 墨菊深度补水奢养礼盒</p>
+                    <span>￥359.00<del>￥399.00</del></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <img src="../dist/img/cart/c-list2.jpg">
+                </dt>
+                <dd>
+                    <p>NAT.REVELATION纯色拼接休闲裤</p>
+                    <span>￥199.00<del>￥499.00</del></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <img src="../dist/img/cart/c-list2.jpg">
+                </dt>
+                <dd>
+                    <p>NAT.REVELATION纯色拼接休闲裤</p>
+                    <span>￥199.00<del>￥499.00</del></span>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <img src="../dist/img/cart/c-list1.jpg">
+                </dt>
+                <dd>
+                    <p>韩束 墨菊深度补水奢养礼盒</p>
+                    <span>￥359.00<del>￥399.00</del></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <footer class="footer1">
+        <ul>
+            <li>
+                <a href="../index.html"><img src="../dist/img/index/shouye1.png" alt=""></a>
+            </li>
+            <li>
+                <a href="sort.html"><img src="../dist/img/index/fenlei1.png" alt=""></a>
+            </li>
+            <li>
+                <a href="listPage.html"><img src="../dist/img/index/huojian1.png" alt=""></a>
+            </li>
+            <li>
+                <a href="cart.html"><img src="../dist/img/index/gouwuche2.png" alt=""></a>
+            </li>
+           <li><a href="login.html"><img src="../dist/img/index/wode1.png" alt=""></a></li>
+        </ul>
+    </footer>
+    <script>
+    var $height = $("footer").height();
+    $(".menu").css({
+        "margin-bottom": $height
+    });
+    </script>
+</body>
+
+</html>

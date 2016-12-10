@@ -1,0 +1,347 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+
+}
+body,html{
+	height:100%;
+}
+ol, ul {
+    list-style: none;
+}
+a {
+	  text-decoration: none;
+
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html,body{
+    font-size: 62.5%;
+    width:100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+img{
+    width: 100%;
+}
+
+nav{
+    width:100%;
+    padding:.6rem;
+    background: #ff3382;
+}
+nav ul{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+}
+nav ul li:nth-child(1){
+    flex: 1;
+}
+nav ul li:nth-child(2){
+    flex: 4;
+}
+nav ul li:nth-child(3){
+    flex: 1;
+}
+nav li img{
+    width:2.6rem
+}
+nav li input{
+    width: 95%;
+    height: 100%;
+    background: #fff;
+    border:0;
+    border-radius: 6px;
+    color:#ccc;
+    text-align: left;
+    font-size: 20px;
+}
+::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+
+header{
+    width:100%;
+}
+
+
+section{
+    width: 100%;
+    overflow: hidden;
+}
+section.main ul{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+section.main li{
+    flex:1;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+    color: #333;
+}
+section.main li div {
+	  width: 70%;
+	  height: 50%;
+	  padding: 20%;
+	  border: 1px solid #ccc;
+	  border-radius: 50%;
+	  margin: 0 auto;
+	  overflow: hidden;
+}
+section.main img{
+    /*width:6rem;*/
+    width: 100%;
+    vertical-align: middle;
+}
+section.main span {
+	  display: inline-block;
+	  vertical-align: middle;
+	  height: 100%;
+	  width: 0;
+}
+section.main p {
+	  margin-top: 0.3rem;
+}
+
+.news {
+	  width: 100%;
+}
+.news a img {
+	  width: 100%;
+}
+
+
+
+/*footer{
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+footer ul{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+footer li{
+    flex:1;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    color: #666;
+}
+footer img{
+    width:2.4rem;
+}
+footer li p a:hover {
+	  color: #000;
+}*/
+
+.newman {
+		width: 100%;
+		
+}
+.new-top {
+		padding: 1rem 0;
+		font-size: 2.6rem;
+		font-weight: 700;
+		text-align: center;
+		background: #f1f1f1;
+		position: relative;
+		color: #666;
+		overflow: hidden;
+}
+.new-top span{
+	  width: 10%;
+	  position: absolute;
+	  top: 10%;
+	  right: 1rem;
+}
+.new-top span img {
+	  width: 100%;			
+}
+.new-pic {
+	  width: 100%;
+}
+.new-list {
+	  padding: 1rem 0;
+	  height: 8rem;
+	  position: relative;
+}
+.new-icon {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 10%;
+}
+.new-list dl {
+	  width: 50%;
+	  float: left;
+}
+.new-list dl dt {
+	  width: 50%;
+	  float: left;
+}
+.new-list dl dt img {
+	  width: 100%;
+}
+.new-list dl dd {
+	width: 40%;
+	padding: 10% 5%;
+	float: left;
+}
+.new-list dl dd span {
+	margin: 15% 0;
+	text-align: center;
+	display: block;
+}
+.new-list dl dd a {
+	  color: #999;
+		display: block;
+	  text-align: center;
+}
+.new-list dl dd a:hover {
+	color: hotpink;
+}
+
+
+.hot {
+	
+}
+.hot .body {
+    		background: #fff;
+    		width: 100%;
+    		overflow: hidden;
+}
+.hot .body li {
+    		display: inline-block;
+    		width: 25%;
+    		text-align: center;
+    		border-bottom: 1px solid #d0d0d0;
+    		border-right: 1px solid #d0d0d0;
+    		/*padding: 13px 0;*/
+    		box-sizing: border-box;
+    		float: left;
+    	}
+.hot .body li:nth-child(4n) {
+    		border-right: none;
+    	}
+.hot .body p {
+    		color: #000;
+    		padding-top: 4px;
+    		font-size: 1.2rem;
+    	}
+.hot .body .fa {
+    		/*color: palevioletred;*/
+    		width: 60%;
+    		font-size: 1rem;
+    	}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer1 {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #e6e6e6;
+  font-size: 1.2rem;
+  background: #fff;
+}
+.footer1 ul {
+  width: 100%;
+  display: flex;
+}
+.footer1 ul li {
+  flex: 1;
+  padding: 12px 0;
+  list-style: none;
+  text-align: center;
+}
+.footer1 ul li a{
+  display: block;
+}
+.footer1 ul li img {
+  width: 2.2rem;
+}
+.footer1 ul li:nth-child(1):after {
+  content: "首页";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(2):after {
+  content: "分类";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(3):after {
+  content: "逛";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(4):after {
+  content: "购物车";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+.footer1 ul li:nth-child(5):after {
+  content: "我的";
+  display: block;
+  color: #b0b0b0;
+  margin-top: 3px;
+}
+
