@@ -21,14 +21,11 @@ body{
 	height:500px;
 }
 
-.page-1-1{ background-color:#083846;}
-.page-2-1{ background-color:#9261BF;}
-.page-2-2{ background-color:#9261BF;}
+.page-1-1{ background-color:red;}
+.page-2-1{ background-color:yellow;}
 .page-3-1{ background-color:#F3533C;}
-.page-3-2{ background-color:#F3533C;}
-.page-4-1{ background-color:#FFBF50;}
-.page-4-2{ background-color:#FFBF50;}
-.page-5-1{ background-color:#083846;}
+.page-4-1{ background-color:#fff;}
+.page-5-1{ background-color:#eee;}
 
 .page-current{
 	z-index:1;
@@ -105,34 +102,6 @@ body{
 	top:8%;
 	margin-left:-110px;
 }
-.page-2-2 .img_1 {
-	height:auto;width:293px;
-	position:absolute;
-	left:50%;
-	top:5%;
-	margin-left:-146px;
-}
-.page-2-2 .img_2 {
-	height:auto;width:260px;
-	position:absolute;
-	left:50%;
-	top:75%;
-	margin-left:-130px;
-}
-.page-2-2 .img_3 {
-	height:auto;width:20px;
-	position:absolute;
-	left:50%;
-	top:87%;
-	margin-left:-10px;
-}
-.page-2-2 .img_6 {
-	height:auto;width:25px;
-	position:absolute;
-	left:50%;
-	top:92%;
-	margin-left:-12px;
-}
 .page-3-1 .img_1 {
 	height:auto;width:166px;
 	position:absolute;
@@ -152,8 +121,8 @@ body{
 	height:auto;width:172px;
 	position:absolute;
 	left:50%;
-	top:28%;
-	margin-left:-55px;
+	top:35%;
+	margin-left:-90px;
 }
 .page-3-1 .img_4 {
 	height:auto;width:20px;
@@ -182,34 +151,6 @@ body{
 	left:50%;
 	top:43%;
 	margin-left:-124px;
-}
-.page-3-2 .img_1 {
-	height:auto;width:296px;
-	position:absolute;
-	left:50%;
-	top:5%;
-	margin-left:-148px;
-}
-.page-3-2 .img_2 {
-	height:auto;width:260px;
-	position:absolute;
-	left:50%;
-	top:75%;
-	margin-left:-130px;
-}
-.page-3-2 .img_3 {
-	height:auto;width:20px;
-	position:absolute;
-	left:50%;
-	top:87%;
-	margin-left:-10px;
-}
-.page-3-2 .img_6 {
-	height:auto;width:25px;
-	position:absolute;
-	left:50%;
-	top:92%;
-	margin-left:-12px;
 }
 .page-4-1 .img_1 {
 	height:auto;width:162px;
@@ -267,34 +208,6 @@ body{
 	left:50%;
 	top:75%;
 	margin-left:-84px;
-}
-.page-4-2 .img_1 {
-	height:auto;width:298px;
-	position:absolute;
-	left:50%;
-	top:5%;
-	margin-left:-149px;
-}
-.page-4-2 .img_2 {
-	height:auto;width:260px;
-	position:absolute;
-	left:50%;
-	top:75%;
-	margin-left:-130px;
-}
-.page-4-2 .img_3 {
-	height:auto;width:20px;
-	position:absolute;
-	left:50%;
-	top:87%;
-	margin-left:-10px;
-}
-.page-4-2 .img_6 {
-	height:auto;width:25px;
-	position:absolute;
-	left:50%;
-	top:92%;
-	margin-left:-12px;
 }
 .page-5-1 .img_1 {
 	height:auto;width:280px;
