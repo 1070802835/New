@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#btn1 {
+				width: 100px;
+				position: fixed;
+				bottom: 0;
+				left: 50%;
+				z-index: 1;
+				transform: translateX(-50%);
+				padding: 10px 0;
+				border-radius: 100%;
+				background: -webkit-linear-gradient(left, orange, red);
+				border: 0;
+				display: block;
+				margin: 0 auto;
+			}
+			
+			#btn1:focus {
+				outline: none;
+			}
+			
+			img {
+				width: 30%;
+				float: left;
+				transition: all .1s ease;
+			}
+			
+			.most {
+				position: absolute;
+				left: 0;
+				top: 0%;
+				width: 100%;
+				z-index: 10;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<button id="btn1">拍照</button>
+		<div class="div1"></div>
+		<p>我的儿子是慷慨</p>
+		<script type="text/javascript">
+			// 		document.addEventListener('plusready', function(){
+			// 			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+			// 			
+			// 		});
+			if(window.plus){
+				plusready()
+			}else{
+				document.addEventListener("plusready",plusready(),false)
+			}
+			function plusready() {
+				var flag = true;
+				document.getElementById("btn1").onclick = function() {
+					getImage();
+
+				}
+
+				function getImage() {
+					var cmr = plus.camera.getCamera();
+					var pic = document.getElementById("pic")
+					cmr.captureImage(function(p) {
+						plus.io.resolveLocalFileSystemURL(p, function(entry) {
+							
+							$(".div1").append("<img class='a' onclick='b' src='" + entry.fullPath + "'>");
+
+							//						$(".a").click(function(){
+							//							if(flag) {
+							//								$(this).addClass("most")
+							//							} else {
+							//								$(this).removeClass("most");
+							//							}
+							//							flag = !flag;
+							//						})
+
+						}, function(e) {
+							console.log("读取拍照文件错误：" + e.message);
+						});
+					}, function(e) {
+						console.log("失败：" + e.message);
+					});
+				}
+			}
+		</script>
+	</body>
+
+</html>

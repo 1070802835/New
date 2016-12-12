@@ -1,7 +1,6 @@
 //导入工具包 require('node_modules里对应模块')
 var gulp = require('gulp'), //本地安装gulp所用到的地方
 	less = require('gulp-less'),
-
 	uglify = require('gulp-uglify'),
 	watch = require('gulp-watch'),
 	cssmin = require('gulp-minify-css');
@@ -21,6 +20,19 @@ gulp.task('jsmin', function() {
 		.pipe(uglify())
 
 	.pipe(gulp.dest('dist/js'));
+});
+
+
+//copy index
+gulp.task("copyindex",function () {
+	gulp.src('src/*.html')
+    .pipe(gulp.dest('dist/'));
+});
+
+//copy html里面的文件
+gulp.task("copyhtml",function () {
+    gulp.src('src/html/*.html')
+        .pipe(gulp.dest('dist/html'));
 });
 
 //定义一个testLess任务（自定义任务名称）
