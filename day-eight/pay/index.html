@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<style>
+			button {
+				display: block;
+				width: 200px;
+				height: 50px;
+				margin: 0 auto;
+				border: 0;
+				border-radius: 50px;
+				background: -webkit-linear-gradient(top, orange, orangered);
+				margin-top: 40px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<!--<button id="b1" onclick="pay(0)">支付宝支付</button>
+		<button id="b2" onclick="pay(1)">微信支付</button>-->
+		<script type="text/javascript">
+			if(window.plus) {
+				plusReady();
+			} else {
+				var channel = null;
+				// 1. 获取支付通道
+				function plusReady() {
+					// 获取支付通道
+					plus.payment.getChannels(function(channels) {
+						channel = channels;
+						for(var i in channel) {
+							var oBt = document.createElement("button");
+							var id = channel[i].id;
+							oBt.innerHTML = id + "支付";
+
+							//
+							//							oBt.setAttribute("id", id);
+							//							oBt.setAttribute("onclick", "pay(this.id)")
+							//							
+							//for循环会刷新id  最后都指向微信支付    return函数  然后立即执行  就给click绑定上了
+
+							oBt.onclick = function(id) {
+								return function() {
+									pay(id)
+								}
+							}(id)
+
+							//方法同理  立即执行函数  用bind的方法来传参
+							//							oBt.onclick = function(id) {
+							//								pay.bind(id);
+							//							}(id);
+							document.body.appendChild(oBt);
+						}
+					}, function(e) {
+						alert("获取支付通道失败：" + e.message);
+					});
+				}
+
+				document.addEventListener('plusready', plusReady, false);
+
+				var ALIPAYSERVER = 'http://demo.dcloud.net.cn/helloh5/payment/alipay.php?total=0.01';
+				var WXPAYSERVER = 'http://demo.dcloud.net.cn/helloh5/payment/wxpay.php?total=0.01';
+
+				function pay(id) {
+					var Road = id == "alipay" ? channel[0] : channel[1];
+					var PAYSERVER = id == "alipay" ? ALIPAYSERVER : WXPAYSERVER;
+					var xhr = new XMLHttpRequest();
+					xhr.onreadystatechange = function() {
+						switch(xhr.readyState) {
+							case 4:
+								if(xhr.status == 200) {
+									plus.payment.request(Road, xhr.responseText, function(result) {
+										alert("支付成功", function() {
+											back();
+										})
+									}, function(error) {
+										alert("支付失败")
+									});
+								} else {
+									alert("获取订单信息失败！");
+								}
+								break;
+							default:
+								break;
+						}
+					}
+
+					xhr.open('GET', PAYSERVER);
+					xhr.send();
+				}
+			}
+		</script>
+	</body>
+
+</html>

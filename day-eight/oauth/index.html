@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<style>
+			button {
+				display: block;
+				width: 200px;
+				height: 50px;
+				margin: 0 auto;
+				border: 0;
+				border-radius: 50px;
+				background: -webkit-linear-gradient(top, orange, orangered);
+				margin-top: 40px;
+				font-size: 14px;
+			}
+		</style>
+		<title></title>
+		<script type="text/javascript">
+			if(window.plus) {
+				plusReady()
+			} else {
+				document.addEventListener('plusready', plusReady, false);
+			}
+			var oauth = null;
+
+			function plusReady() {
+				// 获取登录认证通道
+				plus.oauth.getServices(function(services) {
+					oauth = services;
+					for(var i in oauth){
+						var oBt=document.createElement("button");
+						console.log(oauth[i].id)
+						oBt.innerHTML=oauth[i].id+"登录";
+						oBt.onclick=function(i){
+							return function(){
+								login(i)
+							}
+						}(i);
+						document.body.appendChild(oBt);
+					}
+				}, function(e) {
+					console.log("获取登录认证失败：" + e.message);
+				});
+			}
+
+			function login(i) {
+				var s = oauth[i];
+				if(!s.authResult) {
+					s.login(function(e) {
+						alert("登录认证成功！");
+					}, function(e) {
+						alert("登录认证失败！");
+					});
+				} else {
+					alert("已经登录认证！");
+				}
+			}
+
+			function logout() {
+				for(var i in oauth) {
+					var s = oauth[i];
+					if(s.authResult) {
+						s.logout(function(e) {
+							alert("注销登录认证成功！");
+						}, function(e) {
+							alert("注销登录认证失败！");
+						});
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<!--<button onclick="login()">登录</button>-->
+		<button onclick="logout()">注销</button>
+	</body>
+
+</html>

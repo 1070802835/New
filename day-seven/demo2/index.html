@@ -75,18 +75,7 @@
 					var pic = document.getElementById("pic")
 					cmr.captureImage(function(p) {
 						plus.io.resolveLocalFileSystemURL(p, function(entry) {
-							
 							$(".div1").append("<img class='a' onclick='b' src='" + entry.fullPath + "'>");
-
-							//						$(".a").click(function(){
-							//							if(flag) {
-							//								$(this).addClass("most")
-							//							} else {
-							//								$(this).removeClass("most");
-							//							}
-							//							flag = !flag;
-							//						})
-
 						}, function(e) {
 							console.log("读取拍照文件错误：" + e.message);
 						});
