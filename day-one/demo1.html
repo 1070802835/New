@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+		var url="http://xuliangmost.com/html/static/dist/json/list-page.json"
+		var setting={
+			// dataType:"jsonp",
+			success:function(data){
+				console.log(data.list)
+			},
+			error:function(){
+				alert(1)
+			}
+		}
+		$.ajax(url,setting)
+	</script>
+</body>
+</html>
