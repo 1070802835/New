@@ -1,0 +1,80 @@
+.page {
+  width: 100%;
+}
+.page .content {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  z-index: 2;
+}
+.page .content .footer1 {
+  width: 100%;
+  float: left;
+  font-size: 2rem;
+}
+.page .content .footer1 ul {
+  display: flex;
+}
+.page .content .footer1 ul li {
+  flex: 1;
+  padding: 5px 0;
+  background: #484850;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.page .content .footer1 ul li:after {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 0.8rem;
+}
+.page .content .footer1 ul li:nth-child(1):after {
+  content: '首页';
+}
+.page .content .footer1 ul li:nth-child(2):after {
+  content: '分类';
+}
+.page .content .footer1 ul li:nth-child(3):after {
+  content: '我的';
+}
+.page .content .footer1 ul li:nth-child(4):after {
+  content: '购物车';
+}
+.page .content .footer1 ul li:nth-child(5):after {
+  content: '更多';
+}
+.page .content .footer1 ul .top_line {
+  border-top: 3px solid red;
+}
+.page .product {
+  float: left;
+  width: 50%;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
+.page .product img {
+  margin-top: 10px;
+  width: 72.5%;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 2px #cdced0;
+}
+.page .product p {
+  padding: 8px;
+  color: #000;
+}
+.page .product .price {
+  display: flex;
+  line-height: 2rem;
+}
+.page .product .price span {
+  flex: 2;
+  text-align: left;
+  font-size: 2rem;
+  color: red;
+  text-indent: 2rem;
+}
+.page .product .price del {
+  font-size: 1.4rem;
+  flex: 1;
+}

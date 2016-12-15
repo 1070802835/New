@@ -1,0 +1,10 @@
+.page .content input {
+  width: 84%;
+  display: block;
+  margin: 20px auto;
+  padding: 15px 0;
+  text-indent: 1.4rem;
+}
+.page .content input:focus {
+  outline: none;
+}
