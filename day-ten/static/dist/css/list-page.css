@@ -5,6 +5,8 @@
   position: absolute;
   top: 90px;
   left: 0;
+  bottom: 55px;
+  overflow: hidden;
   z-index: 2;
 }
 .page .content .footer1 {
@@ -46,35 +48,44 @@
 .page .content .footer1 ul .top_line {
   border-top: 3px solid red;
 }
-.page .product {
+.page .product_wrap {
+  width: 100%;
+  overflow: hidden;
+}
+.page .product_wrap .product {
   float: left;
   width: 50%;
   text-align: center;
-  margin: 10px 0;
+  margin: 16px 0;
+  height: 198px;
   font-size: 1.4rem;
 }
-.page .product img {
+.page .product_wrap .product img {
   margin-top: 10px;
   width: 72.5%;
+  height: 134px;
   border: 1px solid #eee;
   box-shadow: 0 2px 2px #cdced0;
 }
-.page .product p {
+.page .product_wrap .product p {
   padding: 8px;
   color: #000;
+  text-align: left;
+  text-indent: 0.6rem;
+  font-size: 1.2rem;
 }
-.page .product .price {
+.page .product_wrap .product .price {
   display: flex;
   line-height: 2rem;
 }
-.page .product .price span {
+.page .product_wrap .product .price span {
   flex: 2;
   text-align: left;
   font-size: 2rem;
   color: red;
   text-indent: 2rem;
 }
-.page .product .price del {
+.page .product_wrap .product .price del {
   font-size: 1.4rem;
   flex: 1;
 }

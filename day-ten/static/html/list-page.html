@@ -7,17 +7,19 @@
     <script src="//at.alicdn.com/t/font_bgcc6k9eqzykqpvi.js"></script>
     <link rel="stylesheet" href="../dist/css/common.css">
     <link rel="stylesheet" href="../dist/css/list-page.css">
-
+    <script src="../dist/js/jquery-2.1.1.min.js"></script>
+    <script src="../dist/js/iscroll-probe.js"></script>
 </head>
 <body>
     <div class="page" id="page1">
         <div class="header">
             <ul class="header_top">
                 <li class="header_left">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-zuojiantou"></use>
-                    </svg>
-
+                    <a href="">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zuojiantou"></use>
+                        </svg>
+                    </a>
                 </li>
                 <li  class="header_mid">新品上市</li>
                 <li class="header_right">
@@ -81,109 +83,11 @@
 
             </ul>
         </div>
-        <div class="content">
-            <div class="product">
-                <img src="../dist/img/list/1.png" alt="">
-                <p>T恤白色</p>
-                <div class="price">
-                    <span>¥49</span>
-                    <del>¥999</del>
-                </div>
-            </div>
-            <div class="product">
-                <img src="../dist/img/list/1.png" alt="">
-                <p>T恤白色</p>
-                <div class="price">
-                    <span>¥49</span>
-                    <del>¥999</del>
-                </div>
-            </div>
-            <div class="product">
-                <img src="../dist/img/list/1.png" alt="">
-                <p>T恤白色</p>
-                <div class="price">
-                    <span>¥49</span>
-                    <del>¥999</del>
-                </div>
-            </div>
-            <div class="product">
-                <img src="../dist/img/list/1.png" alt="">
-                <p>T恤白色</p>
-                <div class="price">
-                    <span>¥49</span>
-                    <del>¥999</del>
-                </div>
-            </div>
-            <div class="product">
-                <img src="../dist/img/list/1.png" alt="">
-                <p>T恤白色</p>
-                <div class="price">
-                    <span>¥49</span>
-                    <del>¥999</del>
-                </div>
-            </div><div class="product">
-            <img src="../dist/img/list/1.png" alt="">
-            <p>T恤白色</p>
-            <div class="price">
-                <span>¥49</span>
-                <del>¥999</del>
-            </div>
-        </div><div class="product">
-            <img src="../dist/img/list/1.png" alt="">
-            <p>T恤白色</p>
-            <div class="price">
-                <span>¥49</span>
-                <del>¥999</del>
-            </div>
-        </div>
-            <div class="product">
-                <img src="../dist/img/list/1.png" alt="">
-                <p>T恤白色</p>
-                <div class="price">
-                    <span>¥49</span>
-                    <del>¥999</del>
-                </div>
-            </div>
-            <div class="product">
-                <img src="../dist/img/list/1.png" alt="">
-                <p>T恤白色</p>
-                <div class="price">
-                    <span>¥49</span>
-                    <del>¥999</del>
-                </div>
-            </div>
-            <div class="footer1">
-                <ul>
-                    <li>
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-shouyeshouye"></use>
-                        </svg>
-                    </li>
-                    <li class="top_line">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-fenlei"></use>
-                        </svg>
-                    </li>
-                    <li>
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-wode"></use>
-                        </svg>
-                    </li>
-                    <li>
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-gouwuche"></use>
-                        </svg>
-                    </li>
-                    <li>
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-gengduo"></use>
-                        </svg>
-                    </li>
-
-                </ul>
-            </div>
+        <div class="content" id="listContent">
+            <div class="product_wrap">
 
 
+            </div>
         </div>
         <div class="footer">
             <ul>
@@ -216,5 +120,7 @@
             </ul>
         </div>
     </div>
+
+    <script src="../dist/js/list-page.js"></script>
 </body>
 </html>

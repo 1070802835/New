@@ -1,10 +1,80 @@
-.page .content input {
+body {
+  background: #f3eff0;
+}
+.page .content {
+  position: absolute;
+  width: 100%;
+  top: 52px;
+  left: 0;
+}
+.page .content .content_top input {
   width: 84%;
   display: block;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 15px 0;
   text-indent: 1.4rem;
 }
-.page .content input:focus {
+.page .content .content_top input:nth-child(1) {
+  margin-top: 30px;
+}
+.page .content .content_top input:focus {
   outline: none;
+}
+.page .content .sign_ul1 {
+  width: 84%;
+  margin: 0 auto;
+  overflow: hidden;
+  font-size: 1.4rem;
+  color: #5b5b5b;
+}
+.page .content .sign_ul1 li {
+  overflow: hidden;
+  position: relative;
+}
+.page .content .sign_ul1 li input {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #676767;
+  position: absolute;
+  left: 0;
+  top: 20%;
+}
+.page .content .sign_ul1 li label {
+  float: left;
+  margin-left: 2.4rem;
+  padding: 15px 0;
+}
+.page .content .sign_ul1 li a {
+  float: left;
+  color: #fe0f52;
+  margin-left: 0.6rem;
+  padding: 15px 0;
+}
+.page .content .sign_button {
+  width: 84%;
+  margin: 0 auto;
+  overflow: hidden;
+  font-size: 1.8rem;
+  color: #fff;
+}
+.page .content .sign_button li {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.page .content .sign_button li:nth-child(1) {
+  background: -webkit-gradient(linear, 50% 0, 50% 100%, from(#d70909), to(#a90506));
+  margin-top: 20px;
+}
+.page .content .sign_button li:nth-child(1):active {
+  transform: translateY(1px);
+  background: #d70909;
+}
+.page .content .sign_button li:nth-child(2) {
+  background: -webkit-gradient(linear, 50% 0, 50% 100%, from(#5e5e5e), to(#232323));
+}
+.page .content .sign_button li:nth-child(2):active {
+  transform: translateY(1px);
+  background: #5e5e5e;
 }
