@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/react.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+	<div id="a"></div>
+	<script type="text/babel">
+		var MessageBox=React.createClass({
+			render:function(){
+				var arr=[];
+				for(var i=0;i<10;i++){
+					arr.push(<footer/>)
+				}
+                return (
+                    <div>
+						<h1>Fuck</h1>
+						<footer/>
+					</div>
+				)
+			}
+		});
+		var footer=React.createClass({
+            render:function () {
+                return (
+                    <div>
+						<h2>Hello  My son</h2>
+					</div>
+                )
+            }
+        });
+        ReactDOM.render(
+				<MessageBox/>,
+            document.getElementById('a')
+        );
+
+
+	</script>
+</body>
+</html>
