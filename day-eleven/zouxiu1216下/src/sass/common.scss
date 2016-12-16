@@ -1,0 +1,62 @@
+
+@import "libs/classes";
+@import "libs/reset";
+@import "libs/base";
+
+html, body { height:100%; overflow: hidden; font-size: 12px;}
+html {font-size: 15.625vw}
+
+
+.page { @extend %position; height: 100%; overflow: hidden; background-color: $contentBg}
+
+
+/*头部*/
+.header { @extend %position; height: 43px; line-height: 43px; background-color: $headerBg; text-align: center; color: $btnColor; font-size: 18px;}
+.header-list { height: 100%; @include flexbox()}
+.header-btn { width: 60px; }
+.header-tit { @include flex(1)}
+
+
+/*二级头部*/
+.sub-header {
+  @extend %position; top: 43px;  height: 30px; line-height: 30px; background-color: #9a9fa5;
+  ul { height: 100%; white-space: nowrap}
+  li { display: inline-block; color: $btnColor; padding: 0 10px;}
+}
+
+
+
+/*内容*/
+.content {@extend %position; top: 43px; bottom:0;  }
+.has-sub-header { top: 73px;}
+.has-footer {bottom: 48px;}
+
+
+/*iscroll*/
+.wrapper {@extend %position; height: 100%; overflow: hidden}
+.scroller {@extend %position; background-color: $contentBg}
+.down-text { line-height: 50px; text-align: center;}
+/*底部*/
+.footer {
+  @extend %position;  top: auto; bottom: 0;
+  height: 48px; line-height: 48px; background-color: $footerBg;
+  .footer-list {
+    height: 100%;
+    li { float: left; width: 20%; text-align: center; }
+    a {color: $btnColor;}
+  }
+
+}
+
+
+/*loading*/
+#loading {
+  @extend %position; bottom: 0; display: none;
+  padding: 15px;background-color: rgba(0,0,0,.1);
+  .loading-img {
+    width: 62px; height: 62px;
+    position: absolute; left: 50%; top: 50%; margin: -31px 0 0 -31px;
+    padding: 15px;background-color: rgba(0,0,0,.3);
+    img { width: 32px; height: 32px;}
+  }
+}

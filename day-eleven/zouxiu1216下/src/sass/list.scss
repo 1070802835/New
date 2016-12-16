@@ -1,0 +1,21 @@
+
+@import "libs/base";
+#list-page {
+  .content { overflow:hidden};
+  .class-list { overflow-x: auto; overflow-y: hidden}
+}
+
+.pro-list { overflow: hidden; }
+//弹性盒不能用也需要换行的布局
+.pro-item {
+  float: left; width: 3.2rem;
+  padding:0.2rem 0.37rem;
+  .pic { width: 2.44rem; box-shadow: 0 0 1px #000; display: block; padding: 0.06rem; }
+  img { width:2.32rem; height: 2.32rem; }
+  .pro-name { @include ellipsis()}
+  p { line-height: 1.8;}
+  .price { overflow: hidden }
+  em { float: left; color: $priceColor; font-size: 16px; }
+  del { float: right}
+}
+

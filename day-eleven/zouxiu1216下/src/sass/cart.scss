@@ -1,0 +1,36 @@
+@import "libs/classes";
+@import "libs/base";
+
+#cart-page {
+  .sub-header {
+
+    height: 44px; line-height: 44px; background-color: #747474;
+  }
+  .content { top: 87px; overflow-y: scroll}
+}
+
+.cart-list { overflow: hidden}
+//弹性盒不能用也需要换行的布局
+.cart-item { @include flexbox();
+  padding: 15px 0 15px 15px; border-bottom: 1px solid #ccc;
+
+  .pic {
+    img {width: 87px; height: 87px;}
+  }
+  .pro-name { @include ellipsis(2);}
+  .pro-info { flex: 1; padding: 0 0.2rem; line-height: 20px;
+
+  }
+  .price {
+    padding: 5px 0;
+    em { color: $priceColor}
+  }
+  .num-wrap { height: 26px;}
+  .num-tit { float: left}
+  .num-box {float: left; text-align: center}
+  .num-btn { float: left;height: 20px; @include button(20px,#b0b0b0,#4f4f4f); width: 28px; }
+
+  .num-val { float: left; padding: 3px 0; border:1px solid #ccc; width: 38px;text-align: center}
+  .delete-btn { width: 40px; text-align: center;}
+}
+

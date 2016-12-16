@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>商品列表</title>
+
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/list.css" />
+    <link rel="stylesheet" href="css/iconfont/iconfont.css" />
+
+</head>
+<body>
+
+    <div class="page" id="list-page">
+
+        <div class="header">
+           <ul class="header-list">
+               <li class="header-btn"><</li>
+               <li class="header-tit">商品列表</li>
+               <li class="header-btn">搜索</li>
+           </ul>
+        </div>
+
+        <div class="sub-header">
+            <ul class="class-list">
+                <li>衬衫</li><li>针织衫</li><li>针织裤</li><li>针织帽</li>
+            </ul>
+        </div>
+
+        <div class="content has-sub-header has-footer">
+            <p class="down-text">下拉刷新</p>
+            <div class="wrapper" id="list-wrapper">
+                <div class="scroller">
+                    <ul class="pro-list">
+
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="footer">
+            <ul class="footer-list">
+                <li><a href="###">首页</a></li>
+                <li><a href="###">列表</a></li>
+                <li><a href="###">购物车</a></li>
+                <li><a href="###">我的</a></li>
+                <li><a href="###">更多</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="loading">
+        <div class="loading-img">
+            <img src="img/loading.gif" />
+        </div>
+    </div>
+
+    <script src="js/libs/iscroll-probe.js"></script>
+    <script src="js/libs/jquery-1.12.3.min.js"></script>
+    <script src="js/list.js"></script>
+</body>
+</html>
