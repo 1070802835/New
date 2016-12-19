@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>angular</title>
+    <style>
+        button{
+            display: block;
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            border:0;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(left,#4BFFF7,#FFE3C0);
+        }
+        button:focus{
+            outline:none;
+        }
+        ul li{
+            /*list-style: none;*/
+        }
+    </style>
+    <script src="js/angular.min.js"></script>
+</head>
+<script>
+    function most1($scope,$rootScope,$timeout) {
+        $rootScope.name="root most";
+        $scope.name="most";
+        $scope.mostData=[
+            {
+                name:"most",
+                student:"kk",
+                girlFriend:"3",
+                num:"2"
+            },
+            {
+                name:"most",
+                student:"kk1",
+                girlFriend:"3",
+                num:"4"
+            },
+            {
+                name:"most",
+                student:"kk2",
+                girlFriend:"4",
+                num:"3"
+            },
+            {
+                name:"most",
+                student:"kk3",
+                girlFriend:"5",
+                num:"1"
+            },
+            {
+                name:"most",
+                student:"kk4",
+                girlFriend:"6",
+                num:"5"
+            },
+            {
+                name: "most",
+                student: "kk5",
+                girlFriend: "7",
+                num:"7"
+            },
+            {
+                name:"李娜娜",
+                student: "kk5",
+                girlFriend: "7",
+                num:"8"
+            }
+        ];
+        $scope.fn1=function () {
+            $timeout(function () {
+                $scope.name="most_update";
+            },1000)
+        }
+    }
+</script>
+<body>
+<div ng-controller="most1">
+    <p>{{name}}</p>
+    <button ng-click="fn1()">点我点我!</button>
+    <ol type="A">
+        <li ng-repeat="data in mostData|orderBy:'num'">
+            <p>姓名 : {{data.name}}</p>
+            <p>学生 : {{data.student|limitTo:2|currency:"￥"}}</p>
+            <p>妹子数量 : {{data.girlFriend}}</p>
+            <p>排名 : {{data.num}}</p>
+        </li>
+    </ol>
+    <hr>
+    <ol type="1">
+        <li ng-repeat="data in mostData|filter:'3'">
+            <p>姓名 : {{data.name}}</p>
+            <p>学生 : {{data.student|limitTo:2}}</p>
+            <p>妹子数量 : {{data.girlFriend}}</p>
+            <p>排名 : {{data.num|currency:"$"}}</p>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>

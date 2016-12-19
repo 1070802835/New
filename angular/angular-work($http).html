@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$http</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            float: left;
+            list-style: none;
+            margin: 10px;
+        }
+        button{
+            display: block;
+            width:150px;
+            height:20px;
+            line-height: 20px;
+            text-align: center;
+            border:0;
+            /*border-radius: 10px;*/
+            background: -webkit-linear-gradient(left,#4BFFF7,#FFE3C0);
+            float: left;
+            margin: 10px;
+        }
+        button:focus{
+            outline:none;
+        }
+        .div1{
+            clear: both;
+        }
+        del{
+            color: red;
+        }
+    </style>
+    <script src="//cdn.bootcss.com/angular.js/1.3.0/angular.js"></script>
+</head>
+<script>
+    var modul1=angular.module("most",[]);
+    modul1.controller("c1",["$scope","$http",function ($s,$h) {
+        $s.dataList="";
+        $h.get('http://xuliangmost.com/html/static/dist/json/list-page.json').success(function(data){
+           $s.dataList=data.list;
+           console.log(data.list)
+        });
+        $s.flag=false;
+        $s.priceChange=function () {
+            $s.flag=!$s.flag
+        };
+        $s.showSex=function () {
+            $s.filt="性感";
+        };
+        $s.shouAll=function () {
+            $s.filt="";
+        }
+    }])
+</script>
+<body ng-app="most">
+<div ng-controller="c1">
+    <button ng-click="priceChange()">{{flag?"价格从低到高":"价格从高到低"}}</button>
+    <button ng-click="showSex()">只显示(性感)</button>
+    <button ng-click="shouAll()">显示全部</button>
+    <div class="div1"></div>
+    <ul>
+        <li ng-repeat="data in dataList|orderBy:'price*1':flag|filter:filt">
+            <img src="{{data.src}}">
+            <p>{{data.parductName}}</p>
+            <p>{{data.price|currency:"$"}}</p><del>{{data.price*1-50|currency:"$"}}</del>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

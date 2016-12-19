@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>module</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<script>
+    var module1=angular.module("most",[]);
+    module1.controller("c1",fn1);
+    function fn1($scope) {
+        $scope.name="most";
+        $scope.demo="Hah"
+    }
+    module1.controller("c2",function ($scope) {
+        $scope.name="most";
+        $scope.demo="Hah"
+    });
+    module1.controller("c3",["$scope","$timeout",function ($s,$timout) {
+        $s.name=1;
+        $s.go=function () {
+            $s.name+=1;
+        };
+        $s.goo=function () {
+            $s.name-=1;
+            if($s.name<1){
+                $s.name=1;
+            }
+        }
+    }])
+</script>
+<body ng-app="most">
+    <div ng-controller="c1">
+        <p>{{name}}</p>
+    </div>
+    <div ng-controller="c2">
+        <p>{{demo}}</p>
+    </div>
+    <div style="background: orange"ng-controller="c3">
+        <p>{{name}}</p>
+        <button ng-click="go()">+</button>
+        <button ng-click="goo()">-</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-model</title>
+    <style>
+        p{
+            word-break: break-all;
+            word-wrap: break-word;
+            width:50%;
+        }
+    </style>
+    <script src="js/angular.min.js"></script>
+</head>
+<script>
+    function most($scope) {
+        $scope.val="";
+        $scope.val1="";
+        $scope.valChange=function (e) {
+            $scope.val1=e.target.value;//e.target当前的对象
+            console.log(e.target.value)
+        }
+    }
+</script>
+<body ng-app>
+<div  ng-controller="most">
+    <input type="text" ng-model="val" placeholder="angular内部">
+    <p>输出 : {{val}}</p>
+</div>
+
+<div ng-controller="most">
+    <input type="text" placeholder="自己写的" ng-keyup="valChange($event)"><!--这里的形参只能填$event-->
+    <p>输出 : {{val1}}</p>
+</div>
+</body>
+</html>
