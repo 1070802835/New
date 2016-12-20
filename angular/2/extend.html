@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//cdn.bootcss.com/jquery/2.1.1/jquery.js"></script>
+    <script src="shopCart/js/angular.min.js"></script>
+</head>
+<body>
+    <script>
+        var obj1={
+            name:"most",
+            sonName:"kk"
+        };
+        var obj2={
+            showName:function(age){
+                console.log(this.name+"'s sonName : "+this.sonName+"; and his age : "+ age );
+            }
+        };
+        angular.bind(obj1,obj2.showName,12)();
+        angular.bind(obj1,obj2.showName)(14);
+        //console.log(angular.equals([],[]));
+        console.log(angular.element==$);
+        //console.log(angular.isElement(document.getElementsByTagName("body")[0]))
+    </script>
+</body>
+</html>

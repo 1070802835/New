@@ -12,6 +12,8 @@
             float: left;
             list-style: none;
             margin: 10px;
+            height:440px;
+            overflow:hidden;
         }
         button{
             display: block;
@@ -21,12 +23,15 @@
             text-align: center;
             border:0;
             /*border-radius: 10px;*/
-            background: -webkit-linear-gradient(left,#4BFFF7,#FFE3C0);
+            background: -webkit-linear-gradient(left,#FF9333,#FF4A0D);
             float: left;
             margin: 10px;
         }
         button:focus{
             outline:none;
+        }
+        ul{
+            overflow: hidden;
         }
         .div1{
             clear: both;
@@ -34,16 +39,19 @@
         del{
             color: red;
         }
+        .wrap{
+            overflow: hidden;
+            margin:0 auto;
+        }
     </style>
     <script src="//cdn.bootcss.com/angular.js/1.3.0/angular.js"></script>
 </head>
 <script>
     var modul1=angular.module("most",[]);
     modul1.controller("c1",["$scope","$http",function ($s,$h) {
-        $s.dataList="";
+        $s.dataList=undefined;
         $h.get('http://xuliangmost.com/html/static/dist/json/list-page.json').success(function(data){
            $s.dataList=data.list;
-           console.log(data.list)
         });
         $s.flag=false;
         $s.priceChange=function () {
@@ -52,24 +60,27 @@
         $s.showSex=function () {
             $s.filt="性感";
         };
-        $s.shouAll=function () {
+        $s.showAll=function () {
             $s.filt="";
         }
     }])
 </script>
 <body ng-app="most">
 <div ng-controller="c1">
-    <button ng-click="priceChange()">{{flag?"价格从低到高":"价格从高到低"}}</button>
-    <button ng-click="showSex()">只显示(性感)</button>
-    <button ng-click="shouAll()">显示全部</button>
+    <div class="wrap">
+        <button ng-click="priceChange()">{{flag?"价格从高到低":"价格从低到高"}}</button>
+        <button ng-click="showSex()">只显示(性感)</button>
+        <button ng-click="showAll()">显示全部</button>
+    </div>
     <div class="div1"></div>
     <ul>
         <li ng-repeat="data in dataList|orderBy:'price*1':flag|filter:filt">
-            <img src="{{data.src}}">
+            <img ng-src="{{data.src}}">
             <p>{{data.parductName}}</p>
             <p>{{data.price|currency:"$"}}</p><del>{{data.price*1-50|currency:"$"}}</del>
         </li>
     </ul>
+
 </div>
 </body>
 </html>

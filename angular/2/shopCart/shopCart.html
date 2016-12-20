@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<script src="//cdn.bootcss.com/jquery/2.1.1/jquery.js"></script>
+	<script src="js/angular.min.js"></script>
+
+	<link rel="stylesheet" href="css/shopCart.css">
+</head>
+<body ng-app="myCart" ng-controller="ctr1">
+<div id="CartMain">
+	<div id="CartMain-last">
+		<a href="" class="GoOn">继续购物</a>
+		<a href="javascript:void(0)" class="deleteCart">清空购物车</a>
+		<a href="javascript:void(0)" class="payFor">
+			去结算
+		</a>
+		<div class="total">
+			总计(不含运费):<span ng-bind="sum|currency:'$ '"></span>
+		</div>
+	</div>
+
+
+	<div id="CartMain-top">
+		<div class="CartMain-top1">
+			商品名称
+		</div>
+		<span class="CartMain-top2">颜色尺码</span>
+		<span class="CartMain-top3">单价</span>
+		<span class="CartMain-top4">数量</span>
+		<span class="CartMain-top5">小计(元)</span>
+		<span class="CartMain-top6">操作</span>
+
+	</div>
+<div id="productList">
+	<div class="productList" ng-repeat="data in dataList">
+		<!--<input type="checkbox" class="productList-int">-->
+		<div class="productList-div1">
+			<img ng-src="{{data.src}}" alt="">
+		</div>
+		<p class="productList-p1">
+			<a href="" ng-bind="data.parductName"></a>
+		</p>
+		<div class="productList-div2">
+			<p>颜色 : <span ng-bind="data.color"></span></p>
+			<p>尺码 : <span ng-bind="data.size|uppercase"></span></p>
+		</div>
+
+		<div class="productList-div2-price" ng-bind="data.price"></div>
+
+		<div class="productList-div2-num">
+			<input type="button" class="productList-in1" ng-click="clickButton(-1,$index)" value="-">
+			<input type="text" class="productList-in2" value="{{data.count}}">
+			<input type="button" class="productList-in3" ng-click="clickButton(+1,$index)" value="+">
+		</div>
+
+		<div class="productList-div2-subtotal" ng-bind="data.count*data.price">
+
+		</div>
+
+
+		<div class="productList-div2-do">
+			<a href="javascript:void(0)">移入收藏夹</a>
+			<a href="" ng-click="clickButton(0,$index)">删除</a>
+		</div>
+
+	</div>
+</div>
+
+</div>
+
+<script src="js/shopCart.js"></script>
+</body>
+</html>

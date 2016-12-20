@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter</title>
+    <script src="//cdn.bootcss.com/angular.js/1.3.0/angular.js"></script>
+    <script src="js/most1.js"></script>
+</head>
+<body ng-app="most1">
+<div ng-controller="filter1">
+    <p>{{name}}</p>
+    <ul>
+        <li ng-repeat="data in mostData">
+            <p>{{data.name|mostFilter:0:2}}</p>
+            <!--自定义的过滤器也可以传参  格式参照js里面的-->
+            <p>{{data.student}}</p>
+            <p>{{data.num|number}}</p>
+            <p>{{data.time|date:"shortDate"}}</p>
+            <p style="white-space: pre-wrap">{{data|json}}</p>
+            <pre>{{data|json}}</pre>
+        </li>
+    </ul>
+    </div>
+</body>
+</html>

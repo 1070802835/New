@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>module</title>
     <script src="js/angular.min.js"></script>
+    <script src="js/most1.js"></script>
 </head>
 <script>
-    var module1=angular.module("most",[]);
+    var module1=angular.module("most",["most1"]);
     module1.controller("c1",fn1);
     function fn1($scope) {
         $scope.name="most";
@@ -36,10 +37,16 @@
     <div ng-controller="c2">
         <p>{{demo}}</p>
     </div>
+
     <div style="background: orange"ng-controller="c3">
         <p>{{name}}</p>
         <button ng-click="go()">+</button>
         <button ng-click="goo()">-</button>
+    </div>
+
+
+    <div ng-controller="c4">
+        <p>我是引进来的——{{name}}</p>
     </div>
 </body>
 </html>
