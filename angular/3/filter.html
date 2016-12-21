@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter</title>
+    <style>
+        .button{
+            display: block;
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            border:0;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(left,#4BFFF7,#FFE3C0);
+            margin-top:20px;
+            transition: all 0.1s linear;
+        }
+        .button:focus{
+            outline:none;
+        }
+        .button:active{
+            transform: translateY(4px);
+        }
+    </style>
+    <script src="//cdn.bootcss.com/angular.js/1.3.0/angular.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.3.0/angular-sanitize.min.js"></script>
+    <link rel="stylesheet" href="css/iconfont.css">
+
+</head>
+<body ng-app="most1">
+<script>
+    angular.module("most1",["ngSanitize"]).controller("filter1",["$scope",function ($s) {
+        $s.name="dwqdqwdwqddq";
+        $s.age="eqeq";
+        $s.linkStr="<a href='http://xuliangmost.com' target='_blank'>啊哈哈</a>";
+
+    }]).controller("filter2",["$scope",function ($s) {
+        $s.styleShit={
+            color:"red",
+            fontSize:"16px"
+        };
+        $s.buttonVal="点我点我!";
+        $s.buttonVal1="快点我快点我!"
+    }]).controller("filter3",["$scope",function ($s) {
+            $s.loadHtml="incloud.html"
+    }]).controller("filter4",["$scope",function ($s) {
+        $s.loadHtml="incloud.html"
+    }])
+</script>
+    <div ng-controller="filter1">
+        <p>{{linkStr}}{{age}}</p>
+        <p ng-bind-template="这是用ng-bind-template加载出来的 : {{name}} {{age}}"></p>
+        <p ng-bind-html="linkStr"></p>
+
+    </div>
+<br><br><br>
+<hr><br><br>
+    <div ng-controller="filter2">
+        <button ng-style="styleShit" ng-bind="buttonVal"></button>
+        <button ng-class="{button:true}" ng-bind="buttonVal1"></button>
+    </div>
+<br><br><br>
+<hr><br><br>
+
+    <div ng-controller="filter3">
+        <button ng-click="sh_ow=!sh_ow" ng-class="{button:true}">点我点我</button>
+        <div ng-switch="sh_ow">
+            <button ng-class="{button:true}" ng-switch-default="">关闭</button>
+            <button ng-class="{button:true}" ng-switch-when="false">关闭</button>
+            <button ng-class="{button:true}" ng-switch-when="true">打开</button>
+        </div>
+        <br><br>
+        ...... ...... ...... ......
+        <div>
+            <p>这是加载的</p>
+            <p ng-include="loadHtml"></p>
+        </div>
+    </div>
+<br><br>
+<div ng-controller="filter4">
+    <input type="text" ng-model="val" ng-model-options="{updateOn:'change',debounce:500}">
+    <!--  updateOn 给事件 eg:click  keyUp    //      debounce 延时-->
+    <textarea ng-bind="val" ng-style="{border:'1px solid #000',display:'block',marginTop:'10px'}"></textarea>
+</div>
+<br><br><br><br><br>
+</body>
+</html>

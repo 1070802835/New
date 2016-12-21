@@ -58,4 +58,10 @@ angular.module("most1",[])
 		// $s.timeDate=new Date();
 		// $s.timeDate=$filter("timeC")($s.timeDate);
 	//要过滤的数据 ==> 过滤器选择 ==> 过滤器设置
-}]);
+}])
+	.filter("getData",function () {
+    return function () {
+       console.log($s.mostData)
+    };
+
+});
