@@ -8,17 +8,17 @@
 </head>
 <body ng-app="most1">
 <div ng-controller="filter1">
-    <!--<ul>-->
-        <!--<li ng-repeat="data in mostData">-->
-            <!--<p>{{data.name|mostFilter}}</p>-->
-            <!--&lt;!&ndash;自定义的过滤器也可以传参  格式参照js里面的&ndash;&gt;-->
-            <!--<p>{{data.student}}</p>-->
-            <!--<p>{{data.num|number}}</p>-->
-            <!--<p>{{data.time|date:"shortDate"}}</p>-->
+    <ul>
+        <li ng-repeat="data in mostData">
+            <p>{{data.name|mostFilter}}</p>
+            <!--自定义的过滤器也可以传参  格式参照js里面的-->
+            <p>{{data.student}}</p>
+            <p>{{data.num|number}}</p>
+            <p>{{data.time|date:"shortDate"}}</p>
             <!--<p style="white-space: pre-wrap">{{data|json}}</p>-->
-            <!--<pre>{{data|json}}</pre>-->
-        <!--</li>-->
-    <!--</ul>-->
+            <pre>{{data|json}}</pre>
+        </li>
+    </ul>
         <p>{{name|arrChange:[0,5,8,12]}}</p>
         <p>{{name|arrChange:1}}</p>
     </div>

@@ -2,7 +2,7 @@ angular.module("most1",[])
 	.filter("mostFilter",function () {
 		return function (str) {
 			// var newStr=str[0].toUpperCase()+str.substring(1);
-			var newStr=str[0].toUpperCase()+str.splice(0,1);
+			var newStr=str[0].toUpperCase()+str.substring(1);
 			return newStr
     }
 })
@@ -47,22 +47,6 @@ angular.module("most1",[])
 				student:"kk1",
 				girlFriend:"3",
 				num:"4",
-				time:new Date(),
-				data_:"19940312"
-			},
-			{
-				name:"most",
-				student:"kk2",
-				girlFriend:"4",
-				num:"3",
-				time:new Date(),
-				data_:"19940312"
-			},
-			{
-				name:"most",
-				student:"kk3",
-				girlFriend:"5",
-				num:"1",
 				time:new Date(),
 				data_:"19940312"
 			}
