@@ -29,10 +29,10 @@ li{
 .footer ul{
     width:100%;
     height:100%;
+    display: flex;
 }
 .footer ul li{
-    float: left;
-    width:25%;
+	flex: 1;
 }
 .bigBang{
     color: red;
