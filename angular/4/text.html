@@ -50,19 +50,23 @@
     </style>
     <script src="js/angular.min.js"></script>
     <script>
-        angular.module("most",[])
-            .controller("msotCtrl",["$scope","$http",function($s,$h){
-                $h.jsonp("http://xuliangmost.com/html/static/dist/json/list-page.json?callback=JSON_CALLBACK" )
-                //注意  这里不是写到get方式里面   是用点方法来使用
-                    .success(function(data){
-                        console.log(data)
-                    })
-            }])
+        var obj={
+            name:"1",
+            most:function () {
+                return function () {
+                    console.log(this.name)
+                }.bind(this)
+            }
+        };
+        obj.most()();
+        var name=2;
+        var most1=function() {
+            console.log(this.name)
+        }.bind(this);
+        most1()
     </script>
 </head>
-<body ng-app="most"  ng-controller="mostCtrl">
-    <button ng-class="{button:true}" ng-click="most2()">true</button>
-    <button ng-class="{button:true}" ng-click="qq(false)">false</button>
-    <div class="div1"></div>
+<body>
+
 </body>
 </html>
