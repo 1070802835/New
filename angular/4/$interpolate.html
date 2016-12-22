@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-location</title>
+
+    <script src="js/angular.min.js"></script>
+    <script>
+        angular.module("most",[]).controller("ctrl1",["$scope","$interpolate",function ($s,$i) {
+            $s.textChange=function () {
+                var temp=$i($s.val3);
+                $s.text1=temp({a:$s.val1,b:$s.val2})
+            }
+        }])
+    </script>
+</head>
+<body ng-app="most"  ng-controller="ctrl1">
+    <input type="text" ng-change="textChange()" ng-model="val1">
+    <input type="text" ng-change="textChange()" ng-model="val2">
+    <textarea ng-model="val3" ng-change="textChange()"></textarea>
+    <p>{{text1}}</p>
+</body>
+</html>

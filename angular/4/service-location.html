@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-location</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .button-wrap{
+            width:200px;
+            height:auto;
+            position: fixed;
+            top:20px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .button{
+            display: block;
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            border:0;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(left,#4BFFF7,#FFE3C0);
+            margin-top:20px;
+            transition: all 0.1s linear;
+        }
+        .button:focus{
+            outline:none;
+        }
+        .button:active{
+            transform: translateY(4px);
+        }
+        .div1{
+            width:100%;
+            height:20px;
+            display: flex;
+            position: fixed;
+            top:20px;
+            left:50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+        .div1 a{
+            flex:1;
+            margin:4px;
+            color: #77F7FF;
+        }
+        body,html{
+            width:100%;
+            height:100%;
+        }
+        .page{
+            width:100%;
+            height:100%;
+        }
+        .page:nth-of-type(1){
+            background: red;
+        }
+        .page:nth-of-type(2){
+            background: yellow;
+        }
+        .page:nth-of-type(3){
+            background: blue;
+        }
+    </style>
+    <script src="js/angular.min.js"></script>
+    <script>
+        angular.module("most",[]).controller("ctrl1",["$scope","$location","$anchorScroll",function ($s,$location,$anchorScroll) {
+            $s.pageJump1=function () {
+                $location.hash("page1");
+                $anchorScroll();
+            };
+            $s.pageJump2=function () {
+                $location.hash("page2");
+                $anchorScroll();
+            };
+            $s.pageJump3=function () {
+                $location.hash("page3");
+                $anchorScroll();
+            }
+        }])
+    </script>
+</head>
+<body ng-app="most"  ng-controller="ctrl1">
+    <div class="page" id="page1"></div>
+    <div class="page" id="page2"></div>
+    <div class="page" id="page3"></div>
+    <div class="button-wrap">
+        <button ng-class="{button:true}" ng-click="pageJump1()">点我点我</button>
+        <button ng-class="{button:true}" ng-click="pageJump2()">点我点我</button>
+        <button ng-class="{button:true}" ng-click="pageJump3()">点我点我</button>
+    </div>
+
+</body>
+</html>

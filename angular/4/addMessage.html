@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-location</title>
+    <style>
+        .button{
+            display: block;
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            border:0;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(left,#4BFFF7,#FFE3C0);
+            margin:20px auto;
+            transition: all 0.1s linear;
+        }
+        .button:focus{
+            outline:none;
+        }
+        .button:active{
+            transform: translateY(4px);
+        }
+
+    </style>
+    <script src="js/angular.min.js"></script>
+    <script>
+        angular.module("most",[])
+            .factory("tan",function () {
+                return {
+                    list:[
+                        {
+                            "pid":"1",
+                            "name":"name1",
+                            "price":"price1"
+                        },
+                        {
+                            "pid":"2",
+                            "name":"name2",
+                            "price":"price2"
+                        },
+                        {
+                            "pid":"3",
+                            "name":"name3",
+                            "price":"price3"
+                        }
+                    ],
+                    addItem:function (obj) {
+                        var newPid=this.list.length?(this.list[this.list.length-1].pid*1+1):1;
+                        obj.pid=newPid;
+                        this.list.push(obj);
+                    },
+                    deleteItem:function (index) {
+                        for(var i=0;i<this.list.length;i++){
+                            if(this.list[i].pid==index){
+                                this.list.splice(i,1)
+                            }
+                        }
+                    }
+                }
+            })
+            .controller("ctrl1",["$scope","tan",function ($s,tan) {
+                $s.proList=tan.list;
+                $s.tan1=function (index) {
+                    tan.deleteItem(index)
+                };
+                $s.tan2=function () {
+                    $s.productName="";
+                    $s.productPrice="";
+                    tan.addItem({
+                        "name":$s.productName,
+                        "price":$s.productPrice
+                    })
+                };
+
+            }])
+    </script>
+</head>
+<body ng-app="most"  ng-controller="ctrl1">
+<ul>
+    <li ng-repeat="data in proList">
+        <p>商品ID : {{data.pid}}</p>
+        <p>商品name : {{data.name}}</p>
+        <p>商品price : {{data.price}}</p>
+        <button ng-click="tan1(data.pid)">删除{{data.pid}}</button>
+    </li>
+</ul>
+<div class="wrap">
+    <ul>
+        <li><input type="text" ng-model="productName" placeholder="name"></li>
+        <li><input type="text" ng-model="productPrice" placeholder="price"></li>
+    </ul>
+    <button ng-class="{button:true}" ng-click="tan2()">点我添加商品</button>
+</div>
+
+</body>
+</html>

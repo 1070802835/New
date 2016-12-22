@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-location</title>
+    <style>
+        .button{
+            display: block;
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            border:0;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(left,#4BFFF7,#FFE3C0);
+            margin:20px auto;
+            transition: all 0.1s linear;
+        }
+        .button:focus{
+            outline:none;
+        }
+        .button:active{
+            transform: translateY(4px);
+        }
+    </style>
+    <script src="js/angular.min.js"></script>
+    <script>
+        angular.module("most",[])
+            .factory("tan",function () {
+                return {
+                    hah:function(){
+                        alert(1)
+                    }
+                }
+            })
+            .service("ser1",function () {
+                return {
+                    sonName:"kangKai",
+                    haha:function () {
+                        alert("我的儿子是"+this.sonName)
+                    }
+                }
+            })
+            .controller("ctrl1",["$scope","tan","ser1",function ($s,tan,ser1) {
+                $s.tan1=function () {
+                    tan.hah();
+                    ser1.haha();
+                };
+
+            }])
+    </script>
+</head>
+<body ng-app="most"  ng-controller="ctrl1">
+    <button ng-class="{button:true}" ng-click="tan1()">点我点我</button>
+</body>
+</html>
