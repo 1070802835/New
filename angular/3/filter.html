@@ -30,9 +30,9 @@
 </head>
 <body ng-app="most1">
 <script>
-    angular.module("most1",["ngSanitize"]).controller("filter1",["$scope",function ($s) {
-        $s.name="dwqdqwdwqddq";
-        $s.age="eqeq";
+    angular.module("most1",["ngSanitize"]).controller("mostCtrl",["$scope",function ($s) {
+        $s.name="gao";
+        $s.age="linli";
         $s.linkStr="<a href='http://xuliangmost.com' target='_blank'>啊哈哈</a>";
 
     }]).controller("filter2",["$scope",function ($s) {
@@ -48,9 +48,9 @@
         $s.loadHtml="incloud.html"
     }])
 </script>
-    <div ng-controller="filter1">
+    <div ng-controller="mostCtrl">
         <p>{{linkStr}}{{age}}</p>
-        <p ng-bind-template="这是用ng-bind-template加载出来的 : {{name}} {{age}}"></p>
+        <p ng-bind-template="{{name}} {{age}}"></p>
         <p ng-bind-html="linkStr"></p>
 
     </div>

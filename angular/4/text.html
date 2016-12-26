@@ -60,17 +60,18 @@
                         console.log($routeParams)
                     }
                 }).when("/page2",{
-                    template:"<div>{{MOST}}</div>",
-                    controller:function($scope){
-                        $scope.MOST="page2"
-                }
+                    template:"<div>{{name}}</div>",
+                    controller:"mostCtrl"
                 }).otherwise({redirectTo:"/page1"})
-            }])
+            }]).controller("mostCtrl",["$scope",function ($s) {
+                $s.name="我是引用的控制器"
+        }])
     </script>
 </head>
 <body ng-app="most">
 <div ng-view></div>
 <a ng-href="#page1/'mostName'">Most</a>
-<a ng-href="#page1">Most2</a>
+<a ng-href="#page1">Most未传参</a>
+<a ng-href="#page2">Most2</a>
 </body>
 </html>

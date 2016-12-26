@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>one</title>
+    <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+    var arr1=[
+      "py","kk","ff"
+    ];
+    ReactDOM.render(
+        <h1>出来吧 ！ 我的孩子</h1>,
+        document.getElementById("div1")
+    );
+    ReactDOM.render(
+        <div>
+        {
+            arr1.map(function(ele,index){
+                return <h2 key={index}>hello , mySon{index*1+1} {ele} ! </h2>
+            })
+        }
+        </div>,
+        document.getElementById("div2")
+    )
+</script>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>

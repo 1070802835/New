@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>one</title>
+    <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+    var arr1=[
+        "py","kk","ff"
+    ];
+
+    var HeaderMost=React.createClass({
+       render:function () {
+           return <div> {arr1.map(function (ele) {
+               return <h3> {ele} </h3>
+           })} </div>
+       }
+    });
+    var FooterMost=React.createClass({
+       render:function () {
+           return <div>
+                     <div> {arr1.map(function (ele,index) {
+                         return <h2 key={index}> hello mySon {ele} </h2>
+                     })} </div>
+                     <HeaderMost/>
+                  </div>
+       }
+    });
+    ReactDOM.render(
+        <FooterMost/>,
+        document.getElementById("div1")
+    );
+    ReactDOM.render(
+        <div>
+            <HeaderMost/>
+            <FooterMost/>
+        </div>,
+        document.getElementById("div2")
+    );
+</script>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>
