@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind</title>
+    <style>
+        .button{
+            display: block;
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            border:0;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(left,#D1B0FF,#00E8FF);
+            margin:30px auto;
+            transition: all 0.1s linear;
+        }
+        .button:focus{
+            outline:none;
+        }
+        .button:active{
+            transform: translateY(4px);
+        }
+        .most{
+            background: red;
+        }
+    </style>
+    <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+    let arr1=["py","kk","ff"];
+    let MySonKk=React.createClass({
+        getDefaultProps:function () {
+            console.log(1);
+            return{
+                listData:[]
+            }
+        },
+        getInitialState:function () {
+            console.log(2);
+            return{
+                show:true
+            }
+        },
+        componentWillMount:function () {
+            console.log("要开始渲染了");
+            this.state.show=false
+        },
+        componentWillUpdate:function () {
+            console.log("要开始更新了");
+        },
+        componentWillReceiveProps:function (newProps) {
+            console.log(newProps,"componentWillReceiveProps")
+        },
+        componentDidMount:function () {
+            console.log(this.refs.wrap);
+            //获取真实节点
+            console.log(this.refs.wrap.style);
+
+            this.refs.wrap.style.background="red";
+            //操作节点
+            console.log("渲染结束了")
+        },
+        changState:function () {
+
+          this.setState({
+              show:!this.state.show
+          })
+        },
+        //getDefaultProps，getInitialState，componentWillMount,componentDidMount,componentDidMount 都是钩子函数，是react自定义的，后面三个是react的状态函数
+        render:function () {
+            console.log("正在渲染");
+            let buttonStyle={"display":this.state.show?"block":"none"};
+            let buttonHtml=this.state.show?"隐藏":"显示";
+            return (
+                    <div className="div1" ref="wrap">
+                        <button onClick={this.changState} className="button">{buttonHtml}</button>
+                        {
+                            this.props.listData.map(function (ele) {
+                                return (
+                                        <button style={buttonStyle} className="button"> {ele} </button>
+                                    )
+
+                            })
+                        }
+                    </div>
+            )
+        }
+    });
+    ReactDOM.render(
+            <MySonKk listData={arr1}/>,
+        document.getElementById("div1")
+    );
+</script>
+<div id="div1"></div>
+</body>
+</html>

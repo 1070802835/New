@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind</title>
+    <style>
+        .button{
+            display: block;
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            border:0;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(left,#D1B0FF,#00E8FF);
+            margin:30px auto;
+            transition: all 0.1s linear;
+        }
+        .button:focus{
+            outline:none;
+        }
+        .button:active{
+            transform: translateY(4px);
+        }
+    </style>
+    <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+
+
+    let arr1=["py","kk","ff"];
+    let MySonKk=React.createClass({
+        arr:["py","kk","ff"],
+        arr2:["不喜欢kk","不喜欢kk","不喜欢kk"],
+        mostClick:function (ele,index) {
+            console.log("我的孩子"+index+" : "+ele+this.arr2[index]);
+        },
+        render:function () {
+            return (
+                    <div>
+                        {
+                            arr1.map(function (ele,index) {
+                            console.log(this);
+                            //return <button className="button" key={index} onClick={ this.mostClick.bind(this,ele,index) } > {ele}{index==0?this.arr2[index]:null} </button>
+                        }.bind(this))
+                        }
+                    </div>
+            )
+        }
+    });
+    ReactDOM.render(
+            <MySonKk/>,
+        document.getElementById("div1")
+    );
+</script>
+<div id="div1"></div>
+</body>
+</html>
