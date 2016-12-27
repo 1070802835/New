@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind</title>
+    <style>
+        .button{
+            display: block;
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            border:0;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(left,#D1B0FF,#00E8FF);
+            margin:30px auto;
+            transition: all 0.1s linear;
+        }
+        .button:focus{
+            outline:none;
+        }
+        .button:active{
+            transform: translateY(4px);
+        }
+    </style>
+    <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+    let arr=["好热1","好热2","好热3","好热4","好热5","好热6","好热7"];
+    let Button1=React.createClass({
+        getInitialState:function () {
+            return {
+                flag:true
+            }
+        },
+        deleteList:function () {
+          this.setState({
+              flag:!this.state.flag
+          })
+        },
+        render:function () {
+            return (
+                <div>
+                    <button onClick={this.deleteList} className="button">{this.state.flag?"删除":"添加"}</button>
+                    {this.state.flag?<List arr={arr} />:<div>已经删了</div>}
+                </div>
+            )
+        }
+    });
+    let List=React.createClass({
+
+        render:function () {
+            return(
+                    <ul>
+                        {this.props.arr.map(function (ele,index) {
+                            return <li key={index}> { ele }</li>
+                        })}
+                    </ul>
+            )
+        }
+    });
+    ReactDOM.render(
+       <Button1/>,
+        document.getElementById("div1")
+    )
+
+</script>
+<div id="div1"></div>
+</body>
+</html>

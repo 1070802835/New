@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind</title>
+    <style>
+        .button{
+            display: block;
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            border:0;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(left,#D1B0FF,#00E8FF);
+            margin:30px auto;
+            transition: all 0.1s linear;
+        }
+        .button:focus{
+            outline:none;
+        }
+        .button:active{
+            transform: translateY(4px);
+        }
+    </style>
+    <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+    let productList={
+        "hotData":["好热1","好热2","好热3","好热4","好热5","好热6","好热7"],
+        "newData":["好新1","好新2","好新3","好新4","好新5","好新6","好新7"]
+    };
+    let List=React.createClass({
+        render:function () {
+            return (
+                    <ul>
+                        {
+                            this.props.productDate.map(function (ele,index) {
+                                return <li key={index}> {ele} </li>
+                            }.bind(this))
+                        }
+                    </ul>
+            );
+            //通过this.props获取到数据对数据遍历
+        }
+    });
+    let ButtonList=React.createClass({
+        getInitialState:function () {
+            let types=Object.keys(this.props.productList);
+            //对传到 ButtonList 里面的参数进行操作，改成自己需要的样子
+          return{
+                types:types,
+                nowProduct:types[0]
+          }
+        },
+        changeSelectType:function (index) {
+
+            this.setState({
+         //想要实现更改数据，页面自动刷新数据，必须要用 setState 方法来改值  下面的直接修改，页面刷新数据
+                nowProduct:this.state.types[index]
+            });
+
+            //this.state.nowProduct=this.state.types[index];
+            //console.log(this.state.nowProduct);
+
+        },
+        render:function () {
+            let arr=this.props.productList[this.state.nowProduct];
+            //这里获取当前要显示的商品数据
+            return (
+                <div>
+                    {
+                        this.state.types.map(function (ele,index) {
+                            //通过点击事件传参   修改this.state里面的变量值
+                            return <button className="button" onClick={this.changeSelectType.bind(this,index)} > {ele} </button>
+                        }.bind(this))
+                    }
+                    <List a="把获取到的数据传到List里面" productDate={arr}/>
+                </div>
+            )
+        }
+    });
+    ReactDOM.render(
+            <ButtonList productList={productList}/>,
+        //传参
+        document.getElementById("div1")
+    );
+
+</script>
+<div id="div1"></div>
+</body>
+</html>

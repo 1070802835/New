@@ -52,6 +52,7 @@
         },
         componentWillUpdate:function () {
             console.log("要开始更新了");
+            return true
         },
         componentWillReceiveProps:function (newProps) {
             console.log(newProps,"componentWillReceiveProps")
@@ -66,7 +67,6 @@
             console.log("渲染结束了")
         },
         changState:function () {
-
           this.setState({
               show:!this.state.show
           })

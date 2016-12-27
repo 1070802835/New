@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .button{
+            display: block;
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            border:0;
+            border-radius: 10px;
+            background: -webkit-linear-gradient(left,#D1B0FF,#00E8FF);
+            margin:30px auto;
+            transition: all 0.1s linear;
+        }
+        .button:focus{
+            outline:none;
+        }
+        .button:active{
+            transform: translateY(4px);
+        }
+        .div1{
+            width:200px;
+            line-height: 50px;
+            height:50px;
+            overflow: hidden;
+            text-align: center;
+            margin:30px auto;
+            background: -webkit-linear-gradient(left,#D1B0FF,#00E8FF);
+            position: relative;
+            border:1px solid #555;
+            transition: all .4s ease;
+        }
+        .div1:hover{
+            cursor: pointer;
+        }
+        .div1 ul{
+            width:200px;
+        }
+        .div1 ul li{
+            width:200px;
+            height:50px;
+            list-style: none;
+            box-sizing: border-box;
+            border-top: 1px solid #555;
+        }
+        .div1 ul li:nth-child(1){
+            border-top:0;
+        }
+        .Triangular{
+            display: block;
+            border:12px solid transparent;
+            border-top:12px solid #555;
+            position: absolute;
+            right:24px;
+            top:20px;
+            transition: all .2s linear;
+        }
+        .rotate{
+            transform-origin: 50% 25%;
+            transform: rotate(180deg);
+        }
+        .p{
+            width:200px;
+            height:50px;
+            border-bottom:1px solid #555;
+        }
+    </style>
+    <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/browser.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+
+    let List=React.createClass({
+        getInitialState:function () {
+          return{
+              isShow:false,
+              showName:this.props.list1[0]
+          }
+        },
+        changeState:function () {
+          this.setState({
+              isShow:!this.state.isShow
+          })
+        },
+        changeName:function (index) {
+            this.setState({
+                isShow:false,
+                showName:this.props.list1[index]
+            })
+        },
+        render:function () {
+            let style1={"height":this.state.isShow?"300px":"50px"};
+            return (
+                    <div className="div1" style={style1}>
+                        <p className="p" onClick={this.changeState}>{this.state.showName} </p>
+                        <span onClick={this.changeState} className={this.state.isShow?"rotate Triangular":"Triangular"}>  </span>
+                        <ul>
+                            {
+                                this.props.list1.map(function (ele,index) {
+                                    return <li onClick={this.changeName.bind(this,index)} key={index} >{ ele }</li>
+                                }.bind(this))
+                            }
+                        </ul>
+                    </div>
+            );
+            //通过this.props获取到数据对数据遍历
+        }
+    });
+
+    let list1=["Most","KK","LL","PY","FF"];
+    ReactDOM.render(
+            <List list1={list1}/>,
+        document.getElementById("most")
+    );
+</script>
+<div id="most">
+
+</div>
+</body>
+</html>
