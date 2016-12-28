@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>subscribe</title>
+    <script src="login/js/react.min.js"></script>
+    <script src="login/js/react-dom.min.js"></script>
+    <script src="login/js/browser.min.js"></script>
+</head>
+<body>
+<div id="most"></div>
+<script type="text/babel">
+    let Action={
+      on:function (name,fn) {
+          this[name]=fn
+      },
+      emit:function (name,data) {
+          this[name](data)
+      }
+    };
+    let Son=React.createClass({
+        change2:function () {
+            Action.emit("changeVal","Son")
+        },
+        render:function () {
+            return(
+                    <button onClick={this.change2} > Son </button>
+            )
+        }
+    });
+
+    let Father=React.createClass({
+        getInitialState:function () {
+            return{
+                value:10
+            }
+        },
+        componentWillMount:function () {
+          Action.on("changeVal",function (val) {
+              this.setState({
+                  value:val
+              })
+          }.bind(this))
+        },
+        change2:function () {
+            Action.emit("changeVal","  通过事件添加的father")
+        },
+        render:function () {
+            return(
+                    <div>
+                        <p>{this.state.value}</p>
+                        <button  onClick={this.change2}> Father </button>
+                        <button onClick={ ()=>Action.emit("changeVal","Son") }> father </button>
+                        <Son/>
+                    </div>
+            )
+        }
+    });
+    ReactDOM.render(
+            <Father />,
+        document.getElementById("most")
+    )
+</script>
+
+</body>
+</html>

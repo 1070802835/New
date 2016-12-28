@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo1</title>
+    <script src="login/js/react.min.js"></script>
+    <script src="login/js/react-dom.min.js"></script>
+    <script src="login/js/browser.min.js"></script>
+</head>
+<body>
+<div id="most"></div>
+<script type="text/babel">
+    let Son=React.createClass({
+        change2:function () {
+          this.props.changSon(30)
+        },
+        render:function () {
+            return(
+                    <button onClick={this.change2} > Son </button>
+            )
+        }
+    });
+
+    let Father=React.createClass({
+        getInitialState:function () {
+          return{
+              value:10
+          }
+        },
+        change:function (index) {
+          this.setState({
+              value:index
+          })
+        },
+        render:function () {
+            return(
+                <div>
+                    <p>{this.state.value}</p>
+                    <button onClick={this.change.bind(this,20)}> Father </button>
+                    <Son changSon={this.change} />
+                </div>
+            )
+        }
+    });
+    ReactDOM.render(
+            <Father />,
+        document.getElementById("most")
+    )
+</script>
+
+</body>
+</html>

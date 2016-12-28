@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>propTypes</title>
+    <script src="login/js/react.min.js"></script>
+    <script src="login/js/react-dom.min.js"></script>
+    <script src="login/js/react-with-addons.js"></script>
+    <script src="login/js/browser.min.js"></script>
+</head>
+<body>
+<div id="most"></div>
+<script type="text/babel">
+    let List=React.createClass({
+        propTypes:{
+            listData:React.PropTypes.array.isRequired
+        },
+        render:function () {
+            return(
+                <ul>
+                    {
+                        this.props.listData.map(function (ele,index) {
+                            return <li key={index} > { ele } </li>
+                        })
+                    }
+                </ul>
+            )
+        }
+    });
+
+    ReactDOM.render(
+        <List hasFooter=true listData={[1,2,332,131,231,231,31,31,3123]}/>,
+        document.getElementById("most")
+    )
+</script>
+
+</body>
+</html>

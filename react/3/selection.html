@@ -72,6 +72,11 @@
             height:50px;
             border-bottom:1px solid #555;
         }
+        .p1{
+            position: absolute;
+            left:10%;
+            top:10%;
+        }
     </style>
     <script src="js/react.min.js"></script>
     <script src="js/react-dom.min.js"></script>
@@ -84,7 +89,8 @@
         getInitialState:function () {
             return{
                 isShow:false,
-                showName:this.props.list1[0]
+                showName:this.props.list1[0],
+                showContent:this.props.list2[0].name+this.props.list2[0].content+this.props.list2[0].type
             }
         },
         changeState:function () {
@@ -95,12 +101,14 @@
         changeName:function (index) {
             this.setState({
                 isShow:false,
-                showName:this.props.list1[index]
+                showName:this.props.list1[index],
+                showContent:this.props.list2[index].name+this.props.list2[index].content+this.props.list2[index].type
             })
         },
         render:function () {
             let style1={"height":this.state.isShow?"300px":"50px"};
             return (
+                <div>
                     <div className="div1" style={style1}>
                         <p className="p" onClick={this.changeState}>{this.state.showName} </p>
                         <span onClick={this.changeState} className={this.state.isShow?"rotate Triangular":"Triangular"}>  </span>
@@ -112,14 +120,43 @@
                             }
                         </ul>
                     </div>
+                    <p className="p1">我觉得{ this.state.showContent }</p>
+                </div>
             );
             //通过this.props获取到数据对数据遍历
         }
     });
 
-    let list1=["Most","KK","LL","PY","FF"];
+    let list1=["Most","KK","LL","DD","FF"];
+    let list2=[
+        {
+            "name":"Most",
+            "content":"是世界上",
+            "type":"最叼的人"
+        },
+        {
+            "name":"KK",
+            "content":"是世界上",
+            "type":"最丑的人"
+        },
+        {
+            "name":"LL",
+            "content":"是世界上",
+            "type":"最好看的人"
+        },
+        {
+            "name":"DD",
+            "content":"是世界上",
+            "type":"最胖的人"
+        },
+        {
+            "name":"FF",
+            "content":"是世界上",
+            "type":"最爱睡觉的人"
+        }
+    ];
     ReactDOM.render(
-            <List list1={list1}/>,
+            <List list1={list1} list2={list2}/>,
         document.getElementById("most")
     );
 </script>

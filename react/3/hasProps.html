@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo1</title>
+    <script src="login/js/react.min.js"></script>
+    <script src="login/js/react-dom.min.js"></script>
+    <script src="login/js/browser.min.js"></script>
+</head>
+<body>
+<div id="most"></div>
+<script type="text/babel">
+    let Most=React.createClass({
+        render:function () {
+            let style1={background:this.props.hasFooter?"red":"blue"}
+            return <div className={this.props.hasFooter?"1":"2"} style={style1} ></div>
+        }
+    });
+
+    ReactDOM.render(
+            <Most hasFooter={true}/>,
+        document.getElementById("most")
+    )
+</script>
+
+</body>
+</html>
