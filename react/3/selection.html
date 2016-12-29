@@ -88,6 +88,7 @@
     let List=React.createClass({
         getInitialState:function () {
             return{
+                listLength:this.props.list1.length,
                 isShow:false,
                 showName:this.props.list1[0],
                 showContent:this.props.list2[0].name+this.props.list2[0].content+this.props.list2[0].type
@@ -106,7 +107,7 @@
             })
         },
         render:function () {
-            let style1={"height":this.state.isShow?"300px":"50px"};
+            let style1={"height":this.state.isShow?this.state.listLength*50+"px":"50px"};
             return (
                 <div>
                     <div className="div1" style={style1}>

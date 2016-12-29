@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="js/bundle.css">
+
+</head>
+<body>
+    <div id="div1">Most</div>
+    <div id="div2">Most</div>
+    <div id="div3">Most</div>
+
+    <script src="./js/bundle.js"></script>
+    <script>
+        class person{
+            constructor (name,age){
+                this.name=name;
+                this.age=age;
+                this.showName=function () {
+                    console.log(this.name)
+                }
+            }
+        }
+        let person1=new person("most","22");
+        person1.showName();
+        class student extends person {
+            constructor (name,age,skill) {
+                super(name,age,skill);
+                this.skill=skill
+            }
+            showSkill (){
+                console.log(this.skill)
+            }
+        }
+        class student2 extends person {
+            constructor (skill,...arg) {
+                super(...arg);
+                this.skill=skill
+            }
+            showSkill (){
+                console.log(this.skill)
+            }
+        }
+        let student1=new student("most2","32","hehe");
+        let student3=new student2("most3","22");
+        console.log(student1);
+        console.log(student3)
+    </script>
+</body>
+</html>
