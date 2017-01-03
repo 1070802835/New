@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="imgScale" type="range" max="10" value="5" min="1" step="1" />
+<input id="textScale" type="text" value="50%" readonly style="width: 40px" />
+<select id="imgType">
+    <option>png</option>
+    <option>jpeg</option>
+</select>
+<script>
+    var imgScale = document.getElementById("imgScale");
+    var imgType = document.getElementById("imgType");
+    var textScale = document.getElementById("textScale");
+    imgScale.onchange=function(){
+        textScale.value = this.value*10+"%";
+    }
+   function makePic(oImg){
+       oImg.onload=function(){
+           var w = parseInt(oImg.width*imgScale.value/10);
+           var h = parseInt(oImg.height*imgScale.value/10);
+
+           var oCanvas = document.createElement("canvas");
+           oCanvas.width = w;
+           oCanvas.height = h;
+           var oContext = oCanvas.getContext("2d");
+           oContext.drawImage(oImg,0,0,w,h);
+
+           /*生成新图*/
+           window.open(oCanvas.toDataURL("image/"+imgType.value));
+           oCanvas = null;
+
+       }
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /*h5文件拖放*/
+
+   document.addEventListener('dragover', function(e) {
+       e.preventDefault();
+       e.stopPropagation();
+       e.dataTransfer.dropEffect = 'copy';
+   });
+    document.addEventListener("drop", function(e){
+        e.stopPropagation();
+        e.preventDefault();
+
+        handleFiles(e.dataTransfer.files);
+
+    }, false);
+
+
+    handleFiles = function(files) {
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            if (!file.type.match(/image*/)) {
+                continue;
+            }
+
+            var img = document.createElement("img");
+            img.file = file;
+            var reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (function(oImg) {
+                return function(e) {
+                    oImg.src = e.target.result;
+                    makePic(oImg)
+                };
+            })(img);
+            /*可以获取API异步读取的文件数据,另存为数据URL;将该URL绑定到img标签的src属性上,就可以实现图片的上传预览*/
+
+        }
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+body,html{
+    width: 100%;
+    height:100%;
+    font-size: 62.5%;
+    overflow: hidden;
+    position: relative;
+}
+.header{
+    width: 100%;
+    height: 50px;
+}
+.header_ul{
+    width:100%;
+    display: flex;
+    height: 50px;
+    background: #95FFFD;
+}
+.header_ul li{
+    width:50px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    float: left;
+}
+.header_ul li:hover{
+    cursor: pointer;
+}
+.header_ul .title_left{
+
+
+}
+.header_ul .title_right{
+
+}
+.header_ul .title{
+    flex: 1;
+    color: #000;
+    font-size: 20px;
+}
+.content{
+    width:100%;
+    position: absolute;
+    top:50px;
+    overflow: hidden;
+}
+.scroll_wrap{
+    width:100%;
+    position: absolute;
+    top:0;
+    bottom:0;
+    overflow: hidden;
+}
+.content_ul1{
+    width:100%;
+    overflow: hidden;
+    background: #fff;
+}
+.scroller{
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.refresh{
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding:30px 0;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 0;
+    background: -webkit-linear-gradient(left,#00E8FF,#95FFFD,#FF8232);
+}
+.content_ul1 li{
+    width:50%;
+    font-size: 16px;
+    padding:4px 0;
+    text-align: center;
+    float: left;
+}
+.content_ul1_li p{
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.content_ul1_li img{
+    height:220px;
+}
+.footer{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    font-size: 14px;
+}
+.footer_ul{
+    width:100%;
+    height:100%;
+    display: flex;
+    background: -webkit-linear-gradient(left,#9CC8FF,#FF8232);
+}
+.footer_ul li{
+    flex:1;
+    line-height: 50px;
+    text-align: center;
+}
+.footer_ul li:hover{
+    cursor: pointer;
+    color: #fff;
+}
+.button{
+    display: block;
+    width:50%;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    border:0;
+    border-radius: 10px;
+    background: -webkit-linear-gradient(left,#D1B0FF,#00E8FF);
+    margin:60px auto;
+    transition: all 0.1s linear;
+}
+.button:focus{
+    outline:none;
+}
+.button:active{
+    transform: translateY(4px);
+}
+
+
+
+
+
+
+
+
+
+/*# sourceMappingURL=bundle.css.map*/
