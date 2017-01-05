@@ -1,0 +1,99 @@
+/*  color  */
+/*  icon-font  */
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    font-size: 16px;
+}
+.icon-white {
+    color: #fff;
+}
+.icon-grey {
+    color: #313131;
+}
+/*  util  */
+/* .shadow(@param){
+	-webkit-box-shadow:@param;
+	-moz-box-shadow:@param;
+	-ms-box-shadow:@param;
+	-o-box-shadow:@param;
+	box-shadow:@param;
+} */
+/*  base  */
+.icon-button {
+    width: 50px;
+    height: 25px;
+    padding: 4px 0;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #cd110f;
+    background-image: -webkit-linear-gradient(top, #cd110f, #940807);
+    background-image: -moz-linear-gradient(top, #cd110f, #940807);
+    background-image: -o-linear-gradient(top, #cd110f, #940807);
+    background-image: -ms-linear-gradient(top, #cd110f, #940807);
+    background-image: linear-gradient(top, #cd110f, #940807);
+    text-align: center;
+    box-shadow: 0 0 2px #7a0607,0 0 3px #9c302e,0 0 4px #b33f3f;
+    margin: 12px auto;
+}
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+}
+#page-list .content {
+    overflow: hidden;
+    padding-top: .1rem;
+}
+#page-list .content ul {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #f3f4f6;
+}
+#page-list .content ul li {
+    float: left;
+    width: 3.2rem;
+    padding: .2rem .36rem;
+}
+#page-list .content ul li a {
+    width: 2.46rem;
+    display: block;
+    box-shadow: 0 0 1px #666;
+    padding: .08rem;
+}
+#page-list .content ul li a img {
+    width: 2.3rem;
+    height: 2.3rem;
+}
+#page-list .content ul li p {
+    line-height: 1.8;
+    text-align: center;
+    font-size: .22rem;
+}
+#page-list .content ul li .pdt-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+}
+#page-list .content ul li .pdt-price {
+    overflow: hidden;
+}
+#page-list .content ul li .pdt-price span {
+    float: left;
+    color: #ee2222;
+    font-size: .24rem;
+}
+#page-list .content ul li .pdt-price del {
+    float: right;
+}
