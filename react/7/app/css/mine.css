@@ -1,0 +1,120 @@
+/*  color  */
+/*  icon-font  */
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  font-size: 16px;
+}
+.icon-white {
+  color: #fff;
+}
+.icon-grey {
+  color: #313131;
+}
+/*  util  */
+/* .shadow(@param){
+	-webkit-box-shadow:@param;
+	-moz-box-shadow:@param;
+	-ms-box-shadow:@param;
+	-o-box-shadow:@param;
+	box-shadow:@param;
+} */
+/*  base  */
+.icon-button {
+  width: 50px;
+  height: 25px;
+  padding: 4px 0;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #cd110f;
+  background-image: -webkit-linear-gradient(top, #cd110f, #940807);
+  background-image: -moz-linear-gradient(top, #cd110f, #940807);
+  background-image: -o-linear-gradient(top, #cd110f, #940807);
+  background-image: -ms-linear-gradient(top, #cd110f, #940807);
+  background-image: linear-gradient(top, #cd110f, #940807);
+  text-align: center;
+  box-shadow: 0 0 2px #7a0607,0 0 3px #9c302e,0 0 4px #b33f3f;
+  margin: 12px auto;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+#page-mine {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#page-mine .header .circle a {
+  color: #fff;
+}
+#page-mine .content dl.info {
+  width: 100%;
+  padding: .6rem .35rem;
+  overflow: hidden;
+}
+#page-mine .content dl.info dt {
+  width: 1.64rem;
+  height: 1.64rem;
+  overflow: hidden;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+  border-radius: 0.2rem;
+  float: left;
+}
+#page-mine .content dl.info dt img {
+  width: 1.64rem;
+  height: 1.64rem;
+}
+#page-mine .content dl.info dd {
+  width: 4.06rem;
+  height: 1.64rem;
+  float: left;
+}
+#page-mine .content dl.info dd p {
+  line-height: .82rem;
+  text-indent: .32rem;
+  font-size: .30rem;
+}
+#page-mine .content dl.info dd p span {
+  color: #ee2222;
+}
+#page-mine .content ul {
+  width: 5.6rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #dedede;
+  -webkit-border-radius: 0.18rem;
+  -moz-border-radius: 0.18rem;
+  -ms-border-radius: 0.18rem;
+  -o-border-radius: 0.18rem;
+  border-radius: 0.18rem;
+}
+#page-mine .content ul li {
+  width: 100%;
+  border-bottom: 1px solid #dedede;
+  font-size: .32rem;
+  padding: .3rem 0;
+  text-indent: .28rem;
+  overflow: hidden;
+}
+#page-mine .content ul li a {
+  float: left;
+  color: #000;
+}
+#page-mine .content ul li span {
+  float: right;
+  color: #dedede;
+  margin-right: .24rem;
+  font-weight: 600;
+}

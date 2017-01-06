@@ -1,0 +1,57 @@
+
+#loginPage{background-color: #f3eff0;}
+#loginPage .content{overflow: hidden;}
+#loginPage .login-con{
+    height:100%;
+    margin:15px;
+    overflow: hidden;
+}
+
+#loginPage .login-con li{
+    height:43px;
+    width:100%;
+    line-height: 43px;
+}
+#loginPage .username input,#loginPage .password input{
+    display: block;
+    width:100%;
+    height:100%;
+    background: #fff;
+    padding-left:10px;
+}
+#loginPage .password{
+    margin-top:2px;
+}
+#loginPage .show{
+    margin-top:15px;
+    padding-left:10px;
+}
+#loginPage .show .forget{
+    margin-left:15px;
+    color:#ff0e54;
+    cursor: hander;
+}
+#loginPage .remember{
+    padding-left:10px;
+}
+#loginPage .login{
+    width:100%;
+    height:100%;
+    border:1px solid #820000;
+    box-shadow: 1px 1px 1px #820000;
+    background-color: #bd0706;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 18px;
+}
+#loginPage .regist{
+    margin-top:5px;
+    width:100%;
+    height:100%;
+    border:1px solid #000;
+    box-shadow: 1px 1px 1px #000;
+    background-color: #555555;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 18px;
+}
