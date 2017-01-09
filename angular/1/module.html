@@ -19,8 +19,11 @@
     });
     module1.controller("c3",["$scope","$timeout",function ($s,$timout) {
         $s.name=1;
-        $s.go=function () {
-            $s.name+=1;
+        $s.go=function (num) {
+            $s.name+=num*1;
+            if($s.name==0){
+                $s.name=1;
+            }
         };
         $s.goo=function () {
             $s.name-=1;
@@ -38,10 +41,10 @@
         <p>{{demo}}</p>
     </div>
 
-    <div style="background: orange"ng-controller="c3">
+    <div style="background: orange" ng-controller="c3">  
         <p>{{name}}</p>
-        <button ng-click="go()">+</button>
-        <button ng-click="goo()">-</button>
+        <button ng-click="go(1)">+</button>
+        <button ng-click="go(-1)">-</button>
     </div>
 
 

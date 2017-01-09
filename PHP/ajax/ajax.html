@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <style>
+        .btn1{
+            display: block;
+            width:300px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            background: -webkit-linear-gradient(left,#D695FF,#53FFEB);
+            margin: 20px auto;
+            border-radius: 20px;
+            transition: all .1s linear;
+            border:0;
+        }
+        .int2,.int1{
+            display: block;
+            width:300px;
+            height:50px;
+            line-height: 50px;
+            margin: 20px auto;
+            border-radius: 10px;
+            border:1px solid #53FFEB;
+            text-indent:14px;
+        }
+        .btn1:active{
+            transform: translateY(6px);
+        }
+        .int2,.int1,.btn1:focus{
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+<script src="//cdn.bootcss.com/jquery/2.1.2/jquery.js"></script>
+<script src="js/get.js"></script>
+<input type="text" name="name" class="int1" placeholder="most">
+ <input type="text" name="email" class="int2" placeholder="most_love">
+<button class="btn1">点我点我</button>
+<script>
+    $(".btn1").click(function () {
+        ajax("http://10.9.164.22:8080/ajax/ajax.php?username="+$(".int1").val()+"&&userPassword="+$(".int2").val(),function (data) {
+            console.log(JSON.parse(data))
+        });
+    });
+    document.onkeydown=function (e) {
+       if(e.keyCode==13){
+           ajax("http://10.9.164.22:8080/ajax/ajax.php?username="+$(".int1").val()+"&&userPassword="+$(".int2").val(),function (data) {
+               console.log(JSON.parse(data))
+           });
+       }
+    }
+
+</script>
+</body>
+</html>

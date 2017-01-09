@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp</title>
+    <style>
+        .btn1{
+            display: block;
+            width:300px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            background: -webkit-linear-gradient(left,#D695FF,#53FFEB);
+            margin: 20px auto;
+            border-radius: 20px;
+            transition: all .1s linear;
+            border:0;
+        }
+        .btn1:active{
+            transform: translateY(6px);
+        }
+        .btn1:focus{
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+<script src="js/get.js"></script>
+<button id="btn1" class="btn1">点我点我</button>
+<script>
+    function fn1(data) {
+        console.log(data)
+    }
+    document.getElementById("btn1").onclick=function () {
+        getJsonp("http://10.9.164.22:8080/ajax/jsonp.php","fn1")
+    };
+
+    function getJsonp(url,callback) {
+        var oScript=document.createElement("script");
+        oScript.src=url+"?callback="+callback;
+        document.body.appendChild(oScript);
+    }
+
+
+
+</script>
+</body>
+</html>
