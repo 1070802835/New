@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+</head>
+<body>
+
+
+
+<script>
+	var url="http://10.17.158.241:8081/datajson/productdata.json";
+	var setttings={
+		success:function () {
+//			for(var i=0;i<data.length;i++){
+//				document.write(data[i].name);
+//			}
+			alert("success");
+		},
+		type:"post",
+		error:function () {
+			alert("false")
+		},
+		complete:function () {
+			alert("complete")
+		},
+		data:{
+			type:"test",
+			id:"Most",
+			datajson:{
+				"name":"Most",
+				"total":99999
+			}
+		}
+	};
+	$.ajax(url,setttings);
+</script>
+</body>
+</html>
