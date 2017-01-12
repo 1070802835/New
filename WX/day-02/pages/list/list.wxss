@@ -1,0 +1,93 @@
+/* pages/list/list.wxss */
+.top{
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    height: 30px;
+    color: pink;
+}
+page{
+    height:100%;
+}
+.scroll_view{
+    height:100%;
+}
+.scroll_view view{
+    color: #000;
+    width:100%;
+}
+.view1{
+    background: red;
+    height:50%;
+}
+.view2{
+    background: #BEA2FF;
+    height:50%;
+}
+.view3{
+    background:#FF85AF;
+    height:50%;
+}
+.view4{
+    background:#A0F7FF;
+    height:50%;
+}
+.swiper_one{
+    margin-bottom: 100rpx;
+    height:512px;
+}
+.slide-image{
+    width:100%;
+    height:512px;
+}
+.swiper-wrap{
+    width: 100%;
+    overflow: hidden;
+}
+.scroll_view{
+    margin-top: 50px;
+}
+.button_wrap{
+    width:100%;
+    height:50px;
+    display: flex;
+    position: relative;
+    margin-top: 50px;
+}
+.btn2{
+    flex: 1;
+    background: #E6FCFF;
+    text-align: center;
+    line-height: 50px;
+    box-sizing: border-box;
+    border:2px solid #eee ;
+}
+.viewMove{
+    width:50%;
+    height:2px;
+    background: #6BFAFF;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.2s linear;
+}
+.active{
+    left:50%;
+}
+.no_active{
+    left:0;
+}
+.button-wrap{
+    height:50px;
+    white-space: nowrap;
+}
+.button-list{
+    display: inline-block;
+    width:86px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.button-active{
+    border-bottom:2px solid #6BFAFF ;
+}

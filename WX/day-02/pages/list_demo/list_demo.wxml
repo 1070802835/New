@@ -1,0 +1,13 @@
+<!--pages/list/list.wxml-->
+<view class="top">
+   {{title}}
+</view>
+<button hidden="{{downLoad}}" class="load" loading="{{true}}"> 正在刷新 </button>
+<view class="content" >
+    <view class="product" wx:for="{{listData}}" wx:key="{{index}}"  >
+        <image class="img1" src="{{item.src}}" bindtap="navigateTo" id="{{item.id}}"></image>
+        <title class="name"> {{item.parductName}} </title>
+        <title class="price"> $ {{item.price}} </title>
+    </view>
+</view>
+<button hidden="{{upLoad}}" class="more" loading="{{true}}"> 正在加载 </button>

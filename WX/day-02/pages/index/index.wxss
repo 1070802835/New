@@ -1,0 +1,36 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #000;
+  font-weight: bolder;
+}
+
+.usermotto {
+  margin-top: 100px;
+  color: hotpink;
+}
+.btn1{
+  margin-top:60rpx; 
+}
+.audio_wrap{
+  width: 80%;
+  margin: 0 auto;
+}
+.myAudio{
+  width:100%;
+
+  margin-top: 40rpx;
+  display:block;
+}

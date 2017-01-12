@@ -1,0 +1,6 @@
+<!--pages/detail/detail.wxml-->
+<text>detail</text>
+<view class="content_product">
+    <image class="img2" src="{{productUrl}}"></image>
+    <title class="productName"> {{productName}} </title>
+</view>

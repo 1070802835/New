@@ -1,0 +1,70 @@
+<!--pages/list/list.wxml-->
+<view class="top">
+   {{title}}
+</view>
+<button class="btn1" bindtap="changeFlag"> {{flag?"隐藏":"显示"}}</button>
+<view wx:if="{{flag?true:false}}"  wx:for="{{['most','kk','PP','FF']}}" wx:key="{{index}}" bindtap="listTap" id="{{index}}">
+    <text id="{{index}}">{{index}} : {{item}}</text>
+</view>
+
+
+
+<view class="swiper-wrap">
+    <scroll-view  class="button-wrap" scroll-x="true" scroll-left="{{scrollLeft}}">
+        <view class="button-list {{index==current?'button-active':''}}" wx:for="{{listData}}" bindtap="changeCurrent" data-id="{{index}}">
+            {{item.id}}
+        </view>
+    </scroll-view >
+    <swiper current="{{current}}" bindchange="bindchange" class="swiper_one" indicator-dots="{{indicator}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" >
+        <block wx:for="{{listData}}" wx:key="{{index}}">
+            <swiper-item>
+                <image bindtap="navigateTo" data-id="{{index}}" src="{{item.src}}" class="slide-image"/>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <button  > 当前滑到第 {{current*1+1}} 张 </button>
+    <button bindtap="isindicator"> {{indicator?"关闭面板指示点":"显示面板指示点"}} </button>
+
+</view>
+
+
+
+
+
+
+
+<view class="button_wrap">
+    <view bindtap="changeCurrent1" class="btn2 ">choice_one</view>
+    <view bindtap="changeCurrent2" class="btn2">choice_two</view>
+    <view class="viewMove {{current1==1?'active':'no_active'}} "></view>
+</view>
+<swiper current="{{current1}}" bindchange="bindchange2" class="swiper_one" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" >
+    <block >
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scroll_view" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                <view  wx:for="{{listData}}">
+                    <image bindtap="navigateTo" data-id="{{index}}" src="{{item.src}}" class="slide-image" />
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </block>
+
+    <block>
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scroll_view" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                <view  wx:for="{{listData}}">
+                    <image bindtap="navigateTo" data-id="{{index}}" src="{{item.src}}" class="slide-image" />
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </block>
+
+</swiper>
+
+
+
+
+
+

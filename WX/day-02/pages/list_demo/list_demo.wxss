@@ -1,0 +1,61 @@
+/* pages/list/list.wxss */
+.top{
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    height: 30px;
+    color: pink;
+}
+page{
+    height:100%;
+}
+.btn1{
+    text-decoration: none;
+    display: block;
+    width:300px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    background: -webkit-linear-gradient(left,#FF8232,#FFAC43);
+    margin: 20px auto;
+    border-radius: 10px;
+    transition: all .1s linear;
+    }
+.btn1:active{
+    transform: translateY(6px);
+}
+.img1{
+    width:320rpx;
+    height: 410rpx;
+    display: block;
+}
+.content{
+    widows:100%;
+    overflow: hidden;
+}
+.product{
+    width:46%;
+    margin-left:4%;
+    margin-top: 10% ;
+
+    float: left;
+}
+.name{
+    word-break: break-all;
+    word-wrap: break-word;
+    width: 100%;
+    display: block;
+}
+.price{
+    text-indent: 24rpx;
+    margin-top: 10rpx;
+    color: red;
+}
+.load{
+    position: absolute;
+    top:0;
+    width:100%;
+}
+.more{
+    display: block;
+}

@@ -1,0 +1,13 @@
+/* pages/detail/detail.wxss */
+.img2{
+  height: 928rpx;
+  width:680rpx;
+}
+.content_product{
+  overflow: hidden;
+  width:680rpx;
+  margin: 0 auto;
+}
+.productName{
+  text-indent: 24rpx;
+}

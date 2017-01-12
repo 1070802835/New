@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/list/list",
+    "pages/list_demo/list_demo",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#FF609A",
+    "navigationBarTitleText": "Most",
+    "navigationBarTextStyle":"black"
+
+  },
+  "tabBar": {
+    "selectedColor":"#666",
+    "backgroundColor":"#FF609A",
+    "borderStyle":"white",
+    "color":"#fff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"pages/images/index.png",
+      "selectedIconPath":"pages/images/index_on.png"
+    },
+    {
+      "pagePath": "pages/list_demo/list_demo",
+      "text": "demo",
+      "iconPath":"pages/images/list.png",
+      "selectedIconPath":"pages/images/list_on.png"
+    },
+    {
+      "pagePath": "pages/list/list",
+      "text": "列表",
+      "iconPath":"pages/images/list.png",
+      "selectedIconPath":"pages/images/list_on.png"
+    },
+    
+     {
+      "pagePath": "pages/logs/logs",
+      "text": "日志",
+      "iconPath":"pages/images/log.png",
+      "selectedIconPath":"pages/images/log_on.png"
+    }]
+  }
+}
