@@ -1,7 +1,12 @@
 // pages/upload/upload.js
 Page({
   data:{
-    urlList:[]
+        urlList:[],
+        headerList:["header_1","header_2","header_3"],
+        es6Params:{
+            title:["footer_1","footer_2","footer_3"],
+            detail:["Hah1","Hah2","Hah3"]
+        }
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -24,17 +29,18 @@ Page({
             success: function(res) {
                 var tempFilePaths = res.tempFilePaths;
                 wx.uploadFile({
-                    url: 'https://xuliangmost.duapp.com/upload/upload.php', //仅为示例，非真实的接口地址
+                    url: 'https://liaman.duapp.com/xiaochengxu/upload.php', //仅为示例，非真实的接口地址
                     filePath: tempFilePaths[0],
                     name: 'file',
+                    header: {
+                        'content-type':'multipart/form-data'
+                    },
                     success: function(res){
-                      console.log(res)
                         var data = res.data.replace(/\s/g,"");
-
                         that.setData({
-                          url:that.data.urlList.push(data)
+                          url:that.data.urlList.push(data.split("}}")[1])
                         });
-
+                        console.log(that.data.urlList);
                         //do something
                     }
                 })

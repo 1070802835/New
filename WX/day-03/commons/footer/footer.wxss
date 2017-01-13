@@ -1,0 +1,6 @@
+/* commons/footer/footer.wxss */
+.footer_button{
+  width:60%;
+  background: #FF6579;
+  margin: 0 auto;
+}

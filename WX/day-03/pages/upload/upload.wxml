@@ -1,4 +1,12 @@
 <!--pages/upload/upload.wxml-->
 <button bindtap="upload">upload</button>
 <button bindtap="download">download</button>
-<image wx:for="{{urlList}}" wx:key="{{index}}" src="{{item}}"></image>
+<view wx:for="{{urlList}}" wx:key="{{index}}">
+    <image src="{{item}}"></image>
+</view>
+
+<import src="../../commons/header/header.wxml" />
+<import src="../../commons/footer/footer.wxml" />
+
+<template is="header" data="{{title:headerList}}" />
+<template is="footer" data="{{...es6Params}}" />

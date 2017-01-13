@@ -2,7 +2,10 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/upload/upload"
+    "pages/upload/upload",
+    "commons/header/header",
+    "commons/footer/footer",
+    "pages/video/video"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -18,8 +21,8 @@
       "pagePath": "pages/upload/upload",
       "text": "upload"
     }, {
-      "pagePath": "pages/logs/logs",
-      "text": "日志"
+      "pagePath": "pages/video/video",
+      "text": "video"
     }]
   }
 }

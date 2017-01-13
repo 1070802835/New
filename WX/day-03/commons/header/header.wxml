@@ -1,0 +1,5 @@
+<template name="header">
+    <view  wx:key="{{index}}" class="header_top" wx:for="{{title}}">
+        <button>{{item}}</button>
+    </view>
+</template>

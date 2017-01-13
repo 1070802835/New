@@ -1,0 +1,7 @@
+/* commons/common/common.wxss */
+.header_top{
+  width:60%;
+  display: block;
+  margin: 0 auto;
+  background: orange;
+}

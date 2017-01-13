@@ -1,1 +1,14 @@
 /* pages/upload/upload.wxss */
+.header_top button{
+  width:60%;
+  display: block;
+  margin: 10px auto;
+  background: #FF9226;
+  border-radius:6px;
+}
+.footer_button{
+  width:60%;
+  background: #FF6579;
+  margin: 10px auto;
+  border-radius:8px;
+}

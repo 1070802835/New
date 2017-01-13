@@ -1,0 +1,7 @@
+/* pages/video/video.wxss */
+#myVideo{
+  width:100%;
+}
+.btn-area{
+  margin-top: 100rpx;
+}

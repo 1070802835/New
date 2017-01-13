@@ -1,0 +1,9 @@
+<template name="footer">
+    <view  wx:key="{{index}}"  wx:for="{{title}}">
+        <button class="footer_button"> {{item}}</button>
+    </view>
+
+    <view  wx:key="{{index}}"  wx:for="{{detail}}" >
+        <button class="footer_button"> {{item}}</button>
+    </view>
+</template>
