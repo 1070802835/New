@@ -1,0 +1,4 @@
+<!--pages/upload/upload.wxml-->
+<button bindtap="upload">upload</button>
+<button bindtap="download">download</button>
+<image wx:for="{{urlList}}" wx:key="{{index}}" src="{{item}}"></image>

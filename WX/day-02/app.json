@@ -33,15 +33,15 @@
     {
       "pagePath": "pages/list/list",
       "text": "列表",
-      "iconPath":"pages/images/list.png",
-      "selectedIconPath":"pages/images/list_on.png"
+      "iconPath":"pages/images/list2.png",
+      "selectedIconPath":"pages/images/list2_on.png"
     },
     
      {
       "pagePath": "pages/logs/logs",
       "text": "日志",
-      "iconPath":"pages/images/log.png",
-      "selectedIconPath":"pages/images/log_on.png"
+      "iconPath":"pages/images/history.png",
+      "selectedIconPath":"pages/images/history_on.png"
     }]
   }
 }
