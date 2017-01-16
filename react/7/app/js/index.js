@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3799dfc3098980d36764"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3e837431df9426f3ab2b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8520,19 +8520,23 @@
 	
 	var _cart2 = _interopRequireDefault(_cart);
 	
-	var _mine = __webpack_require__(304);
+	var _mine = __webpack_require__(303);
 	
 	var _mine2 = _interopRequireDefault(_mine);
 	
-	var _login = __webpack_require__(306);
+	var _login = __webpack_require__(305);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
-	var _regist = __webpack_require__(309);
+	var _regist = __webpack_require__(308);
 	
 	var _regist2 = _interopRequireDefault(_regist);
 	
-	var _myOrder = __webpack_require__(311);
+	var _detial = __webpack_require__(310);
+	
+	var _detial2 = _interopRequireDefault(_detial);
+	
+	var _myOrder = __webpack_require__(313);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -8542,12 +8546,14 @@
 	    _react2.default.createElement(_reactRouter.Route, { path: "/", component: _index2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: "/index", component: _index2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: "/list", component: _list2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: "/order", component: _list2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: "/mine", component: _mine2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: "/cart", component: _cart2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: "/cart(/:hah)", component: _cart2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: "/login", component: _login2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: "/regist", component: _regist2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: "/detial(/:goodsID)", component: _detial2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: "/orderPage", component: _myOrder.OrderPage }),
-	    _react2.default.createElement(_reactRouter.Route, { path: "/sureOrder", component: _myOrder.SureOrder }),
-	    _react2.default.createElement(_reactRouter.Route, { path: "/regist", component: _regist2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: "/sureOrder", component: _myOrder.SureOrder })
 	), document.getElementById("root"));
 	
 	if (true) {
@@ -33084,7 +33090,9 @@
 	
 	var _config2 = _interopRequireDefault(_config);
 	
-	var _common = __webpack_require__(299);
+	__webpack_require__(299);
+	
+	var _common = __webpack_require__(300);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -33226,7 +33234,7 @@
 	                        _react2.default.createElement(_common.GoodList, { pdtData: this.state.pdtData })
 	                    )
 	                ),
-	                _react2.default.createElement(_common.Footer, { active: "1" })
+	                _react2.default.createElement(_common.Footer, null)
 	            );
 	        }
 	    }]);
@@ -33868,6 +33876,12 @@
 
 /***/ },
 /* 299 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -33879,7 +33893,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	__webpack_require__(300);
+	__webpack_require__(299);
 	
 	var _react = __webpack_require__(79);
 	
@@ -33919,7 +33933,11 @@
 	                    _react2.default.createElement(
 	                        "li",
 	                        { className: "icons" },
-	                        this.props.hasBack ? this.props.hasBack : ""
+	                        this.props.hasBack ? _react2.default.createElement(
+	                            "div",
+	                            { className: "circle" },
+	                            "\u8FD4\u56DE"
+	                        ) : ""
 	                    ),
 	                    _react2.default.createElement(
 	                        "li",
@@ -33927,9 +33945,17 @@
 	                        this.props.title
 	                    ),
 	                    _react2.default.createElement(
-	                        "li",
-	                        { className: "icons" },
-	                        this.props.hasRightBtn ? this.props.hasRightBtn : ""
+	                        _reactRouter.Link,
+	                        { to: "/cart" },
+	                        _react2.default.createElement(
+	                            "li",
+	                            { className: "icons" },
+	                            this.props.hasRightBtn ? _react2.default.createElement(
+	                                "div",
+	                                { className: "circle" },
+	                                "\u8D2D\u7269\u8F66"
+	                            ) : ""
+	                        )
 	                    )
 	                )
 	            );
@@ -33951,25 +33977,37 @@
 	    _createClass(Footer, [{
 	        key: "render",
 	        value: function render() {
-	            var _this3 = this;
-	
 	            return _react2.default.createElement(
 	                "div",
 	                { className: "footer" },
 	                _react2.default.createElement(
 	                    "ul",
 	                    null,
-	                    this.props.footerData.map(function (ele, i) {
-	                        return _react2.default.createElement(
-	                            "li",
-	                            { className: i == _this3.props.active ? "has-line" : "", key: i },
-	                            _react2.default.createElement(
-	                                "a",
-	                                { href: ele.hash, className: "icon-kk" },
-	                                ele.icon
-	                            )
-	                        );
-	                    })
+	                    _react2.default.createElement(
+	                        "li",
+	                        null,
+	                        "index"
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        { className: "has-line" },
+	                        "list"
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        null,
+	                        "mine"
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        null,
+	                        "cart"
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        null,
+	                        "more"
+	                    )
 	                )
 	            );
 	        }
@@ -33977,10 +34015,6 @@
 	
 	    return Footer;
 	}(_react.Component);
-	
-	Footer.defaultProps = {
-	    footerData: [{ icon: "\uE631", hash: "#/index" }, { icon: "\uE697", hash: "#/list" }, { icon: "\uE602", hash: "#/cart" }, { icon: "\uE65D", hash: "#/mine" }, { icon: "\uE601", hash: "#/more" }]
-	};
 	
 	var Content = function (_Component3) {
 	    _inherits(Content, _Component3);
@@ -34038,12 +34072,12 @@
 	                        { goodsID: ele.goodsID, key: i },
 	                        _react2.default.createElement(
 	                            "a",
-	                            { href: "#/cart/" + ele.goodsID },
+	                            { href: "#/detial/" + ele.goodsID },
 	                            _react2.default.createElement("img", { src: ele.goodsListImg })
 	                        ),
 	                        _react2.default.createElement(
 	                            _reactRouter.Link,
-	                            { to: "/cart/" + ele.goodsID },
+	                            { to: "/detial/" + ele.goodsID },
 	                            _react2.default.createElement(
 	                                "p",
 	                                { className: "pdt-name" },
@@ -34093,7 +34127,7 @@
 	    }, {
 	        key: "render",
 	        value: function render() {
-	            var _this7 = this;
+	            var _this6 = this;
 	
 	            return _react2.default.createElement(
 	                "div",
@@ -34105,7 +34139,7 @@
 	                        return _react2.default.createElement(
 	                            "li",
 	                            { key: i, onClick: function onClick() {
-	                                    return _this7.handleClick(ele.classID);
+	                                    return _this6.handleClick(ele.classID);
 	                                } },
 	                            ele.className
 	                        );
@@ -34128,12 +34162,6 @@
 	if (true) {
 	    module.hot.accept();
 	}
-
-/***/ },
-/* 300 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ },
 /* 301 */
@@ -34211,11 +34239,7 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _common = __webpack_require__(299);
-	
-	var _tools = __webpack_require__(303);
-	
-	var _tools2 = _interopRequireDefault(_tools);
+	var _common = __webpack_require__(300);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -34228,218 +34252,39 @@
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 	
 	
-	var CartList = function (_Component) {
-	    _inherits(CartList, _Component);
+	var cartList = function (_Component) {
+	    _inherits(cartList, _Component);
 	
-	    function CartList(props) {
-	        _classCallCheck(this, CartList);
+	    function cartList(props) {
+	        _classCallCheck(this, cartList);
 	
-	        return _possibleConstructorReturn(this, (CartList.__proto__ || Object.getPrototypeOf(CartList)).call(this, props));
+	        return _possibleConstructorReturn(this, (cartList.__proto__ || Object.getPrototypeOf(cartList)).call(this, props));
 	    }
 	
-	    _createClass(CartList, [{
-	        key: "render",
-	        value: function render() {
-	            var _this2 = this;
-	
-	            return _react2.default.createElement(
-	                "ul",
-	                { className: "cart-list" },
-	                this.props.cartData.map(function (ele, index) {
-	                    return _react2.default.createElement(
-	                        "li",
-	                        { key: index, className: "cart-item" },
-	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "###", className: "pic" },
-	                            _react2.default.createElement("img", { src: ele.goodsListImg })
-	                        ),
-	                        _react2.default.createElement(
-	                            "div",
-	                            { className: "info" },
-	                            _react2.default.createElement(
-	                                "p",
-	                                { className: "p-name" },
-	                                ele.goodsName
-	                            ),
-	                            _react2.default.createElement(
-	                                "p",
-	                                { className: "price" },
-	                                _react2.default.createElement(
-	                                    "em",
-	                                    null,
-	                                    "$",
-	                                    ele.price
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "div",
-	                                { className: "num-wrap" },
-	                                _react2.default.createElement(
-	                                    "span",
-	                                    { onClick: function onClick() {
-	                                            return _this2.props.changeData(-1, index);
-	                                        }, className: "minus" },
-	                                    "-"
-	                                ),
-	                                _react2.default.createElement("input", { type: "text", value: ele.number }),
-	                                _react2.default.createElement(
-	                                    "span",
-	                                    { onClick: function onClick() {
-	                                            return _this2.props.changeData(1, index);
-	                                        }, className: "plus" },
-	                                    "+"
-	                                )
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            "a",
-	                            { className: "delete", onClick: function onClick() {
-	                                    return _this2.props.changeData(0, index);
-	                                }, href: "javascript:void (0);" },
-	                            "\u5220\u9664"
-	                        )
-	                    );
-	                })
-	            );
-	        }
-	    }]);
-	
-	    return CartList;
+	    return cartList;
 	}(_react.Component);
 	
-	var SubHeader = function (_Component2) {
-	    _inherits(SubHeader, _Component2);
-	
-	    function SubHeader(props) {
-	        _classCallCheck(this, SubHeader);
-	
-	        return _possibleConstructorReturn(this, (SubHeader.__proto__ || Object.getPrototypeOf(SubHeader)).call(this, props));
-	    }
-	
-	    _createClass(SubHeader, [{
-	        key: "render",
-	        value: function render() {
-	            return _react2.default.createElement(
-	                "div",
-	                { className: "sub-header" },
-	                this.props.children
-	            );
-	        }
-	    }]);
-	
-	    return SubHeader;
-	}(_react.Component);
-	
-	var Cart = function (_Component3) {
-	    _inherits(Cart, _Component3);
+	var Cart = function (_Component2) {
+	    _inherits(Cart, _Component2);
 	
 	    function Cart(props) {
 	        _classCallCheck(this, Cart);
 	
-	        var _this4 = _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).call(this, props));
-	
-	        _this4.state = {
-	            cartData: [],
-	            pdtSum: 0,
-	            sumPrice: 0
-	        };
-	        var id = _tools2.default.getUserId();
-	        id && $.getJSON("http://datainfo.duapp.com/shopdata/getCar.php?callback=?", { userID: id }, function (data) {
-	            console.log(data);
-	            _this4.setState({
-	                cartData: data
-	            });
-	            _this4.getTotal(data);
-	        });
-	        return _this4;
+	        return _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).call(this, props));
 	    }
 	
 	    _createClass(Cart, [{
-	        key: "changeData",
-	        value: function changeData(type, index) {
-	            var data = this.state.cartData;
-	            var number = data[index].number;
-	            if (type) {
-	                number = number * 1 + type;
-	                data[index].number = number;
-	            } else {
-	                //number一定要清零，一面影响后面总数和总价的计算
-	                number = 0;
-	                data.splice(index, 1);
-	            }
-	            this.setState({
-	                cartData: data
-	            });
-	            this.getTotal(data);
-	        }
-	    }, {
-	        key: "getTotal",
-	        value: function getTotal(data) {
-	            var number = 0;
-	            var price = 0;
-	            for (var i = 0; i < data.length; i++) {
-	                number += data[i].number * 1;
-	                price += data[i].number * data[i].price;
-	            }
-	            this.setState({
-	                pdtSum: number,
-	                sumPrice: price
-	            });
-	        }
-	    }, {
-	        key: "checkOut",
-	        value: function checkOut() {
-	            localStorage.setItem("cartData", JSON.stringify({
-	                totalNum: this.state.pdtSum,
-	                totalPrice: this.state.sumPrice,
-	                pdtInfo: this.state.cartData
-	            }));
-	            location.hash = "#/order";
+	        key: "componentDidMount",
+	        value: function componentDidMount() {
+	            console.log(this.props.params.hah);
 	        }
 	    }, {
 	        key: "render",
 	        value: function render() {
-	            var _this5 = this;
-	
 	            return _react2.default.createElement(
 	                "div",
-	                { id: "cart-page" },
-	                _react2.default.createElement(_common.Header, { hasFooter: true, hasRightBtn: _react2.default.createElement(
-	                        "div",
-	                        { className: "circle", onClick: function onClick() {
-	                                return _this5.checkOut();
-	                            } },
-	                        "\u7ED3\u7B97"
-	                    ), title: "\u8D2D\u7269\u8F66" }),
-	                _react2.default.createElement(
-	                    SubHeader,
-	                    null,
-	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "cart-bar" },
-	                        _react2.default.createElement(
-	                            "span",
-	                            null,
-	                            "\u603B\u6570:",
-	                            this.state.pdtSum
-	                        ),
-	                        _react2.default.createElement(
-	                            "span",
-	                            null,
-	                            "\u603B\u91D1\u989D:$",
-	                            this.state.sumPrice
-	                        )
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    _common.Content,
-	                    { hasSubHeader: true, hasFooter: true },
-	                    _react2.default.createElement(CartList, { cartData: this.state.cartData, changeData: function changeData(type, index) {
-	                            return _this5.changeData(type, index);
-	                        } })
-	                ),
-	                _react2.default.createElement(_common.Footer, { active: "2" })
+	                { className: "cart" },
+	                "\u8D2D\u7269\u8F66"
 	            );
 	        }
 	    }]);
@@ -34451,30 +34296,6 @@
 
 /***/ },
 /* 303 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	/**
-	 * Created by Administrator on 2017/1/5.
-	 */
-	var Tools = {
-	    getUserId: function getUserId() {
-	        var id = localStorage.getItem("user-id");
-	        if (!id) {
-	            window.location.hash = "#/login";
-	        }
-	        return id;
-	    }
-	};
-	
-	exports.default = Tools;
-
-/***/ },
-/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34493,9 +34314,9 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _common = __webpack_require__(299);
+	var _common = __webpack_require__(300);
 	
-	var _avatar = __webpack_require__(305);
+	var _avatar = __webpack_require__(304);
 	
 	var _avatar2 = _interopRequireDefault(_avatar);
 	
@@ -34664,13 +34485,13 @@
 	}
 
 /***/ },
-/* 305 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "8e270e741a16a96852eb6bc4b375f9bf.jpg";
 
 /***/ },
-/* 306 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34683,9 +34504,9 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	__webpack_require__(307);
+	__webpack_require__(306);
 	
-	__webpack_require__(308);
+	__webpack_require__(307);
 	
 	var _react = __webpack_require__(79);
 	
@@ -34695,7 +34516,7 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _common = __webpack_require__(299);
+	var _common = __webpack_require__(300);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -34744,7 +34565,7 @@
 	        _this2.state = {
 	            username: "",
 	            password: "",
-	            checked: true,
+	            checked: false,
 	            show: false
 	        };
 	        return _this2;
@@ -34767,31 +34588,96 @@
 	                userID: this.state.username,
 	                password: this.state.password
 	            }, function (data) {
-	                if ((typeof data === "undefined" ? "undefined" : _typeof(data)) == "object") {
+	
+	                var userValue = _this3.state.username.length;
+	                var passValue = _this3.state.password.length;
+	                if (userValue == 0 || passValue == 0) {
+	                    alert("用户名密码不能为空");
+	                } else if ((typeof data === "undefined" ? "undefined" : _typeof(data)) == "object" && userValue != 0 && passValue != 0) {
 	                    var obj = [];
-	                    if (window.localStorage.getItem("userID")) {
-	                        console.log("111");
-	                        var reobj = JSON.parse(window.localStorage.getItem("userID"));
-	                        // for(var i=0; i<reobj.length; i++){
-	                        //     if(reobj[i].name == this.state.username){
-	                        //         alert("用户已存在")
-	                        //     }
-	                        // }
-	                        reobj.push({
-	                            name: _this3.state.username,
-	                            list: []
-	                        });
-	                        window.localStorage.setItem("userID", JSON.stringify(reobj));
+	                    console.log("true");
+	                    if (_this3.state.checked) {
+	                        if (window.localStorage.getItem("userID")) {
+	                            console.log("111");
+	                            obj = JSON.parse(window.localStorage.getItem("userID"));
+	                            // for(var i=0; i<reobj.length; i++){
+	                            //     if(reobj[i].name == this.state.username){
+	                            //         alert("用户已存在")
+	                            //     }
+	                            // }
+	                            obj.push({
+	                                name: _this3.state.username,
+	                                password: _this3.state.password,
+	                                list: []
+	                            });
+	                        } else {
+	                            obj = [{
+	                                name: _this3.state.username,
+	                                password: _this3.state.password,
+	                                list: []
+	                            }];
+	                        }
 	                    } else {
-	                        obj = [{
-	                            name: _this3.state.username,
-	                            list: []
-	                        }];
-	                        window.localStorage.setItem("userID", JSON.stringify(obj));
+	                        if (window.localStorage.getItem("userID")) {
+	                            console.log("111");
+	                            obj = JSON.parse(window.localStorage.getItem("userID"));
+	                            // for(var i=0; i<reobj.length; i++){
+	                            //     if(reobj[i].name == this.state.username){
+	                            //         alert("用户已存在")
+	                            //     }
+	                            // }
+	                            obj.push({
+	                                name: _this3.state.username,
+	                                password: "",
+	                                list: []
+	                            });
+	                        } else {
+	                            obj = [{
+	                                name: _this3.state.username,
+	                                password: "",
+	                                list: []
+	                            }];
+	                        }
+	                    }
+	                    window.localStorage.setItem("userID", JSON.stringify(obj));
+	                    window.location.hash = "#/list";
+	                } else if (data == 0) {
+	                    alert("用户名不存在");
+	                } else if (data == 2) {
+	                    alert("用户名密码不符");
+	                }
+	            });
+	        }
+	    }, {
+	        key: "rememberPass",
+	        value: function rememberPass() {
+	            console.log("333");
+	            var userID = JSON.parse(window.localStorage.getItem("userID"));
+	            var obj = [];
+	            if (userID && userID.length != 0) {
+	                console.log("222");
+	                obj = userID;
+	                for (var i = 0; i < obj.length; i++) {
+	                    console.log(obj[i].name);
+	                    console.log(this.state.username);
+	                    if (obj[i].name == this.state.username) {
+	                        var pass = obj[i].password;
+	
+	                        this.setState({
+	                            password: pass,
+	                            checked: true
+	                        });
+	                        break;
 	                    }
 	                }
-	                window.location.hash = "#/list";
-	            });
+	                console.log(this.state.password);
+	            } else {
+	                obj = [{
+	                    name: this.state.username,
+	                    password: this.state.password,
+	                    list: []
+	                }];
+	            }
 	        }
 	    }, {
 	        key: "userNameChange",
@@ -34824,6 +34710,7 @@
 	        value: function render() {
 	            var _this4 = this;
 	
+	            console.log(this.state.password);
 	            return _react2.default.createElement(
 	                "ul",
 	                { className: "login-con" },
@@ -34832,7 +34719,7 @@
 	                    { className: "username" },
 	                    _react2.default.createElement("input", { onChange: function onChange(ev) {
 	                            _this4.userNameChange(ev);
-	                        }, type: "text", placeholder: "\u8BF7\u8F93\u5165\u8D26\u6237" })
+	                        }, type: "text", placeholder: "\u8BF7\u8F93\u5165\u8D26\u6237", onKeyUp: this.rememberPass.bind(this) })
 	                ),
 	                _react2.default.createElement(
 	                    "li",
@@ -34868,7 +34755,7 @@
 	                    _react2.default.createElement(
 	                        "label",
 	                        null,
-	                        _react2.default.createElement("input", { type: "checkbox", checked: this.state.checked ? "checked" : "", onClick: this.changeState.bind(this) }),
+	                        _react2.default.createElement("input", { type: "checkbox", defaultChecked: this.state.checked, onClick: this.changeState.bind(this) }),
 	                        "\u8BB0\u4F4F\u5BC6\u7801\u81EA\u52A8\u767B\u5F55"
 	                    )
 	                ),
@@ -34900,6 +34787,12 @@
 	exports.default = LoginPage;
 
 /***/ },
+/* 306 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
 /* 307 */
 /***/ function(module, exports) {
 
@@ -34907,12 +34800,6 @@
 
 /***/ },
 /* 308 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -34923,9 +34810,9 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	__webpack_require__(307);
+	__webpack_require__(306);
 	
-	__webpack_require__(310);
+	__webpack_require__(309);
 	
 	var _react = __webpack_require__(79);
 	
@@ -34935,7 +34822,7 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _common = __webpack_require__(299);
+	var _common = __webpack_require__(300);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -34986,24 +34873,37 @@
 	            password: "",
 	            repassword: ""
 	        };
+	        _this2.userPatten = false;
+	        _this2.passPatten = false;
+	        _this2.repassPatten = false;
 	        return _this2;
 	    }
 	
 	    _createClass(LoginContent, [{
 	        key: "userNameChange",
 	        value: function userNameChange(ev) {
-	            console.log(ev.target.value);
 	            this.setState({
 	                username: ev.target.value
 	            });
+	            //  console.log(this.state.username.search(/^[A-Za-z0-9]{6,16}$/))
+	            if (this.state.username.search(/^[A-Za-z0-9]{6,16}$/) == -1) {
+	                this.userPatten = true;
+	            } else if (this.state.username.search(/^[A-Za-z0-9]{6,16}$/) == 0) {
+	                this.userPatten = false;
+	            }
 	        }
 	    }, {
 	        key: "passwordChange",
 	        value: function passwordChange(ev) {
-	            console.log(ev.target.value);
 	            this.setState({
 	                password: ev.target.value
 	            });
+	            var patten2 = this.state.password.search(/^[a-zA-Z0-9!"\#$%&'()*+,-./:;<=>?@\[\\\]^_`\{\|\}\~]{5,16}$/);
+	            if (patten2 == -1) {
+	                this.passPatten = true;
+	            } else if (patten2 == 0) {
+	                this.passPatten = false;
+	            }
 	        }
 	    }, {
 	        key: "rePasswordChange",
@@ -35012,6 +34912,11 @@
 	            this.setState({
 	                repassword: ev.target.value
 	            });
+	            // if(this.state.password === this.state.repassword){
+	            //     this.repassPatten = false;
+	            // }else{
+	            //     this.repassPatten =true;
+	            // }
 	        }
 	    }, {
 	        key: "onSubmit",
@@ -35025,13 +34930,21 @@
 	                if (data == 1) {
 	                    alert("注册成功！");
 	                    window.location.hash = "#/login";
+	                } else if (data == 0) {
+	                    alert("用户名已存在");
+	                } else if (data == 2) {
+	                    alert("数据库报错");
 	                }
 	            });
 	        }
 	    }, {
 	        key: "render",
 	        value: function render() {
-	
+	            var error = {
+	                userError: "用户名必须为6-16位英文字母、数字、下划线等组成",
+	                passwordError: "密码必须为6-16位英文字母、数字、下划线等组成",
+	                repasswordError: "两次密码不一致"
+	            };
 	            return _react2.default.createElement(
 	                "ul",
 	                { className: "regist-con" },
@@ -35043,8 +34956,8 @@
 	                ),
 	                _react2.default.createElement(
 	                    "p",
-	                    null,
-	                    this.state.userError
+	                    { style: this.userPatten ? { "display": "block" } : { "display": "none" } },
+	                    this.userPatten ? this.props.userError : ""
 	                ),
 	                _react2.default.createElement(
 	                    "li",
@@ -35053,10 +34966,20 @@
 	                    _react2.default.createElement("input", { type: "password", placeholder: "\u8BF7\u8F93\u5165\u5BC6\u7801", required: true, onChange: this.passwordChange.bind(this) })
 	                ),
 	                _react2.default.createElement(
+	                    "p",
+	                    { style: this.passPatten ? { "display": "block" } : { "display": "none" } },
+	                    this.passPatten ? error.passwordError : ""
+	                ),
+	                _react2.default.createElement(
 	                    "li",
 	                    { className: "password" },
 	                    "\u786E\u8BA4\u5BC6\u7801\uFF1A",
 	                    _react2.default.createElement("input", { type: "password", placeholder: "\u8BF7\u8F93\u5165\u5BC6\u7801", required: true, onChange: this.rePasswordChange.bind(this) })
+	                ),
+	                _react2.default.createElement(
+	                    "p",
+	                    { style: this.repassPatten ? { "display": "block" } : { "display": "none" } },
+	                    this.repassPatten ? error.repasswordError : ""
 	                ),
 	                _react2.default.createElement(
 	                    "li",
@@ -35074,16 +34997,401 @@
 	    return LoginContent;
 	}(_react.Component);
 	
+	LoginContent.defaultProps = {
+	    userError: "用户名必须为6-16位英文字母、数字、下划线等组成",
+	    passwordError: "密码必须为6-16位英文字母、数字、下划线等组成",
+	    repasswordError: "两次密码不一致"
+	};
 	exports.default = RegistPage;
 
 /***/ },
-/* 310 */
+/* 309 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
+/* 310 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(79);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _common = __webpack_require__(300);
+	
+	var _reactRouter = __webpack_require__(236);
+	
+	__webpack_require__(306);
+	
+	__webpack_require__(311);
+	
+	__webpack_require__(312);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Header = function (_Component) {
+	    _inherits(Header, _Component);
+	
+	    function Header(props) {
+	        _classCallCheck(this, Header);
+	
+	        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this, props));
+	    }
+	
+	    _createClass(Header, [{
+	        key: "onClick",
+	        value: function onClick() {
+	            if (this.props.show) {
+	                this.props.showCon(false);
+	            } else {
+	                window.location.hash = "#/list";
+	            }
+	        }
+	    }, {
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "header" },
+	                _react2.default.createElement(
+	                    "ul",
+	                    null,
+	                    _react2.default.createElement(
+	                        "li",
+	                        { className: "icons", onClick: this.onClick.bind(this) },
+	                        this.props.hasBack ? _react2.default.createElement(
+	                            "div",
+	                            { className: "circle" },
+	                            "\u8FD4\u56DE"
+	                        ) : ""
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        { className: "header-title" },
+	                        this.props.title
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: "/cart" },
+	                        _react2.default.createElement(
+	                            "li",
+	                            { className: "icons" },
+	                            this.props.hasRightBtn ? _react2.default.createElement(
+	                                "div",
+	                                { className: "circle" },
+	                                "\u8D2D\u7269\u8F66"
+	                            ) : ""
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Header;
+	}(_react.Component);
+	
+	var DetialPage = function (_Component2) {
+	    _inherits(DetialPage, _Component2);
+	
+	    function DetialPage(props) {
+	        _classCallCheck(this, DetialPage);
+	
+	        var _this2 = _possibleConstructorReturn(this, (DetialPage.__proto__ || Object.getPrototypeOf(DetialPage)).call(this, props));
+	
+	        _this2.state = {
+	            detail: [],
+	            imgUrl: '',
+	            show: false
+	        };
+	        $.get("http://datainfo.duapp.com/shopdata/getGoods.php?callback=?", { "goodsID": _this2.props.params.goodsID }, function (data) {
+	            var detail = data[0].detail;
+	            if (detail.indexOf("；") != -1) {
+	                detail = detail.split("；");
+	            } else if (detail.indexOf("。") != -1) {
+	                detail = detail.split("。");
+	            } else {
+	                detial = detail.split();
+	            }
+	            _this2.setState({
+	                detail: detail,
+	                imgUrl: JSON.parse(data[0].goodsBenUrl)
+	            });
+	        });
+	        return _this2;
+	    }
+	
+	    _createClass(DetialPage, [{
+	        key: "showCon",
+	        value: function showCon(show) {
+	            this.setState({
+	                show: show
+	            });
+	        }
+	    }, {
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { id: "detialPage" },
+	                _react2.default.createElement(Header, { show: this.state.show, title: "\u5546\u54C1\u8BE6\u60C5", hasBack: true, hasRightBtn: true, showCon: this.showCon.bind(this) }),
+	                _react2.default.createElement(
+	                    _common.Content,
+	                    { hasFooter: true },
+	                    _react2.default.createElement(DetialContent, { show: this.state.show, ref: "contetnShow", showCon: this.showCon.bind(this), goodsID: this.props.params.goodsID }),
+	                    _react2.default.createElement(DetialSingle, { show: this.state.show, ref: "singleShow", detailList: this.state.detail || [], detailUrl: this.state.imgUrl || [] })
+	                ),
+	                _react2.default.createElement(_common.Footer, null)
+	            );
+	        }
+	    }]);
+	
+	    return DetialPage;
+	}(_react.Component);
+	
+	var DetialSingle = function (_Component3) {
+	    _inherits(DetialSingle, _Component3);
+	
+	    function DetialSingle(props) {
+	        _classCallCheck(this, DetialSingle);
+	
+	        return _possibleConstructorReturn(this, (DetialSingle.__proto__ || Object.getPrototypeOf(DetialSingle)).call(this, props));
+	    }
+	
+	    _createClass(DetialSingle, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { style: this.props.show ? { "display": "block" } : { "display": "none" }, className: "detial-sin" },
+	                this.props.detailUrl.map(function (ele, index) {
+	                    return _react2.default.createElement(
+	                        "div",
+	                        { key: index },
+	                        _react2.default.createElement("img", { src: ele })
+	                    );
+	                }),
+	                this.props.detailList.map(function (ele, index) {
+	                    return _react2.default.createElement(
+	                        "p",
+	                        { key: index },
+	                        ele
+	                    );
+	                })
+	            );
+	        }
+	    }]);
+	
+	    return DetialSingle;
+	}(_react.Component);
+	
+	var DetialContent = function (_Component4) {
+	    _inherits(DetialContent, _Component4);
+	
+	    function DetialContent(props) {
+	        _classCallCheck(this, DetialContent);
+	
+	        var _this4 = _possibleConstructorReturn(this, (DetialContent.__proto__ || Object.getPrototypeOf(DetialContent)).call(this, props));
+	
+	        _this4.state = {
+	            goodsList: [],
+	            imgList: [],
+	            oldPrice: "",
+	            newPrice: "",
+	            discount: "",
+	            num: ""
+	        };
+	        $.get("http://datainfo.duapp.com/shopdata/getGoods.php?callback=?", { "goodsID": _this4.props.goodsID }, function (data) {
+	            //  console.log(data[0])
+	            _this4.setState({
+	                goodsList: data[0],
+	                imgList: JSON.parse(data[0].imgsUrl),
+	                discount: data[0].discount == 0 ? 10 : data[0].discount,
+	                newPrice: (data[0].price * (data[0].discount == 0 ? 10 : data[0].discount) / 10).toFixed(2),
+	                oldPrice: (data[0].price * 1).toFixed(2),
+	                num: data[0].buynumber
+	            });
+	        });
+	        return _this4;
+	    }
+	
+	    _createClass(DetialContent, [{
+	        key: "componentDidMount",
+	        value: function componentDidMount() {
+	            this.mySwiper = new Swiper(this.refs["swiper-container"], {
+	                loop: true,
+	                pagination: this.refs.page,
+	                slidesPerView: 2,
+	                spaceBetween: 0
+	            });
+	        }
+	    }, {
+	        key: "componentDidUpdate",
+	        value: function componentDidUpdate() {
+	            // console.log("111")
+	            // console.log(this.mySwiper)
+	            this.mySwiper.reLoop();
+	            this.mySwiper.update();
+	        }
+	        //添加购物车
+	
+	    }, {
+	        key: "addToCart",
+	        value: function addToCart() {
+	            var userID = JSON.parse(window.localStorage.getItem("userID"));
+	            // console.log(userID)
+	            if (window.localStorage.getItem("userID") && userID.length != 0) {
+	                var cartObj = [];
+	
+	                if (window.localStorage.getItem("cartList")) {
+	                    cartObj = JSON.parse(localStorage.getItem("cartList"));
+	                    cartObj.push(this.state.goodsList);
+	                } else {
+	                    cartObj.push(this.state.goodsList);
+	                }
+	                window.localStorage.setItem("cartList", JSON.stringify(cartObj));
+	                alert("添加购物车成功");
+	            } else {
+	                window.location.hash = "#/login";
+	            }
+	        }
+	    }, {
+	        key: "toDetial",
+	        value: function toDetial() {
+	            this.props.showCon(true);
+	        }
+	    }, {
+	        key: "render",
+	        value: function render() {
+	
+	            return _react2.default.createElement(
+	                "div",
+	                { style: this.props.show ? { "display": "none" } : { "display": "block" }, className: "detial-con" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "swiper-container", ref: "swiper-container" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "swiper swiper-wrapper" },
+	                        this.state.imgList.map(function (ele, index) {
+	                            return _react2.default.createElement(
+	                                "div",
+	                                { className: "swiper-slide", key: index },
+	                                _react2.default.createElement("img", { src: ele })
+	                            );
+	                        })
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "pagegation" },
+	                    _react2.default.createElement("ul", { className: "page", ref: "page" })
+	                ),
+	                _react2.default.createElement(
+	                    "ul",
+	                    { className: "detial-info" },
+	                    _react2.default.createElement(
+	                        "li",
+	                        null,
+	                        "\u5546\u54C1\u540D\u79F0\uFF1A",
+	                        this.state.goodsList.goodsName
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        { className: "price" },
+	                        "\u4EF7\u683C\uFF1A",
+	                        _react2.default.createElement(
+	                            "span",
+	                            { className: "new" },
+	                            "￥" + this.state.newPrice
+	                        ),
+	                        _react2.default.createElement(
+	                            "del",
+	                            { style: this.state.discount == 10 ? { "visibility": "hidden" } : { "visibility": "normal" }, className: "old" },
+	                            "￥" + this.state.oldPrice
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        { className: "num" },
+	                        "\u8D2D\u4E70\u4EBA\u6570\uFF1A",
+	                        this.state.num
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "ul",
+	                    { className: "bottom" },
+	                    _react2.default.createElement(
+	                        "li",
+	                        { onClick: this.toDetial.bind(this), className: "to-detial" },
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "mark" },
+	                            _react2.default.createElement(
+	                                "i",
+	                                null,
+	                                "i"
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "p",
+	                            null,
+	                            "\u67E5\u770B\u5546\u54C1\u8BE6\u60C5"
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "mark" },
+	                            "<"
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "li",
+	                        { className: "add-cart" },
+	                        _react2.default.createElement(
+	                            "button",
+	                            { onClick: this.addToCart.bind(this) },
+	                            "\u6DFB\u52A0\u5230\u8D2D\u7269\u8F66"
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return DetialContent;
+	}(_react.Component);
+	
+	exports.default = DetialPage;
+
+/***/ },
 /* 311 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 312 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -35105,7 +35413,7 @@
 	
 	var _reactRouter = __webpack_require__(236);
 	
-	var _common = __webpack_require__(299);
+	var _common = __webpack_require__(300);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	

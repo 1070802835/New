@@ -3,11 +3,17 @@
  */
 let Tools = {
     getUserId:function () {
-        let id = localStorage.getItem("user-id");
-        if(!id){
+        //let id = JSON.parse(window.localStorage.getItem("userID"))
+        let id = JSON.parse(window.sessionStorage.getItem("nowID"))
+        if(!id || id.length == 0){
             window.location.hash = "#/login";
+        }else{
+          return id
         }
-        return id
+
+    },
+    getBackHash:function(){
+
     }
 }
 

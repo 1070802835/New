@@ -177,16 +177,16 @@ textarea::-moz-focus-inner {
   padding: 0;
 }
 /* 代码段是为了在不同分辨率手机上，字体缩放
-@media screen and (min-width:100px){ //  iPhone 4,5 
+@media screen and (min-width:100px){ //  iPhone 4,5
  html{ font-size: 10px;}
 }
-@media screen and (min-width:320px){ //  iPhone 4,5 
+@media screen and (min-width:320px){ //  iPhone 4,5
  html{ font-size: 10px;}
 }
-@media screen and (min-width:375px){ //  iPhone 6 
+@media screen and (min-width:375px){ //  iPhone 6
  html{ font-size: 12px;}
 }
-@media screen and (min-width:414px){  //  iPhone 6 plus 
+@media screen and (min-width:414px){  //  iPhone 6 plus
  html{ font-size: 12px;}
 }
 @media screen and (min-width:600px){
@@ -460,4 +460,40 @@ html {
   top: 0;
   left: 0;
   background: #d71110;
+}
+.historyHeader{
+  width: 100%;
+  height:50px;
+  background: -webkit-linear-gradient(top,#FF5B5F,red);
+  position: relative;
+}
+.historyHeader>p{
+  width:100%;
+  text-align: center;
+  height:100%;
+  line-height: 50px;
+}
+.historyHeader .clearHistory{
+  display: block;
+  width:50px;
+  height:50px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 14px;
+  position:absolute;
+  right:0;
+  top:0;
+}
+.historyHeader .backHistory{
+  display: block;
+  width:50px;
+  height:50px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 14px;
+  position:absolute;
+  left:0;
+  top:0;
 }

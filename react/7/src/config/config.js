@@ -3,6 +3,7 @@
  */
 const ScrollOptions = {
     probeType:2,
-    scrollbars:true
+    scrollbars:true,
+    click:true
 }
 export default ScrollOptions

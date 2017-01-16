@@ -1,0 +1,50 @@
+.changepsd-con,.foodback-con,.about-con{
+    padding-top:30px;
+    height:100%;
+    width:100%;
+    background-color: #f3eff0;
+}
+.changepsd-con li{
+    width:100%;
+}
+.changepsd-con .text input{
+    display: block;
+    width:80%;
+    height:30px;
+    margin:8px auto;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    padding-left:5px;
+}
+.changepsd-con .btn button,.foodback-con .btn button {
+    display: block;
+    width:80%;
+    height:30px;
+    margin:8px auto;
+    line-height: 30px;
+    background-color: #6EB92B;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 14px;
+    padding-left:5px;
+}
+/*用户反馈*/
+.foodback-con li{
+    width:100%;
+
+}
+.foodback-con .text textarea{
+    display: block;
+    width:80%;
+    margin:0 auto;
+    border: 1px solid #ccc;
+}
+/*about*/
+.about-con .text{
+  width:100%;
+}
+.about-con .text p{
+  width:80%;
+  margin:0 auto;
+  line-height: 2;
+}

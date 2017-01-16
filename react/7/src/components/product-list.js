@@ -15,27 +15,22 @@ class  ProductList extends Component {
         return (
             <ul className="product-list">
                 {
-                    this.props.productData.map((ele,i)=><li key={i}>
-                        <a href={"#/detail/"+ele.goodsID}>
+                    this.props.productData?this.props.productData.map((ele,i)=><li key={i}>
+                        <a href={"#/detial/"+ele.goodsID}>
                             <img src={ele.goodsListImg}/>
                         </a>
 
-                        <Link to={"/detail/"+ele.goodsID}>
+                        <Link to={"/detial/"+ele.goodsID}>
                             <p style={{"lineHeight":"30px"}}>{ele.goodsName}</p>
                         </Link>
 
 
-                    </li>)
+                    </li>):""
                 }
             </ul>
         )
     }
 
 }
-ProductList.defaultProps={
-    productData:[]
-};
 
 export default ProductList
-
-

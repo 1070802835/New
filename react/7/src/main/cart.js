@@ -11,6 +11,7 @@ class CartList extends Component {
     constructor(props){
         super(props)
     }
+
     render(){
         return (
             <ul className="cart-list">
@@ -19,14 +20,14 @@ class CartList extends Component {
                         <a href="###" className="pic"><img src={ele.goodsListImg} /></a>
                         <div className="info">
                             <p className="p-name">{ele.goodsName}</p>
-                            <p className="price"><em>${ele.price}</em></p>
+                            <p className="price">价格：<em>${ele.price}</em></p>
                             <div className="num-wrap">
-                                <span onClick={()=>this.props.changeData(-1,index)}  className="minus">-</span>
-                                <input type="text" value={ele.number} />
-                                <span onClick={()=>this.props.changeData(1,index)} className="plus">+</span>
+                                <span onClick={()=>this.props.changeData(-1,index)}  className="minus num-btn">-</span>
+                                <input className="num-val" value={ele.buynumber}/>
+                                <span onClick={()=>this.props.changeData(1,index)} className="plus num-btn">+</span>
                             </div>
                         </div>
-                        <a className="delete" onClick={()=>this.props.changeData(0,index)}  href="javascript:void (0);" >删除</a>
+                        <a className="delete-btn num-btn" onClick={()=>this.props.changeData(0,index)}  href="javascript:void (0);" >删除</a>
                     </li>)
                 }
             </ul>
@@ -53,21 +54,43 @@ class Cart extends Component{
             pdtSum:0,
             sumPrice:0
         };
-        let id = Tools.getUserId();
-        id && $.getJSON("http://datainfo.duapp.com/shopdata/getCar.php?callback=?",{userID:id},(data)=>{
-            console.log(data)
-            this.setState({
-                cartData:data
-            })
-            this.getTotal(data)
-        })
+
+
+
+        // id && $.getJSON("http://datainfo.duapp.com/shopdata/getCar.php?callback=?",{userID:id},(data)=>{
+        //     console.log(data)
+        //     this.setState({
+        //         cartData:data
+        //     })
+        //     this.getTotal(data)
+        // })
+    }
+    componentDidMount(){
+      let id = Tools.getUserId();
+      let cartList = JSON.parse(window.localStorage.getItem("userID"));
+      let cartArr = [];
+      if(id && cartList){
+
+        for(var i=0; i<cartList.length; i++){
+            if(cartList[i].name == id){
+              cartArr = cartList[i].list
+              break;
+            }
+        }
+      }
+      this.setState({
+            cartData:cartArr
+      })
+      this.getTotal(cartArr)
+
+
     }
     changeData(type,index){
         let data = this.state.cartData;
-        let number = data[index].number;
+        let number = data[index].buynumber;
         if(type){
             number = number*1 + type;
-            data[index].number = number;
+            data[index].buynumber = number;
         }else{
             //number一定要清零，一面影响后面总数和总价的计算
             number = 0;
@@ -82,8 +105,9 @@ class Cart extends Component{
         let number = 0;
         let price = 0;
         for( let i = 0; i < data.length; i++){
-            number += data[i].number*1;
-            price += data[i].number * data[i].price
+          console.log(data[i].buynumber)
+            number += data[i].buynumber*1;
+            price += data[i].buynumber * data[i].price
         }
         this.setState({
             pdtSum:number,
@@ -91,22 +115,34 @@ class Cart extends Component{
         })
     }
     checkOut(){
-        localStorage.setItem("cartData",JSON.stringify({
-            totalNum:this.state.pdtSum,
-            totalPrice:this.state.sumPrice,
-            pdtInfo:this.state.cartData
-        }))
-        location.hash = "#/order"
+        var nowID = Tools.getUserId()
+        var cartObj = JSON.parse(window.localStorage.getItem("userID"))
+        var nowList = []
+        console.log(cartObj)
+        if(nowID){
+              for(var i=0; i<cartObj.length;i++){
+                  if(cartObj[i].name == nowID){
+                      cartObj[i].list = this.state.cartData;
+                      break;
+                  }
+              }
+              window.localStorage.setItem("userID",JSON.stringify(cartObj))
+              location.hash = "#/sureOrder"
+        }
     }
 
     render(){
+      console.log(this.state.cartData)
         return(
             <div id="cart-page">
-                <Header hasFooter={true} hasRightBtn={<div className="circle" onClick={()=>this.checkOut()}>结算</div>} title="购物车"/>
+                <Header hasBack={true} hasFooter={true} hasRightBtn={true} title="购物车"/>
                 <SubHeader>
                     <div className="cart-bar">
-                        <span>总数:{this.state.pdtSum}</span>
-                        <span>总金额:${this.state.sumPrice}</span>
+                        <p>
+                            总数:<span className="total">${this.state.pdtSum}</span>
+                            总金额:<span className="total">${this.state.sumPrice}</span>
+                        </p>
+                        <span className="circle" onClick={()=>this.checkOut()}>结算</span>
                     </div>
                 </SubHeader>
                 <Content hasSubHeader={true} hasFooter={true}>

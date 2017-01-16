@@ -10,19 +10,21 @@ class Header extends Component {
         super(props)
     }
     render(){
-        // console.log(this.props.hasRightBtn)
         return (
             <div className="header">
                 <ul>
-                    <li className="icons">
-                        {/*{this.props.hasBack?<div className="circle"><a href={()=>window.history.go(-1)}>返回</a></div>:""}*/}
-                        {this.props.hasBack?this.props.hasBack:""}
-                    </li>
+                    <Link to={this.props.hash}>
+                        <li className="icons">
+                            {/*this.props.hasBack?return <div className="circle"><a href={()=>window.history.go(-1)}>返回</a></div>:""*/}
+                            {this.props.hasBack?<div onClick={()=>window.history.go(-1)} className="circle">返回</div>:""}
+                        </li>
+                    </Link>
                     <li className="header-title">{this.props.title}</li>
-                    <li className="icons">
-                        {/*{this.props.hasRightBtn?<div className="circle">{this.props.rightContnet}</div>:""}*/}
-                        {this.props.hasRightBtn?this.props.hasRightBtn:""}
-                    </li>
+
+                        <li className="icons">
+                            {this.props.hasRightBtn?<Link to="/cart"><div className="circle">购物车</div></Link>:""}
+                        </li>
+
                 </ul>
             </div>
         )
@@ -33,27 +35,18 @@ class Footer extends Component {
         super(props)
     }
     render(){
+        var footList =["index","list","mine","cart","more"]
         return (
             <div className="footer">
-                <ul>
-                    {
-                        this.props.footerData.map((ele,i)=> <li className={i==this.props.active?"has-line":""} key={i}><a href={ele.hash} className="icon-kk">{ele.icon}</a></li>)
-                    }
-
-                </ul>
+                <ul>{
+                      footList.map((ele,index)=>{
+                          return <li key={index}>{ele}</li>
+                      })
+                }</ul>
             </div>
         )
     }
 }
-Footer.defaultProps={
-    footerData:[
-        {icon:"\ue631",hash:"#/index"},
-        {icon:"\ue697",hash:"#/list"},
-        {icon:"\ue602",hash:"#/cart"},
-        {icon:"\ue65d",hash:"#/mine"},
-        {icon:"\ue601",hash:"#/more"}
-    ]
-};
 class Content extends Component {
     constructor(props){
         super(props)
@@ -91,8 +84,8 @@ class GoodList extends Component {
                     this.props.pdtData.map((ele,i)=>{
                         return (
                             <li goodsID={ele.goodsID} key={i}>
-                                <a href={"#/cart/"+ele.goodsID}><img src={ele.goodsListImg} /></a>
-                                <Link to={"/cart/"+ele.goodsID}>
+                                <a href={"#/detial/"+ele.goodsID}><img src={ele.goodsListImg} /></a>
+                                <Link to={"/detial/"+ele.goodsID}>
                                     <p className="pdt-name">{ele.goodsName}</p>
                                 </Link>
                                 <p className="pdt-price"><span>￥{ele.price}.00</span><del>￥699.00</del></p>

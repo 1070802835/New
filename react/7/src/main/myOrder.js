@@ -3,6 +3,7 @@ import ReactDOM from "react-dom"
 import {Router,Route,hashHistory} from "react-router"
 
 import {Header,Content,Footer} from "../components/common"
+import Tools from "../tools/tools"
 
 let Action= {
     on: function (name, fn) {
@@ -98,11 +99,11 @@ class ProList extends Component{
                                         ele.arrList?ele.arrList.map((ele1,index1)=>{
                                                 return(
                                                     <li key={index1}>
-                                                        <img className="productList_img" src="" alt=""/>
-                                                        <p className="productList_p1">商品{ele.orderId}</p>
+                                                        <img className="productList_img" src={ele1.goodsListImg} alt=""/>
+                                                        <p className="productList_p1">商品{ele1.goodsName}</p>
                                                         <div>
-                                                            <p>0.01</p>
-                                                            <p>*1</p>
+                                                            <p>{ele1.price}</p>
+                                                            <p>*{ele1.buynumber}</p>
                                                         </div>
                                                     </li>
                                                 )
@@ -194,39 +195,35 @@ class SureOrder extends Component{
 class SureContent extends Component{
     constructor(props){
         super(props);
-        this.state={
-            list:[
-                    {
-                        "src":"http://xuliangmost.com/html/static/dist/img/list-img/monster1.jpg",
-                        "parductName":"Monster Guardians粉色弹力裤",
-                        "price":"98.00",
-                        "size":"xl",
-                        "color":"红色",
-                        "count":"2",
-                        "id":"1"
-                    },
-                    {
-                        "src":"http://xuliangmost.com/html/static/dist/img/list-img/monster1.jpg",
-                        "parductName":"Monster Guardians粉色弹力裤",
-                        "price":"98.00",
-                        "size":"xl",
-                        "color":"红色",
-                        "count":"2",
-                        "id":"2"
-                    }
+        let id = Tools.getUserId();
+        let cartList = JSON.parse(window.localStorage.getItem("userID"));
+        let cartArr = [];
+        if(id && cartList){
 
-                 ]
+          for(var i=0; i<cartList.length; i++){
+              if(cartList[i].name == id){
+                cartArr = cartList[i].list
+                break;
+              }
+          }
         }
-    }
-    componentWillMount(){
         this.count=0;
         this.totalAmount=0;
         this.yunFei=0;
-        this.state.list.map((ele)=>{
-            this.count+= ele.count*1;
+        cartArr.map((ele)=>{
+            this.count+= ele.buynumber*1;
             this.totalAmount+=ele.price*1
         });
-        this.allMoney=this.yunFei+this.totalAmount
+        this.allMoney=this.yunFei+this.totalAmount;
+        this.state={
+              list:cartArr||[]
+
+        }
+
+    }
+    componentDidMount(){
+
+
     }
     pushOrder(){
 
@@ -238,7 +235,8 @@ class SureContent extends Component{
         let orderList=[];
         if(localStorage.getItem("orderList")){
             orderList=JSON.parse(localStorage.getItem("orderList"));
-            this.obj.orderId=(orderList[orderList.length-1].orderId)*1+1;
+
+            this.obj.orderId=orderList[orderList.length-1]?((orderList[orderList.length-1].orderId)*1+1):1;
             orderList.push(this.obj)
         }else{
             this.obj.orderId=1;
@@ -249,6 +247,7 @@ class SureContent extends Component{
         window.location.hash="#/orderPage"
     }
     render(){
+  console.log(this.count,this.totalAmount,this.allMoney)
         return(
             <div className="SureContent">
                 <div className="SureContent_top">
@@ -262,11 +261,11 @@ class SureContent extends Component{
                         this.state.list.map((ele,index)=>{
                             return(
                                 <li key={index}>
-                                    <img className="productList_img" src={ele.src} alt=""/>
-                                    <p className="productList_p1">{ele.parductName}</p>
+                                    <img className="productList_img" src={ele.goodsListImg} alt=""/>
+                                    <p className="productList_p1">{ele.goodsName}</p>
                                     <div>
                                         <p>{ele.price}</p>
-                                        <p>*{ele.count}</p>
+                                        <p>*{ele.buynumber}</p>
                                     </div>
                                 </li>
                             )

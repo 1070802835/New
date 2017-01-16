@@ -6,6 +6,8 @@ import ReactDOM from "react-dom"
 import ReactIScroll from "react-iscroll"
 import ScrollOptions from "../config/config"
 
+import "../css/list.css"
+
 console.log(ScrollOptions);
 import {Header,Footer,Content,SubHeader,GoodList} from "../components/common"
 let name = "global name";
@@ -97,7 +99,7 @@ class List extends Component{
                         <GoodList pdtData={this.state.pdtData}/>
                     </ReactIScroll>
                 </Content>
-                <Footer active="1"/>
+                <Footer/>
             </div>
         )
     }
