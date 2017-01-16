@@ -2,10 +2,33 @@ http://www.cocoachina.com/ios/20150629/12248.html
 
 http://blog.csdn.net/it1039871366/article/details/46372207
 
-//°²×¿Óëios   ºÍ  Ç°¶Î»ìºÏ¿ª·¢½â¾ö·½°¸
+//å®‰å“ä¸ios   å’Œ  å‰æ®µæ··åˆå¼€å‘è§£å†³æ–¹æ¡ˆ
 
 
 
 
 https://segmentfault.com/q/1010000004302110?_ea=563521
-//webpack  less °²×°
+
+
+$ npm install less-loader --save-dev
+var path = require('path');
+
+module.exports = {
+    entry: "./src/entry.js",
+
+    output: {
+        path: path.join(__dirname, "build"),
+        filename: "bundle.js"
+    },
+
+    module: {
+        loaders: [
+            {test: /\.css$/, loader: 'style!css'},
+            {test: /\.less$/, loader: 'style!css!less'},
+
+        ]
+    }
+}
+
+
+//webpack  less å®‰è£…
