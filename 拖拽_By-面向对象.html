@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        * { margin: 0; padding: 0}
+        div { position: absolute; left: 0;
+            top:0; width: 100px; height: 100px; background-color: red; border-radius: 50%;}
+    </style>
+
+</head>
+<body>
+
+<button id="btn">create obj</button>
+<!--
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+-->
+
+
+<script>
+  /*  var aDiv = document.getElementsByTagName("div")
+
+    for(var i=0;i<aDiv.length;i++){
+        drag(aDiv[i])
+    }
+
+    function drag(oDiv) {
+        oDiv.onmousedown=function (ev) {
+
+            var x = ev.offsetX;
+            var y = ev.offsetY;
+
+            document.onmousemove=function (ev) {
+
+                oDiv.style.left =  ev.clientX-x+"px";
+                oDiv.style.top =  ev.clientY-y+"px"
+            };
+            document.onmouseup=function () {
+                document.onmousemove = null
+                document.onmouseup = null
+            }
+        }
+
+    }*/
+
+  
+  document.getElementById("btn").onclick=function () {
+      //须有创建一个对象
+      var r = Math.round(Math.random()*255);
+      var g = Math.round(Math.random()*255);
+      var b = Math.round(Math.random()*255);
+      new Drag("rgb("+r+","+g+","+b+")")
+  };
+
+  function Drag(bg) {
+      this.bg = bg;
+      //初始化对象方法
+      this.init();
+  }
+  Drag.prototype.init=function () {
+      //创建DOM节点
+      this.ele = document.createElement("div");
+      this.ele.style.background = this.bg;
+      document.body.appendChild(this.ele);
+      //绑定拖拽事件
+      this.bindEvent()
+  };
+  Drag.prototype.bindEvent=function () {
+      var that = this;
+      this.ele.onmousedown=function (ev) {
+          var x = ev.offsetX;
+          var y = ev.offsetY;
+          document.onmousemove=function (ev) {
+              that.ele.style.left =  ev.clientX-x+"px";
+              that.ele.style.top =  ev.clientY-y+"px"
+          };
+          document.onmouseup=function () {
+              document.onmousemove = null;
+              document.onmouseup = null
+          }
+      }
+  };
+
+
+
+  //CowFarm
+  //一个农场有母牛和公牛共100只，母牛3年下一只小牛；20年以后农场有多少牛
+
+  function Cow(farm,sex) {
+      this.farm = farm; //牛所在的农场
+      //this.farm.cows牛群
+      this.sex = sex;
+      this.age = 0;
+  }
+  Cow.prototype.growUp=function () {
+      this.age++;
+
+      if(this.sex==1&&this.age%3==0){
+
+          //母牛
+          //隔3年下犊子
+          //小牛的性别
+          //小牛应该也会加入牛群
+          //this.farm.cows牛群
+          var sex = Math.round(Math.random());//0或1
+          this.farm.cows.push(new Cow(this.farm,sex));
+
+      }
+  };
+
+
+  //农场
+  function CowFarm(num) {
+        this.cows = []; //牛群
+        this.initNum = num; //开始的时候有多少牛
+        this.init(); //初始化
+  }
+
+  CowFarm.prototype.init=function () {
+      console.log(1);
+       //买牛
+      this.buyCow()
+  };
+
+  CowFarm.prototype.buyCow=function () {
+
+      for(var i=0;i<this.initNum;i++){
+          var sex = Math.round(Math.random());//0或1
+          this.cows.push(new Cow(this,sex))
+      }
+  };
+
+  CowFarm.prototype.run=function (years) {
+        //农场运行多少年
+
+
+      for(var i=0;i<years;i++){
+          var num = this.cows.length;//知道当年有多少牛
+          for(var j=0;j<num;j++){
+              //每隔一年，牛长大一岁
+              this.cows[j].growUp()
+          }
+      }
+  };
+
+    var farm = new CowFarm(100);
+   farm.run(20);
+
+   console.log(farm);
+
+    //3 150
+    //6 225
+
+  //9 330
+
+  //12 480
+
+  //15 720
+
+  //18  1100
+
+
+    var arr= [1];
+    for(var i=0;i<arr.length;i++){
+        console.log(arr[i]);
+       // arr.push(1)
+    }
+
+</script>
+</body>
+</html>
