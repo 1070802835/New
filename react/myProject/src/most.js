@@ -1,39 +1,30 @@
 import React,{Component} from "react"
 import ReactDOM from "react-dom"
-import {Header,Content,Footer} from "./common/common"
+import {Router,Route,hashHistory} from "react-router"
+
 import "./common/common.less"
-class H1 extends Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return(
-            <h1> demo </h1>
-        )
-    }
-}
 
-class Page extends Component{
-    constructor(props){
-        super(props)
-    }
-    render(){
-        return(
-            <div className="page">
-                <Header/>
-                <Content hasSubNav={false} hasFooter={true}>
-                    <H1/>
-                </Content>
-                <Footer/>
-            </div>
-        )
-    }
-}
+import Index from "./main/index"
+import Detail from "./main/detail"
+import List from "./main/list"
+import Login from "./main/login"
+import Mine from "./main/mine"
+import Order from "./main/order"
 
-ReactDOM.render(
-    <Page/>,
-        document.getElementById("page")
-);
+
+
+ReactDOM.render((
+    <Router history={hashHistory}>
+        <Route path="/" component={Index}/>
+        <Route path="/index" component={Index}/>
+        <Route path="/detail(/:productId)" component={Detail}/>
+        <Route path="/list" component={List}/>
+        <Route path="/login" component={Login}/>
+        <Route path="/mine" component={Mine}/>
+        <Route path="/order" component={Order}/>
+    </Router>
+), document.getElementById('page'));
+
 
 if(module.hot){
     module.hot.accept()
