@@ -4,7 +4,8 @@ http://blog.csdn.net/it1039871366/article/details/46372207
 
 //安卓与ios   和  前段混合开发解决方案
 
-
+git config --global http.postBuffer 524288000 
+//处理git上传大小为1M的限制
 
 
 https://segmentfault.com/q/1010000004302110?_ea=563521
