@@ -1,0 +1,134 @@
+.loginWrapper {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #000;
+}
+
+.loginHeader {
+  height: 106px;
+  width: 100%;
+  background: url('../../../assets/common/logo.png') no-repeat 88px 30px;
+  background-size: 196px 32px;
+}
+
+.loginCheckbox{
+  display: block;
+  color: #3e3e3e;
+  .forgot{
+    padding: 0 0 0 200px;
+    font-size: 14px;
+    color: #3e3e3e;
+    cursor: pointer;
+    &:hover{
+      color: #fff;
+    }
+  }
+}
+
+
+.loginBox {
+  width: 400px;
+  position: fixed;
+  top: 48%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+  z-index: 2;
+}
+//重新定义 ant 一些样式
+:global {
+  .login-checkbox-customer {
+    font-size: 14px;
+    margin: 18px 0 32px;
+    .ant-checkbox-inner {
+      width: 20px;
+      height: 20px;
+      background: #000;
+      border-color: #e4e4e4;
+    }
+    .ant-checkbox-checked {
+      .ant-checkbox-inner {
+        background: #fff;
+        border-color: #3e3e3e;
+        &:after {
+          left: 5px;
+          top: -1px;
+          width: 8px;
+          height: 14px;
+          border: 2px solid #3e3e3e;
+          border-top: 0;
+          border-left: 0;
+        }
+      }
+    }
+    .ant-checkbox:hover {
+      .ant-checkbox-inner {
+        border-color: #3e3e3e;
+      }
+    }
+    .ant-checkbox-focused {
+      .ant-checkbox-inner {
+        border-color: #3e3e3e !important;
+      }
+    }
+    &:hover {
+      .ant-checkbox-inner {
+        border-color: #3e3e3e !important;
+      }
+    }
+    span:nth-child(2):hover{
+      color: #fff;
+    }
+  }
+  .login-input-customer {
+    margin: 8px 0 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #3e3e3e;
+    border-radius: 0;
+    outline: 0;
+    color: #fff;
+    height: 38px;
+    padding: 10px 0 10px;
+    -webkit-transition: border-color .1s ease-in-out;
+    transition: border-color .1s ease-in-out;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    &:hover {
+      border: 0;
+      border-bottom: 1px solid #3e3e3e;
+    }
+    &:focus {
+      border-color: #fff;
+      box-shadow: none;
+    }
+  }
+  .login-button-customer {
+    margin-left: 42px;
+    background: #e4e4e4;
+    border-color: #e4e4e4;
+    padding: 11px 49px;
+    font-size: 14px;
+    color: #3e3e3e;
+    &:hover {
+      background: #ccc;
+      border-color: #ccc;
+      color: #3e3e3e;
+    }
+  }
+  .login-button-customer-sign {
+    margin-left: 38px;
+    background: transparent;
+    border-color: #3e3e3e;
+    padding: 11px 49px;
+    font-size: 14px;
+    color: #fff;
+    &:hover {
+      background: transparent;
+      border-color: #fff;
+      color: #fff;
+    }
+  }
+}
