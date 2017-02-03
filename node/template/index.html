@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a1{
+            display: block;
+            width:300px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            background: -webkit-linear-gradient(left,#87FFFD,#FF9226);
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all .3s linear;
+        }
+        .a1:hover{
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+<div>index</div>
+<a class="a1" href="login.html">login</a>
+<img src="./img/1.jpg" alt="">
+<button value="aaa" id="btn1">提交</button>
+</body>
+<script>
+    document.getElementById("btn1").onclick=function () {
+        console.log(this.value)
+    }
+</script>
+</html>
