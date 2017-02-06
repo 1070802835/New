@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>socket</title>
+    <script src="socket.io.js"></script>
+    <style>
+        html,body{
+            height:100%;
+        }
+        #content{
+            width:60%;
+            margin:0 auto;
+            height:50%;
+            border:1px solid #ccc;
+            overflow-y: auto;
+        }
+        .wrap{
+            margin: 10px auto;
+
+            width:224px;
+        }
+        #t1:focus{
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+
+</div>
+<div class="wrap">
+    <input id="t1" type="text">
+    <button id="b1">发送</button>
+</div>
+
+<script>
+    var socket = io.connect("http://10.9.164.70:8080");
+    document.getElementById("b1").onclick=function () {
+        if(document.getElementById("t1").value==""){
+            alert("内容不能为空!");
+            return
+        }
+        socket.send(document.getElementById("t1").value);
+        createP(document.getElementById("t1").value);
+        var contentHeight=document.getElementById("content").clientHeight;
+        document.getElementById("content").scrollTop=contentHeight;
+        document.getElementById("t1").value="";
+
+    };
+    socket.on("connect",function () {
+        console.log("链接成功了");
+    });
+    socket.on("message",function (data) {
+        console.log(data);
+        createP(data)
+    });
+
+    function createP(inn) {
+        var oP=document.createElement("p");
+        oP.style.color="#4DF2FF";
+        oP.innerHTML=inn;
+        document.getElementById("content").appendChild(oP);
+
+
+    }
+</script>
+</body>
+</html>

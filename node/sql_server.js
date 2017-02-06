@@ -11,7 +11,7 @@ http.createServer(function (req,res) {
             case "api":
         }
         if(urlArr[1]=="api"){
-            //懒得去分割   爱咋地咋地
+            //懒得去分割 ws  爱咋地咋地
         }else{
 
         }
