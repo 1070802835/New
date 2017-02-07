@@ -5,6 +5,10 @@
     <title>socket</title>
     <script src="socket.io.js"></script>
     <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
         html,body{
             height:100%;
         }
@@ -14,6 +18,7 @@
             height:50%;
             border:1px solid #ccc;
             overflow-y: auto;
+            background: -webkit-linear-gradient(top,#B4FFDE,#CDC7FF);
         }
         .wrap{
             margin: 10px auto;
@@ -42,8 +47,9 @@
             return
         }
         socket.send(document.getElementById("t1").value);
-        createP(document.getElementById("t1").value);
-        var contentHeight=document.getElementById("content").clientHeight;
+        createP(document.getElementById("t1").value,1);
+        var contentHeight=document.getElementById("content").offsetHeight;
+
         document.getElementById("content").scrollTop=contentHeight;
         document.getElementById("t1").value="";
 
@@ -56,9 +62,14 @@
         createP(data)
     });
 
-    function createP(inn) {
+    function createP(inn,flag) {
         var oP=document.createElement("p");
-        oP.style.color="#4DF2FF";
+        oP.style.color="#FF9D42";
+        oP.style.margin="4px 0";
+        oP.style.border="1px solid #ccc";
+        if(flag){
+            oP.style.textAlign="right";
+        }
         oP.innerHTML=inn;
         document.getElementById("content").appendChild(oP);
 

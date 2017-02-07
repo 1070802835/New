@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= name %></title>
+    <style>
+      .btn{
+        text-decoration: none;
+        display: block;
+        width:300px;
+        height:50px;
+        line-height: 50px;
+        text-align: center;
+        background: -webkit-linear-gradient(left,#D695FF,#53FFEB);
+        margin: 20px auto;
+        border-radius: 10px;
+        transition: all .1s linear;
+        border:0;
+      }
+      .btn:active{
+        transform: translateY(6px);
+      }
+      .btn:focus{
+        outline:none;
+      }
+    </style>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= name %></h1>
+    <p>Welcome to <%= mark %></p>
+    <div> <%- html %> </div>
+    <!--如果要渲染标签  这里要用-号-->
+    <% if(showName){ %>
+    <h1>name : <%= name %></h1>
+    <h1>love : <%= love %></h1>
+    <%}%>
+    <form action="login" method="post">
+      <input type="text" name="username" placeholder="username">
+      <input type="password" name="password" placeholder="password">
+      <input type="submit" value="Commit">
+    </form>
+  </body>
+</html>

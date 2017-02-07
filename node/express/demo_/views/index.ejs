@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <link rel="icon" href="/images/favicon.ico" mce_href="/images/favicon.ico" type="image/x-icon">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <h1><%= title %>111</h1>
+
+  <%- include header %>
+  <div><%- html %></div>
+  <% if(logined){ %>
+  <!--如登录了-->
+  <p>Welcome  <%= username %></p>
+  <%}else {%>
+
+  <!--没有登录，让他登录-->
+  <form method="post" action="/login">
+    <input name="username">
+    <input name="password">
+    <input type="submit">
+  </form>
+  <%}%>
+  </body>
+</html>

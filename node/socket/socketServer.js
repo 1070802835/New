@@ -20,7 +20,7 @@ function hander(req,res) {
         })
     }
 }
-var userArr=[];
+var userArr={};
 var userId=1;
 //当有人链接的时候
 io.on("connection",function (socket) {
@@ -32,7 +32,7 @@ io.on("connection",function (socket) {
             console.log(data)
         }
         socket.broadcast.send(socket.name+" : "+data);
-        userArr.push(userId)
+        // userArr[socket.name]=        //通过ip来判断是否设置过用户名
     });
 });
 
