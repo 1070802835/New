@@ -44,3 +44,5 @@ router.post('/login', function(req, res, next) {
 
 module.exports = router;
 //想使用路由的话   先要在app.js里面 require 然后 use
+
+//npm start   启动服务
