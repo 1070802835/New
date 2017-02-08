@@ -90,7 +90,6 @@ let Footer=React.createClass({
         )
     }
 });
-
 let PageIndex=React.createClass({
    render:function () {
        return (

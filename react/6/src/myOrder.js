@@ -91,20 +91,7 @@ class OrderPage extends Component{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+----------------------------------------------------------------------------------------------------------------------------
 
 class SureOrder extends Component{
     constructor(props){
