@@ -40,3 +40,21 @@ module.exports = {
 http://slides.com/sorrycc/dva#/
 
 //Dva   demo
+
+
+
+贝塞尔曲线
+http://cubic-bezier.com/#.17,.67,.83,.67
+
+//通过 cubic-bezier 来规定速度曲线：
+#div1 {transition-timing-function: cubic-bezier(0,0,1,1;}
+
+
+
+
+渐变
+http://www.colorzilla.com/gradient-editor/
+c3 transform
+http://westciv.com/tools/transforms/index.html
+
+
