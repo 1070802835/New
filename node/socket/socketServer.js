@@ -1,7 +1,7 @@
 ﻿var http=require("http").createServer(hander);
 var io=require("socket.io").listen(8181);//避免端口占用
 var fs=require("fs");
-http.listen(80);
+http.listen(80);//80是默认的端口，占用就改掉
 function hander(req,res) {
     if(req.url=="/"){
         fs.readFile("./socket.html",function (err,data) {
