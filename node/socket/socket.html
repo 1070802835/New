@@ -35,13 +35,17 @@
 
 </div>
 <div class="wrap">
-    <input id="t1" type="text">
-    <button id="b1">发送</button>
+    <form action="javascript:void(0)" onsubmit="Go()">
+        <input id="t1" type="text">
+    </form>
+
+    <!--<button id="b1">发送</button>-->
 </div>
 
 <script>
     var socket = io.connect("http://192.168.243.172:8181");//IP与段口号都要改
-    document.getElementById("b1").onclick=function () {
+//    document.getElementById("b1").onclick=Go;
+    function Go() {
         if(document.getElementById("t1").value==""){
             alert("内容不能为空!");
             return
@@ -52,8 +56,7 @@
 
         document.getElementById("content").scrollTop=contentHeight;
         document.getElementById("t1").value="";
-
-    };
+    }
     socket.on("connect",function () {
         console.log("链接成功了");
     });
