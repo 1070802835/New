@@ -40,7 +40,7 @@
 </div>
 
 <script>
-    var socket = io.connect("http://10.9.164.70:8080");
+    var socket = io.connect("http://192.168.243.172:8181");//IP与段口号都要改
     document.getElementById("b1").onclick=function () {
         if(document.getElementById("t1").value==""){
             alert("内容不能为空!");

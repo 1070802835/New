@@ -1,5 +1,5 @@
-var http=require("http").createServer(hander);
-var io=require("socket.io").listen(8080);
+﻿var http=require("http").createServer(hander);
+var io=require("socket.io").listen(8181);//避免端口占用
 var fs=require("fs");
 http.listen(80);
 function hander(req,res) {
@@ -36,4 +36,4 @@ io.on("connection",function (socket) {
     });
 });
 
-console.log("ok,8080");
+console.log("ok,8181");
